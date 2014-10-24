@@ -50,9 +50,13 @@
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req
                                                      completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                         NSString *json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                                                         NSLog(@"%@", json);
-                                                     }];
+                                                         // Use NSJSONSerialization to convert raw JSON data instead of String
+                                                         NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                                    options:0
+                                                                                                                      error:nil];
+                                                         NSLog(@"%@", jsonObject);
+                                                     }
+                                      ];
     [dataTask resume];
 }
 
