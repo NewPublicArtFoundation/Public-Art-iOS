@@ -38,6 +38,10 @@
 
 
 // 6. Create method for NSURLRequest and use NSURL to create NSURLSessionDataTask to transfers request to server
+// NSURLRequest explained
+// a. create an NSURL instance
+// b. instantiate a request object with it
+
 - (void)fetchFeed
 {
     NSString *requestString = @"www.graffpass.com/find.json?search=new+york+city";
