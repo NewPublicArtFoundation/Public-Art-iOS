@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NearbyListViewController.h"
+#import "NearbyListWebViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,10 @@
     // 3. Set up the root view
     NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
+    
+    NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
+    lvc.webViewController = wvc;
+    
     self.window.rootViewController = masterNav;
     
     self.window.backgroundColor = [UIColor whiteColor];
