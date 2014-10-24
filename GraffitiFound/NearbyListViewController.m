@@ -49,7 +49,7 @@
 
 - (void)fetchFeed
 {
-    NSString *requestString = @"http://localhost:8000/xcode.json";
+    NSString *requestString = @"http://localhost:8000/graffiti.json";
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
@@ -99,11 +99,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
-                                                            forIndexPath:indexPath];
+    // Get a new or recycled cell
+    NearbyGraffitiCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NearbyGraffitiCell"
+                                                               forIndexPath:indexPath];
     
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
-    cell.textLabel.text = nearbyGraffiti[@"title"];
+    
+    // Configure the cell with the NearbyGraffitiCell
+    cell.distanceLabel.text = nearbyGraffiti[@"distance"];
+    cell.backgroundColor = [UIColor blackColor];
     
     return cell;
 }

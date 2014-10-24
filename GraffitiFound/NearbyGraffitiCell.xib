@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,28 +14,67 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dCo-s6-QrV" id="Y7P-A0-iHs">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="elq-Dx-YVa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="elq-Dx-YVa">
+                        <rect key="frame" x="8" y="8" width="304" height="53"/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76Z-rZ-AxN">
-                        <rect key="frame" x="0.0" y="2" width="320" height="70"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.33000000000000002" colorSpace="calibratedRGB"/>
-                        <state key="normal">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jr-d6-i23">
-                        <rect key="frame" x="162" y="2" width="158" height="70"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jr-d6-i23">
+                        <rect key="frame" x="8" y="5" width="284" height="59"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="51"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="centerY" secondItem="9Jr-d6-i23" secondAttribute="centerY" id="0kt-rj-zll"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="29t-mN-eOA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Jr-d6-i23" secondAttribute="trailing" constant="10" id="33o-Ep-Ooa"/>
+                    <constraint firstAttribute="centerY" secondItem="9Jr-d6-i23" secondAttribute="centerY" id="4MC-8f-AwL"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" constant="-8" id="BdZ-80-1Dy"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="elq-Dx-YVa" secondAttribute="bottom" id="EtB-ph-rMz"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="GKg-b4-vqD"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" id="JBd-sJ-mhP"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" constant="-8" id="KYa-0a-yAS"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="Phx-8V-835"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" id="TkF-5b-abh"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" constant="10" id="ZUJ-qp-XX4"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="dVM-Ra-Vt5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="elq-Dx-YVa" secondAttribute="trailing" id="gBX-2W-gIe"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" constant="-8" id="iMz-Sb-AzQ"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="9Jr-d6-i23" secondAttribute="leading" id="k3L-TJ-GLu"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" id="mQP-b7-qpA"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="bottom" secondItem="Y7P-A0-iHs" secondAttribute="bottomMargin" id="mtP-R1-9o7"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Jr-d6-i23" secondAttribute="trailing" constant="-8" id="tYp-Ex-fhj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Jr-d6-i23" secondAttribute="trailing" constant="20" id="thh-dc-ZMT"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="wyJ-6u-X5Z"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="9Jr-d6-i23" secondAttribute="leading" id="y4o-Q4-fTi"/>
+                    <constraint firstAttribute="centerY" secondItem="elq-Dx-YVa" secondAttribute="centerY" id="yAv-B1-1P9"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="zpl-wU-QY9"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="33o-Ep-Ooa"/>
+                        <exclude reference="4MC-8f-AwL"/>
+                        <exclude reference="tYp-Ex-fhj"/>
+                        <exclude reference="BdZ-80-1Dy"/>
+                        <exclude reference="EtB-ph-rMz"/>
+                        <exclude reference="GKg-b4-vqD"/>
+                        <exclude reference="JBd-sJ-mhP"/>
+                        <exclude reference="KYa-0a-yAS"/>
+                        <exclude reference="Phx-8V-835"/>
+                        <exclude reference="ZUJ-qp-XX4"/>
+                        <exclude reference="gBX-2W-gIe"/>
+                        <exclude reference="iMz-Sb-AzQ"/>
+                        <exclude reference="k3L-TJ-GLu"/>
+                        <exclude reference="mQP-b7-qpA"/>
+                        <exclude reference="wyJ-6u-X5Z"/>
+                        <exclude reference="yAv-B1-1P9"/>
+                        <exclude reference="zpl-wU-QY9"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundImageView" destination="elq-Dx-YVa" id="Fbe-Ng-Qap"/>
                 <outlet property="distanceLabel" destination="9Jr-d6-i23" id="s7p-6M-OVf"/>
-                <outlet property="transparentColorLayer" destination="76Z-rZ-AxN" id="f5N-IP-qeK"/>
             </connections>
             <point key="canvasLocation" x="434" y="258"/>
         </tableViewCell>
