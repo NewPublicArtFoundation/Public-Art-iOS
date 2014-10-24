@@ -11,5 +11,6 @@
 
 @interface NearbyListWebViewController : UIViewController
 
+@property (nonatomic) NSURL *URL;
 
 @end
