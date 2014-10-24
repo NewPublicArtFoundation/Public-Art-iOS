@@ -57,7 +57,9 @@
                                                          NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                                                                     options:0
                                                                                                                       error:nil];
-                                                         NSLog(@"%@", jsonObject);
+                                                         // {name of local data store} = {json accessor and content reference}
+                                                         self.nearbyGraffiti = jsonObject[@"data"];
+                                                         NSLog(@"%@", self.nearbyGraffiti);
                                                      }
                                       ];
     [dataTask resume];
