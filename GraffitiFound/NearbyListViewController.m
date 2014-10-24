@@ -10,4 +10,15 @@
 
 @implementation NearbyListViewController
 
+// 1. write stubs for required data
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)indexPath
+{
+    return nil;
+}
+
 @end
