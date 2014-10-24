@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+@class NearbyListWebViewController;
+
 @interface NearbyListViewController : UITableViewController
 
+@property (nonatomic) NearbyListWebViewController *webViewController;
 
 @end
