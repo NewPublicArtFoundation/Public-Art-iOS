@@ -82,8 +82,11 @@
     
     self.webViewController.title = nearbyGraffiti[@"title"];
     self.webViewController.URL = URL;
-    [self.navigationController pushViewController:self.webViewController
-                                         animated:YES];
+    
+    if (!self.splitViewController) {
+        [self.navigationController pushViewController:self.webViewController
+                                             animated:YES];
+    }
 }
 
 // 1. write stubs for required data
