@@ -7,6 +7,7 @@
 //
 
 #import "NearbyListViewController.h"
+#import "NearbyListWebViewController.h"
 
 @interface NearbyListViewController ()
 
@@ -71,6 +72,18 @@
 }
 
 #pragma mark Table Related
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
+    NSURL *URL = [NSURL URLWithString:nearbyGraffiti[@"url"]];
+    
+    self.webViewController.title = nearbyGraffiti[@"title"];
+    self.webViewController.URL = URL;
+    [self.navigationController pushViewController:self.webViewController
+                                         animated:YES];
+}
+
 // 1. write stubs for required data
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
