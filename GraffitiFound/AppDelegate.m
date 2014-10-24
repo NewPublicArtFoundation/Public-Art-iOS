@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NearbyListViewController.h"
 
 @interface AppDelegate ()
 

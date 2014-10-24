@@ -11,4 +11,5 @@
 
 @interface NearbyListViewController : UITableViewController
 
+
 @end
