@@ -31,6 +31,11 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="backgroundImageView" destination="elq-Dx-YVa" id="Fbe-Ng-Qap"/>
+                <outlet property="distanceLabel" destination="9Jr-d6-i23" id="s7p-6M-OVf"/>
+                <outlet property="transparentColorLayer" destination="76Z-rZ-AxN" id="f5N-IP-qeK"/>
+            </connections>
             <point key="canvasLocation" x="434" y="258"/>
         </tableViewCell>
     </objects>

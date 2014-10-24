@@ -8,6 +8,7 @@
 
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
+#import "NearbyGraffitiCell.h"
 
 @interface NearbyListViewController ()
 

@@ -10,5 +10,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NearbyGraffitiCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+@property (weak, nonatomic) IBOutlet UIButton *transparentColorLayer;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 
 @end

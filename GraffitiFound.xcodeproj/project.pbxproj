@@ -148,8 +148,8 @@
 				0378079D19FAE71B000C681F /* NearbyListWebViewController.h */,
 				0378079E19FAE71B000C681F /* NearbyListWebViewController.m */,
 				037807A019FAF10E000C681F /* NearbyGraffitiCell.h */,
-				037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */,
 				037807A119FAF10E000C681F /* NearbyGraffitiCell.m */,
+				037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */,
 			);
 			name = NearbyListTableView;
 			sourceTree = "<group>";
