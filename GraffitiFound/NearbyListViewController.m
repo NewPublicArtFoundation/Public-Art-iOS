@@ -113,8 +113,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ 
+    // Load the NIB file
+    UINib *nib = [UINib nibWithNibName:@"NearbyGraffitiCell" bundle:nil];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    // Register this NIB, which contrains the cell
+    [self.tableView registerNib:nib
+         forCellReuseIdentifier:@"NearbyGraffitiCell"];
 }
 
 @end
