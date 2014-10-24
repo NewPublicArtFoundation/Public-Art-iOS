@@ -11,6 +11,8 @@
 		031A34E519FAD7E40034FE9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A34E419FAD7E40034FE9F /* AppDelegate.m */; };
 		031A34ED19FAD7E40034FE9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031A34EC19FAD7E40034FE9F /* Images.xcassets */; };
 		031A34FC19FAD7E50034FE9F /* GraffitiFoundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A34FB19FAD7E50034FE9F /* GraffitiFoundTests.m */; };
+		0378079419FAD957000C681F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378079319FAD957000C681F /* UIKit.framework */; };
+		0378079619FAD95C000C681F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378079519FAD95C000C681F /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		031A34F519FAD7E50034FE9F /* GraffitiFoundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraffitiFoundTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031A34FA19FAD7E50034FE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		031A34FB19FAD7E50034FE9F /* GraffitiFoundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraffitiFoundTests.m; sourceTree = "<group>"; };
+		0378079319FAD957000C681F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0378079519FAD95C000C681F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0378079619FAD95C000C681F /* Foundation.framework in Frameworks */,
+				0378079419FAD957000C681F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +62,7 @@
 		031A34D319FAD7E40034FE9F = {
 			isa = PBXGroup;
 			children = (
+				0378079219FAD946000C681F /* Frameworks */,
 				031A34DE19FAD7E40034FE9F /* GraffitiFound */,
 				031A34F819FAD7E50034FE9F /* GraffitiFoundTests */,
 				031A34DD19FAD7E40034FE9F /* Products */,
@@ -106,6 +113,16 @@
 				031A34FA19FAD7E50034FE9F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0378079219FAD946000C681F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0378079519FAD95C000C681F /* Foundation.framework */,
+				0378079319FAD957000C681F /* UIKit.framework */,
+			);
+			name = Frameworks;
+			path = GraffitiFound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +398,7 @@
 				031A350119FAD7E50034FE9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		031A350219FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "GraffitiFoundTests" */ = {
 			isa = XCConfigurationList;
@@ -389,6 +407,7 @@
 				031A350419FAD7E50034FE9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
