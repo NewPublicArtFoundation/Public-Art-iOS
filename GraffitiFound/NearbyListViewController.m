@@ -26,10 +26,12 @@
         self.navigationItem.title = @"Nearby Graffiti";
         
         // 5. Override initWithStyle to create the NSURLSession object
+        // Want the defaults, so pass nil for second and third options
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         _session = [NSURLSession sessionWithConfiguration:config
                                                  delegate:nil
                                             delegateQueue:nil];
+        
     }
     return self;
 }
