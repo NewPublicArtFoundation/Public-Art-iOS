@@ -77,4 +77,13 @@
     return nil;
 }
 
+#pragma mark General
+// 10. Overwrite the default action
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+}
+
 @end
