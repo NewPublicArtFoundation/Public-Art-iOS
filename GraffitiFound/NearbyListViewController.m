@@ -8,6 +8,13 @@
 
 #import "NearbyListViewController.h"
 
+// 4. Create property to hold NSURLSession
+@interface NearbyListViewController ()
+
+@property (nonatomic, strong) NSURLSession *session;
+
+@end
+
 @implementation NearbyListViewController
 
 // 1. write stubs for required data
