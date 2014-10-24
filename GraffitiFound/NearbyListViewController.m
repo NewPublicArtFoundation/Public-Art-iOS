@@ -72,9 +72,16 @@
     return [self.nearbyGraffiti count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
+                                                            forIndexPath:indexPath];
+    
+    NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
+    cell.textLabel.text = nearbyGraffiti[@"title"];
+    
+    return cell;
 }
 
 #pragma mark General
