@@ -31,7 +31,7 @@
         _session = [NSURLSession sessionWithConfiguration:config
                                                  delegate:nil
                                             delegateQueue:nil];
-        
+        [self fetchFeed];
     }
     return self;
 }
@@ -44,7 +44,7 @@
 
 - (void)fetchFeed
 {
-    NSString *requestString = @"www.graffpass.com/find.json?search=new+york+city";
+    NSString *requestString = @"http://localhost:8000/xcode.json";
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
