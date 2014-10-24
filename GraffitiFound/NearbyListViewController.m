@@ -17,6 +17,24 @@
 
 @implementation NearbyListViewController
 
+#pragma mark NSURL 
+
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        self.navigationItem.title = @"Nearby Graffiti";
+        
+        // 5. Override initWithStyle to create the NSURLSession object
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:config
+                                                 delegate:nil
+                                            delegateQueue:nil];
+    }
+    return self;
+}
+
+#pragma mark Table Related
 // 1. write stubs for required data
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
