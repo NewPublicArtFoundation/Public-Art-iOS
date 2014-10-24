@@ -8,10 +8,13 @@
 
 #import "NearbyListViewController.h"
 
-// 4. Create property to hold NSURLSession
 @interface NearbyListViewController ()
 
+// 4. Create property to hold NSURLSession
 @property (nonatomic, strong) NSURLSession *session;
+
+// 8. Create array to hold on to JSON response array
+@property (nonatomic, copy) NSArray *nearbyGraffiti;
 
 @end
 
