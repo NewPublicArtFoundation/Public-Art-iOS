@@ -122,6 +122,10 @@
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 85;
+}
+
 #pragma mark General
 // 10. Overwrite the default action
 - (void)viewDidLoad
