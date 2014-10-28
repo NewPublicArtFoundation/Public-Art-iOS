@@ -49,7 +49,7 @@
 
 - (void)fetchFeed
 {
-    NSString *requestString = @"http://localhost:8000/graffiti.json";
+    NSString *requestString = @"http://www.graffpass.com/find.json?search=new+york+city";
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
@@ -79,10 +79,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
-    NSURL *URL = [NSURL URLWithString:nearbyGraffiti[@"url"]];
+    NSURL *URL = [NSURL URLWithString:nearbyGraffiti[@"properties"][@"title"]];
     
     self.webViewController.title = nearbyGraffiti[@"title"];
     self.webViewController.URL = URL;
+   
+    
     
     if (!self.splitViewController) {
         [self.navigationController pushViewController:self.webViewController
@@ -107,7 +109,15 @@
     
     // Configure the cell with the NearbyGraffitiCell
     cell.distanceLabel.text = nearbyGraffiti[@"distance"];
-    cell.backgroundColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor clearColor];
+    
+    NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
+    NSURL *url = [NSURL URLWithString:imageUrlString];
+    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
+    UIImage *image = [UIImage imageWithData:data];
+    
+    cell.backgroundImageView.image = image;
+    
     
     return cell;
 }

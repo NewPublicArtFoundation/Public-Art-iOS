@@ -18,7 +18,10 @@
                         <rect key="frame" x="8" y="8" width="304" height="53"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jr-d6-i23">
-                        <rect key="frame" x="8" y="5" width="284" height="59"/>
+                        <rect key="frame" x="8" y="-1" width="284" height="71"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="Dwg-Z1-6o0"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="51"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
