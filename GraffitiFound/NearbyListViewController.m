@@ -123,9 +123,9 @@
     NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
     NSURL *url = [NSURL URLWithString:imageUrlString];
     
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    [cell.imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
-    
+    cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+
     return cell;
 }
 
