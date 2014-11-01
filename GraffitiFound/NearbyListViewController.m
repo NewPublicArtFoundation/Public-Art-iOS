@@ -105,8 +105,6 @@
 {
     static NSString *MyIdentifier = @"NearbyGraffitiCell";
     
-    
-    
     // Get a new or recycled cell
     NearbyGraffitiCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
@@ -118,8 +116,6 @@
     
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
     
-    cell.textLabel.text = @"My Text";
-    
     // Configure the cell with the NearbyGraffitiCell
     cell.distanceLabel.text = nearbyGraffiti[@"distance"];
     cell.backgroundColor = [UIColor clearColor];
@@ -127,10 +123,8 @@
     NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
     NSURL *url = [NSURL URLWithString:imageUrlString];
     
-    // Here we use the new provided setImageWithURL: method to load the web image
-    
-    [cell.imageView sd_setImageWithURL:url
-                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [cell.imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     return cell;
 }

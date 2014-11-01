@@ -37,7 +37,7 @@
         
         // Set the delegate of the split view controller to the detail VC
         // You will need this later - ignore the warning for now
-        svc.delegate = wvc;
+//        svc.delegate = wvc;
         
         svc.viewControllers = @[masterNav, detailNav];
         

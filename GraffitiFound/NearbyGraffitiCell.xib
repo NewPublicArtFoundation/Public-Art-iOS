@@ -96,7 +96,7 @@
                 <outlet property="backgroundImageView" destination="elq-Dx-YVa" id="Fbe-Ng-Qap"/>
                 <outlet property="distanceLabel" destination="9Jr-d6-i23" id="s7p-6M-OVf"/>
             </connections>
-            <point key="canvasLocation" x="434" y="266"/>
+            <point key="canvasLocation" x="262" y="261"/>
         </tableViewCell>
     </objects>
 </document>
