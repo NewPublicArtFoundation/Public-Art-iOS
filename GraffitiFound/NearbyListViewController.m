@@ -84,11 +84,10 @@
 {
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
     NSURL *URL = [NSURL URLWithString:nearbyGraffiti[@"properties"][@"title"]];
-    
+
     self.webViewController.title = nearbyGraffiti[@"title"];
     self.webViewController.URL = URL;
-   
-    
+    self.webViewController.hidesBottomBarWhenPushed = YES;
     
     if (!self.splitViewController) {
         [self.navigationController pushViewController:self.webViewController
@@ -139,10 +138,18 @@
 
 #pragma mark General
 // 10. Overwrite the default action
+-(void)get_current_location {
+    NSLog(@"Eh up, someone just pressed the button!");
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                                                                                           target:self
+                                                                                           action:@selector(get_current_location)];
+    
     // Load the NIB file
     UINib *nib = [UINib nibWithNibName:@"NearbyGraffitiCell" bundle:nil];
     
