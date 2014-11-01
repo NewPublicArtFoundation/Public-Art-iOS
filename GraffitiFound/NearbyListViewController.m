@@ -98,14 +98,27 @@
     return [self.nearbyGraffiti count];
 }
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *MyIdentifier = @"NearbyGraffitiCell";
+    
+    
+    
     // Get a new or recycled cell
-    NearbyGraffitiCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NearbyGraffitiCell"
-                                                               forIndexPath:indexPath];
+    NearbyGraffitiCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:MyIdentifier];
+    }
     
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
+    
+    cell.textLabel.text = @"My Text";
     
     // Configure the cell with the NearbyGraffitiCell
     cell.distanceLabel.text = nearbyGraffiti[@"distance"];
@@ -113,11 +126,11 @@
     
     NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
     NSURL *url = [NSURL URLWithString:imageUrlString];
-    NSData *data = [[NSData alloc] initWithContentsOfURL:url];
-    UIImage *image = [UIImage imageWithData:data];
     
-    cell.backgroundImageView.image = image;
+    // Here we use the new provided setImageWithURL: method to load the web image
     
+    [cell.imageView sd_setImageWithURL:url
+                   placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
     
     return cell;
 }

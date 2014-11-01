@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @class NearbyListWebViewController;
 
