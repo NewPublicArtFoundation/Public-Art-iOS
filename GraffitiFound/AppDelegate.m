@@ -37,7 +37,7 @@
         
         // Set the delegate of the split view controller to the detail VC
         // You will need this later - ignore the warning for now
-//        svc.delegate = wvc;
+        // svc.delegate = wvc;
         
         svc.viewControllers = @[masterNav, detailNav];
         
@@ -45,9 +45,20 @@
         self.window.rootViewController = svc;
     } else {
         // On non-ipad devices, just use the navigation controller
-        self.window.rootViewController = masterNav;
+        UITabBarController *tabBars = [[UITabBarController alloc] init];
+        NSMutableArray *localViewControllersArray = [[NSMutableArray alloc] initWithCapacity:1];
+        
+        [localViewControllersArray addObject:masterNav];
+        tabBars.viewControllers = localViewControllersArray;
+        tabBars.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
+        
+        self.window.rootViewController = tabBars;
+        
+        // self.window.rootViewController = masterNav;
     }
+
     
+  
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     

@@ -27,8 +27,12 @@
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
+    if(self){
+
+        self.title = @"Find";
         self.navigationItem.title = @"Nearby Graffiti";
+        UIImage *image = [UIImage imageNamed:@"find.png"];
+        self.tabBarItem.image = image;
         
         // 5. Override initWithStyle to create the NSURLSession object
         // Want the defaults, so pass nil for second and third options
@@ -138,7 +142,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
+
     // Load the NIB file
     UINib *nib = [UINib nibWithNibName:@"NearbyGraffitiCell" bundle:nil];
     
