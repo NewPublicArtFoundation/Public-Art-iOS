@@ -210,6 +210,8 @@
                                                                           self.queryGraffiti = queryGraffiti;
                                                                           NSLog(@"%@", queryGraffiti);
                                                                           
+                                                                          [self fetchFeed];
+                                                                          
                                                                       }
                                                                       else if (status == INTULocationStatusTimedOut) {
                                                                           // You may wish to inspect achievedAccuracy here to see if it is acceptable, if you plan to use currentLocation
