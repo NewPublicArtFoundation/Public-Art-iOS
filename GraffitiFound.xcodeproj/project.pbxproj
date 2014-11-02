@@ -44,7 +44,6 @@
 		031A34FA19FAD7E50034FE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		031A34FB19FAD7E50034FE9F /* GraffitiFoundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraffitiFoundTests.m; sourceTree = "<group>"; };
 		0373EAB21A058D7A00DC0858 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		0373EAB41A05B2A200DC0858 /* GraffitiFound-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "GraffitiFound-Prefix.pch"; path = "../../LocationManager/LocationManagerExample/LocationManagerExample/GraffitiFound-Prefix.pch"; sourceTree = "<group>"; };
 		0373EAB61A05B2B000DC0858 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../../LocationManager/LocationManagerExample/LocationManagerExample/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0378079319FAD957000C681F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0378079519FAD95C000C681F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				0373EAB51A05B2B000DC0858 /* InfoPlist.strings */,
-				0373EAB41A05B2A200DC0858 /* GraffitiFound-Prefix.pch */,
 				031A34E019FAD7E40034FE9F /* Info.plist */,
 				031A34E119FAD7E40034FE9F /* main.m */,
 			);

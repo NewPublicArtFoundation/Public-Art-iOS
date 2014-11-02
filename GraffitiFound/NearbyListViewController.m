@@ -151,11 +151,6 @@
 }
 
 #pragma mark General
-// 10. Overwrite the default action
--(void)get_current_location {
-    NSLog(@"Eh up, someone just pressed the button!");
-}
-
 
 - (void)viewDidLoad
 {
