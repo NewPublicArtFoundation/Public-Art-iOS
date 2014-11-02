@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6249" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="86" id="dCo-s6-QrV" customClass="NearbyGraffitiCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" tableViewCell="dCo-s6-QrV" id="Y7P-A0-iHs">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="elq-Dx-YVa">
+                        <rect key="frame" x="0.0" y="-1" width="320" height="89"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="4p3-1T-dGh"/>
+                            <constraint firstAttribute="width" secondItem="elq-Dx-YVa" secondAttribute="height" multiplier="152:35" id="ejp-63-wTu"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4p3-1T-dGh"/>
+                                <exclude reference="ejp-63-wTu"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jr-d6-i23">
+                        <rect key="frame" x="28" y="8" width="284" height="69"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="Dwg-Z1-6o0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="51"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Dwg-Z1-6o0"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="centerY" secondItem="9Jr-d6-i23" secondAttribute="centerY" constant="1" id="0kt-rj-zll"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="29t-mN-eOA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Jr-d6-i23" secondAttribute="trailing" constant="10" id="33o-Ep-Ooa"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="elq-Dx-YVa" secondAttribute="bottom" constant="-2" id="41W-9w-Dff"/>
+                    <constraint firstAttribute="centerY" secondItem="9Jr-d6-i23" secondAttribute="centerY" id="4MC-8f-AwL"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" constant="-8" id="BdZ-80-1Dy"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="centerY" secondItem="Y7P-A0-iHs" secondAttribute="centerY" constant="1" id="CCs-c7-v89"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="elq-Dx-YVa" secondAttribute="bottom" id="EtB-ph-rMz"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" id="GH5-nE-G7Y"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="GKg-b4-vqD"/>
+                    <constraint firstItem="9Jr-d6-i23" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="GTw-8g-Llz"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="Hr7-hA-Rfj"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" id="JBd-sJ-mhP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Jr-d6-i23" secondAttribute="trailing" id="KRO-YL-h6M"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="KYa-0a-yAS"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="Phx-8V-835"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="9Jr-d6-i23" secondAttribute="top" id="SnP-X3-w91"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" id="TkF-5b-abh"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" constant="-9" id="U6b-YB-jya"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="WqE-B4-JjN"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="centerY" secondItem="Y7P-A0-iHs" secondAttribute="centerY" id="YP5-rK-eos"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="ZUJ-qp-XX4"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" constant="-8" id="a6T-nh-iUe"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="elq-Dx-YVa" secondAttribute="bottom" constant="-1" id="b6m-Gg-DHm"/>
+                    <constraint firstItem="9Jr-d6-i23" firstAttribute="leading" secondItem="elq-Dx-YVa" secondAttribute="leading" constant="28" id="c2O-jE-6ia"/>
+                    <constraint firstItem="9Jr-d6-i23" firstAttribute="top" secondItem="elq-Dx-YVa" secondAttribute="top" constant="9" id="cr7-xr-hvh"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="dVM-Ra-Vt5"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="9Jr-d6-i23" secondAttribute="leading" id="ew1-eO-g6W"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="elq-Dx-YVa" secondAttribute="trailing" id="gBX-2W-gIe"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" constant="-8" id="iMz-Sb-AzQ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9Jr-d6-i23" secondAttribute="bottom" id="jsH-sj-8R6"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="9Jr-d6-i23" secondAttribute="leading" id="k3L-TJ-GLu"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" constant="1" id="lhd-hL-3L9"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" id="mQP-b7-qpA"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" constant="-8" id="mV3-OH-nBD"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="bottom" secondItem="Y7P-A0-iHs" secondAttribute="bottomMargin" id="mtP-R1-9o7"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Jr-d6-i23" secondAttribute="trailing" constant="-8" id="tYp-Ex-fhj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Jr-d6-i23" secondAttribute="trailing" constant="20" id="thh-dc-ZMT"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" constant="8" id="wl9-Fe-Yxo"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="wyJ-6u-X5Z"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="9Jr-d6-i23" secondAttribute="leading" id="y4o-Q4-fTi"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" constant="8" id="y6X-lT-GHP"/>
+                    <constraint firstAttribute="centerY" secondItem="elq-Dx-YVa" secondAttribute="centerY" id="yAv-B1-1P9"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="zpl-wU-QY9"/>
+                    <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="zzL-Ec-uUU"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="0kt-rj-zll"/>
+                        <exclude reference="29t-mN-eOA"/>
+                        <exclude reference="41W-9w-Dff"/>
+                        <exclude reference="BdZ-80-1Dy"/>
+                        <exclude reference="EtB-ph-rMz"/>
+                        <exclude reference="GH5-nE-G7Y"/>
+                        <exclude reference="GKg-b4-vqD"/>
+                        <exclude reference="Hr7-hA-Rfj"/>
+                        <exclude reference="JBd-sJ-mhP"/>
+                        <exclude reference="KYa-0a-yAS"/>
+                        <exclude reference="Phx-8V-835"/>
+                        <exclude reference="SnP-X3-w91"/>
+                        <exclude reference="TkF-5b-abh"/>
+                        <exclude reference="WqE-B4-JjN"/>
+                        <exclude reference="YP5-rK-eos"/>
+                        <exclude reference="ZUJ-qp-XX4"/>
+                        <exclude reference="b6m-Gg-DHm"/>
+                        <exclude reference="dVM-Ra-Vt5"/>
+                        <exclude reference="ew1-eO-g6W"/>
+                        <exclude reference="gBX-2W-gIe"/>
+                        <exclude reference="iMz-Sb-AzQ"/>
+                        <exclude reference="k3L-TJ-GLu"/>
+                        <exclude reference="lhd-hL-3L9"/>
+                        <exclude reference="mQP-b7-qpA"/>
+                        <exclude reference="mtP-R1-9o7"/>
+                        <exclude reference="wyJ-6u-X5Z"/>
+                        <exclude reference="y4o-Q4-fTi"/>
+                        <exclude reference="yAv-B1-1P9"/>
+                        <exclude reference="zpl-wU-QY9"/>
+                        <exclude reference="zzL-Ec-uUU"/>
+                        <exclude reference="33o-Ep-Ooa"/>
+                        <exclude reference="4MC-8f-AwL"/>
+                        <exclude reference="GTw-8g-Llz"/>
+                        <exclude reference="tYp-Ex-fhj"/>
+                        <exclude reference="thh-dc-ZMT"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backgroundImageView" destination="elq-Dx-YVa" id="Fbe-Ng-Qap"/>
+                <outlet property="distanceLabel" destination="9Jr-d6-i23" id="s7p-6M-OVf"/>
+            </connections>
+            <point key="canvasLocation" x="279" y="264.5"/>
+        </tableViewCell>
+    </objects>
+</document>
