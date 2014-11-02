@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GraffitiFound/NearbyListViewController.m"
-            timestampString = "436592053.949499"
+            timestampString = "436641972.463074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-fetchFeed"
             landmarkType = "5">
          </BreakpointContent>

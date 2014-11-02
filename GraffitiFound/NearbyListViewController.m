@@ -13,7 +13,6 @@
 
 @interface NearbyListViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *graffQuery;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeoutLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *desiredAccuracyControl;
@@ -24,7 +23,6 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 // 4. Create property to hold NSURLSession
-@property(readonly, copy) NSString *queryString;
 @property (nonatomic, strong) NSURLSession *session;
 
 // 8. Create array to hold on to JSON response array
@@ -33,6 +31,7 @@
 @property (assign, nonatomic) INTULocationAccuracy desiredAccuracy;
 @property (assign, nonatomic) NSTimeInterval timeout;
 @property (assign, nonatomic) NSInteger locationRequestID;
+@property (assign, nonatomic) NSString *queryGraffiti;
 
 @end
 
@@ -49,6 +48,8 @@
         self.navigationItem.title = @"Nearby Graffiti";
         UIImage *image = [UIImage imageNamed:@"find.png"];
         self.tabBarItem.image = image;
+        
+        self.queryGraffiti = @"new+york+city";
         
         // 5. Override initWithStyle to create the NSURLSession object
         // Want the defaults, so pass nil for second and third options
@@ -69,9 +70,15 @@
 
 - (void)fetchFeed
 {
-    NSString *query = @"new+york+city";
-    NSString *requestString = [NSString stringWithFormat:@"http://www.graffpass.com/find.json?search=%@", query];
-    NSURL *url = [NSURL URLWithString:requestString];
+    
+    NSString *queryURL = @"http://www.graffpass.com/find.json/?search=";
+    NSString *queryParam = self.queryGraffiti;
+    NSString *query = [queryURL stringByAppendingString:queryParam];
+    
+    NSURL *url = [NSURL URLWithString:query];
+    
+    NSLog(@"%@", url);
+    
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithRequest:req
@@ -163,7 +170,6 @@
                                                                                            target:self
                                                                                            action:@selector(startLocationRequest:)];
     
-    self.graffQuery.text = @"new+york+city";
     self.desiredAccuracyControl.selectedSegmentIndex = 0;
     self.desiredAccuracy = INTULocationAccuracyCity;
     self.timeoutSlider.value = 10.0;

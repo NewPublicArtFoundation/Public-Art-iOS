@@ -92,11 +92,6 @@
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
-                        <exclude reference="33o-Ep-Ooa"/>
-                        <exclude reference="4MC-8f-AwL"/>
-                        <exclude reference="GTw-8g-Llz"/>
-                        <exclude reference="tYp-Ex-fhj"/>
-                        <exclude reference="thh-dc-ZMT"/>
                         <exclude reference="0kt-rj-zll"/>
                         <exclude reference="29t-mN-eOA"/>
                         <exclude reference="41W-9w-Dff"/>
@@ -127,6 +122,11 @@
                         <exclude reference="yAv-B1-1P9"/>
                         <exclude reference="zpl-wU-QY9"/>
                         <exclude reference="zzL-Ec-uUU"/>
+                        <exclude reference="33o-Ep-Ooa"/>
+                        <exclude reference="4MC-8f-AwL"/>
+                        <exclude reference="GTw-8g-Llz"/>
+                        <exclude reference="tYp-Ex-fhj"/>
+                        <exclude reference="thh-dc-ZMT"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
