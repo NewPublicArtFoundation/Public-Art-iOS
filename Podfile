@@ -1,1 +1,2 @@
+pod 'INTULocationManager'
 pod 'SDWebImage'
