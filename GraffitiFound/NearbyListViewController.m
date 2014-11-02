@@ -204,6 +204,12 @@
                                                                       if (status == INTULocationStatusSuccess) {
                                                                           // achievedAccuracy is at least the desired accuracy (potentially better)
                                                                           strongSelf.statusLabel.text = [NSString stringWithFormat:@"Location request successful! Current Location:\n%@", currentLocation];
+                                                                          
+                                                                          NSString *queryGraffiti = [[NSString alloc] initWithFormat:@"%f,%f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
+                                                                          
+                                                                          self.queryGraffiti = queryGraffiti;
+                                                                          NSLog(@"%@", queryGraffiti);
+                                                                          
                                                                       }
                                                                       else if (status == INTULocationStatusTimedOut) {
                                                                           // You may wish to inspect achievedAccuracy here to see if it is acceptable, if you plan to use currentLocation
@@ -226,6 +232,7 @@
                                                                       
                                                                       strongSelf.locationRequestID = NSNotFound;
                                                                   }];
+    
 }
 
 /**
