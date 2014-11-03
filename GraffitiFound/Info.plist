@@ -26,7 +26,7 @@
 			<key>CFBundleURLIconFile</key>
 			<string></string>
 			<key>CFBundleURLName</key>
-			<string>npafartfoundNPAFARTFOUND</string>
+			<string>com.graffpass.graffitifound</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>artfoundapp</string>
