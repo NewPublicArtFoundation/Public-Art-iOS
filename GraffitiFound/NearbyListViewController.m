@@ -107,9 +107,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
-    NSURL *URL = [NSURL URLWithString:nearbyGraffiti[@"properties"][@"title"]];
+    NSString *queryURL = @"http://www.graffpass.com/instagram_arts/";
 
-    self.webViewController.title = nearbyGraffiti[@"title"];
+    NSString *queryParam = nearbyGraffiti[@"properties"][@"id"];
+    
+    
+    NSString *query = [queryURL stringByAppendingString:queryParam];
+    
+    NSURL *URL = [NSURL URLWithString:query];
+
     self.webViewController.URL = URL;
     self.webViewController.hidesBottomBarWhenPushed = YES;
     

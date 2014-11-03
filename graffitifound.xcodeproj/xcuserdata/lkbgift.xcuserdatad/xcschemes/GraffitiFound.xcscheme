@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "031A34DB19FAD7E40034FE9F"
-               BuildableName = "graffitifound.temp_caseinsensitive_rename.app"
+               BuildableName = "graffitifound.app"
                BlueprintName = "graffitifound"
                ReferencedContainer = "container:graffitifound.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "031A34DB19FAD7E40034FE9F"
-            BuildableName = "graffitifound.temp_caseinsensitive_rename.app"
+            BuildableName = "graffitifound.app"
             BlueprintName = "graffitifound"
             ReferencedContainer = "container:graffitifound.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "031A34DB19FAD7E40034FE9F"
-            BuildableName = "graffitifound.temp_caseinsensitive_rename.app"
+            BuildableName = "graffitifound.app"
             BlueprintName = "graffitifound"
             ReferencedContainer = "container:graffitifound.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "031A34DB19FAD7E40034FE9F"
-            BuildableName = "graffitifound.temp_caseinsensitive_rename.app"
+            BuildableName = "graffitifound.app"
             BlueprintName = "graffitifound"
             ReferencedContainer = "container:graffitifound.xcodeproj">
          </BuildableReference>

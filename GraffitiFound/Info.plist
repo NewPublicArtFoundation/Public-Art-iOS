@@ -18,12 +18,27 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string></string>
+			<key>CFBundleURLName</key>
+			<string>npafartfoundNPAFARTFOUND</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>artfoundapp</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This string is required to gain permission to access location services on iOS 8+ and should describe how your app uses location services. Set this string in the Info.plist</string>
+	<string>Allow access to your current location to find graffiti near you.</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
