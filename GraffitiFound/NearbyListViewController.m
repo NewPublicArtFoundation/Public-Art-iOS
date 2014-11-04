@@ -5,7 +5,6 @@
 //  Created by Leonard Bogdonoff on 10/24/14.
 //  Copyright (c) 2014 New Public Art Foundation. All rights reserved.
 //
-#define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
 #import "NearbyGraffitiCell.h"
@@ -71,7 +70,8 @@
 
 - (void)fetchFeed
 {
-    
+
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
     NSString *queryURL = @"http://www.graffpass.com/find.json/?search=";
     NSString *queryParam = self.queryGraffiti;
     NSString *query = [queryURL stringByAppendingString:queryParam];
@@ -112,11 +112,13 @@
 
     NSString *queryParam = nearbyGraffiti[@"properties"][@"id"];
     
-    
     NSString *query = [queryURL stringByAppendingString:queryParam];
     
     NSURL *URL = [NSURL URLWithString:query];
-
+    
+    [[Mixpanel sharedInstance] track:@"Request URL"
+                          properties:@{@"url": query}];
+    
     self.webViewController.URL = URL;
     self.webViewController.hidesBottomBarWhenPushed = YES;
     
@@ -220,7 +222,7 @@
                                                                           NSString *queryGraffiti = [[NSString alloc] initWithFormat:@"%f,%f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
                                                                           
                                                                           [[Mixpanel sharedInstance] track:@"Current location"
-                                                                                                properties:@{@"url": queryGraffiti}];
+                                                                                                properties:@{@"coordinates": queryGraffiti}];
                                                                           
                                                                           self.queryGraffiti = queryGraffiti;
                                                                           NSLog(@"%@", queryGraffiti);
