@@ -16,7 +16,6 @@
 		0378079419FAD957000C681F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378079319FAD957000C681F /* UIKit.framework */; };
 		0378079619FAD95C000C681F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378079519FAD95C000C681F /* Foundation.framework */; };
 		0378079A19FAD999000C681F /* NearbyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378079919FAD999000C681F /* NearbyListViewController.m */; };
-		0378079C19FAE151000C681F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0378079B19FAE151000C681F /* Default-568h@2x.png */; };
 		0378079F19FAE71B000C681F /* NearbyListWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378079E19FAE71B000C681F /* NearbyListWebViewController.m */; };
 		037807A219FAF10E000C681F /* NearbyGraffitiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 037807A119FAF10E000C681F /* NearbyGraffitiCell.m */; };
 		037807A419FAF13C000C681F /* NearbyGraffitiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */; };
@@ -49,7 +48,6 @@
 		0378079519FAD95C000C681F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0378079819FAD999000C681F /* NearbyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyListViewController.h; sourceTree = "<group>"; };
 		0378079919FAD999000C681F /* NearbyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyListViewController.m; sourceTree = "<group>"; };
-		0378079B19FAE151000C681F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		0378079D19FAE71B000C681F /* NearbyListWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyListWebViewController.h; sourceTree = "<group>"; };
 		0378079E19FAE71B000C681F /* NearbyListWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyListWebViewController.m; sourceTree = "<group>"; };
 		037807A019FAF10E000C681F /* NearbyGraffitiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyGraffitiCell.h; sourceTree = "<group>"; };
@@ -84,7 +82,6 @@
 		031A34D319FAD7E40034FE9F = {
 			isa = PBXGroup;
 			children = (
-				0378079B19FAE151000C681F /* Default-568h@2x.png */,
 				0378079219FAD946000C681F /* Frameworks */,
 				031A34DE19FAD7E40034FE9F /* GraffitiFound */,
 				031A34F819FAD7E50034FE9F /* GraffitiFoundTests */,
@@ -253,7 +250,6 @@
 				031A34ED19FAD7E40034FE9F /* Images.xcassets in Resources */,
 				0373EAB71A05B2B000DC0858 /* InfoPlist.strings in Resources */,
 				037807A419FAF13C000C681F /* NearbyGraffitiCell.xib in Resources */,
-				0378079C19FAE151000C681F /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
