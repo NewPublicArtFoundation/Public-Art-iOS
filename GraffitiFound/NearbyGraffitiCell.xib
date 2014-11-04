@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="elq-Dx-YVa">
-                        <rect key="frame" x="0.0" y="-1" width="320" height="89"/>
+                        <rect key="frame" x="0.0" y="-1" width="320" height="90"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="4p3-1T-dGh"/>
                             <constraint firstAttribute="width" secondItem="elq-Dx-YVa" secondAttribute="height" multiplier="152:35" id="ejp-63-wTu"/>
@@ -28,12 +28,19 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jr-d6-i23">
-                        <rect key="frame" x="28" y="8" width="284" height="69"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v2-69-AbY">
+                        <rect key="frame" x="0.0" y="-1" width="320" height="90"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.33000000000000002" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jr-d6-i23">
+                        <rect key="frame" x="28" y="9" width="284" height="69"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="Dwg-Z1-6o0"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="51"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="51"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
@@ -134,7 +141,7 @@
                 <outlet property="backgroundImageView" destination="elq-Dx-YVa" id="Fbe-Ng-Qap"/>
                 <outlet property="distanceLabel" destination="9Jr-d6-i23" id="s7p-6M-OVf"/>
             </connections>
-            <point key="canvasLocation" x="279" y="264.5"/>
+            <point key="canvasLocation" x="279" y="264"/>
         </tableViewCell>
     </objects>
 </document>

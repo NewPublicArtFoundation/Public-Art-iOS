@@ -6,18 +6,27 @@
 //  Copyright (c) 2014 New Public Art Foundation. All rights reserved.
 //
 
+#import "Mixpanel.h"
 #import "AppDelegate.h"
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
 
+#define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
+
 @interface AppDelegate ()
 
-@end
+@end    
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+   
+    
+    // Initialize the library with your
+    // Mixpanel project token, MIXPANEL_TOKEN
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

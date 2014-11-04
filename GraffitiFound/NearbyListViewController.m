@@ -5,11 +5,12 @@
 //  Created by Leonard Bogdonoff on 10/24/14.
 //  Copyright (c) 2014 New Public Art Foundation. All rights reserved.
 //
-
+#define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
 #import "NearbyGraffitiCell.h"
 #import "INTULocationManager.h"
+#import "Mixpanel.h"
 
 @interface NearbyListViewController ()
 
@@ -87,6 +88,7 @@
                                                          NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                                                                     options:0
                                                                                                                       error:nil];
+                                                         
                                                          // {name of local data store} = {json accessor and content reference}
                                                          self.nearbyGraffiti = jsonObject[@"data"];
                                                          NSLog(@"%@", self.nearbyGraffiti);
@@ -99,7 +101,6 @@
                                       ];
     [dataTask resume];
 }
-
 
 
 #pragma mark Table Related
@@ -118,6 +119,8 @@
 
     self.webViewController.URL = URL;
     self.webViewController.hidesBottomBarWhenPushed = YES;
+    
+    [[Mixpanel sharedInstance] track:@"Image clicked" properties:@{@"url": queryParam}];
     
     if (!self.splitViewController) {
         [self.navigationController pushViewController:self.webViewController
@@ -183,6 +186,8 @@
     self.locationRequestID = NSNotFound;
     self.statusLabel.text = @"Tap the button below to start a new location request.";
     
+    
+    
     // Load the NIB file
     UINib *nib = [UINib nibWithNibName:@"NearbyGraffitiCell" bundle:nil];
     
@@ -199,6 +204,7 @@
 - (IBAction)startLocationRequest:(id)sender
 {
     __weak __typeof(self) weakSelf = self;
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
     
     INTULocationManager *locMgr = [INTULocationManager sharedInstance];
     self.locationRequestID = [locMgr requestLocationWithDesiredAccuracy:self.desiredAccuracy
@@ -213,28 +219,56 @@
                                                                           
                                                                           NSString *queryGraffiti = [[NSString alloc] initWithFormat:@"%f,%f", currentLocation.coordinate.latitude, currentLocation.coordinate.longitude];
                                                                           
+                                                                          [[Mixpanel sharedInstance] track:@"Current location"
+                                                                                                properties:@{@"url": queryGraffiti}];
+                                                                          
                                                                           self.queryGraffiti = queryGraffiti;
                                                                           NSLog(@"%@", queryGraffiti);
+                                                                          
+
+                                                                          
+                                                                          [mixpanel track:@"Request current location" properties:@{
+                                                                                                                                   @"Request": @"Success"
+                                                                                                                                   }];
                                                                           
                                                                           [self fetchFeed];
                                                                           
                                                                       }
                                                                       else if (status == INTULocationStatusTimedOut) {
                                                                           // You may wish to inspect achievedAccuracy here to see if it is acceptable, if you plan to use currentLocation
+                                                                          
+                                                                          [mixpanel track:@"Request current location" properties:@{
+                                                                                                                                   @"Request": @"Timed Out"
+                                                                                                                                   }];
                                                                           strongSelf.statusLabel.text = [NSString stringWithFormat:@"Location request timed out. Current Location:\n%@", currentLocation];
                                                                       }
                                                                       else {
                                                                           // An error occurred
                                                                           if (status == INTULocationStatusServicesNotDetermined) {
                                                                               strongSelf.statusLabel.text = @"Error: User has not responded to the permissions alert.";
+                                                                              [mixpanel track:@"Request current location" properties:@{
+                                                                                                                                       @"Request": @"No Permissions"
+                                                                                                                                       }];
                                                                           } else if (status == INTULocationStatusServicesDenied) {
                                                                               strongSelf.statusLabel.text = @"Error: User has denied this app permissions to access device location.";
+                                                                              [mixpanel track:@"Request current location" properties:@{
+                                                                                                                                       @"Request": @"Denied Permissions"
+                                                                                                                                       }];
                                                                           } else if (status == INTULocationStatusServicesRestricted) {
                                                                               strongSelf.statusLabel.text = @"Error: User is restricted from using location services by a usage policy.";
+                                                                              [mixpanel track:@"Request current location" properties:@{
+                                                                                                                                       @"Request": @"Restricted Location Policy"
+                                                                                                                                       }];
                                                                           } else if (status == INTULocationStatusServicesDisabled) {
                                                                               strongSelf.statusLabel.text = @"Error: Location services are turned off for all apps on this device.";
+                                                                              [mixpanel track:@"Request current location" properties:@{
+                                                                                                                                       @"Request": @"Location Services Off"
+                                                                                                                                       }];
                                                                           } else {
                                                                               strongSelf.statusLabel.text = @"An unknown error occurred.\n(Are you using iOS Simulator with location set to 'None'?)";
+                                                                              [mixpanel track:@"Request current location" properties:@{
+                                                                                                                                       @"Request": @"Unknown Error"
+                                                                                                                                       }];
                                                                           }
                                                                       }
                                                                       

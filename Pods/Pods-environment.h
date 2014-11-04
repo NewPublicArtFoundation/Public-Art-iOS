@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_INTULocationManager 2
 #define COCOAPODS_VERSION_PATCH_INTULocationManager 0
 
+// Mixpanel
+#define COCOAPODS_POD_AVAILABLE_Mixpanel
+#define COCOAPODS_VERSION_MAJOR_Mixpanel 2
+#define COCOAPODS_VERSION_MINOR_Mixpanel 5
+#define COCOAPODS_VERSION_PATCH_Mixpanel 4
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3
