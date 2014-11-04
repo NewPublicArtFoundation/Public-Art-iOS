@@ -162,7 +162,7 @@
     NSURL *url = [NSURL URLWithString:imageUrlString];
     
     cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+    [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
 
     return cell;
 }

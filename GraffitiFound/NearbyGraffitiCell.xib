@@ -30,7 +30,6 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v2-69-AbY">
                         <rect key="frame" x="0.0" y="-1" width="320" height="90"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.33000000000000002" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -43,6 +42,7 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="51"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Dwg-Z1-6o0"/>
