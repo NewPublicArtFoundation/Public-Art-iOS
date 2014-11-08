@@ -35,7 +35,7 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvf-xp-VYg">
                     <rect key="frame" x="16" y="188" width="288" height="36"/>
-                    <color key="backgroundColor" red="0.91469381313131315" green="0.73885027560926764" blue="0.72706144351166635" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.94130959322709273" blue="0.95209544830910797" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="f0z-4d-jyB"/>
                     </constraints>
@@ -55,7 +55,7 @@
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rp7-DS-53X">
                     <rect key="frame" x="16" y="279" width="288" height="36"/>
-                    <color key="backgroundColor" red="0.91469381309999997" green="0.73885027560000005" blue="0.72706144350000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.94130959322709273" blue="0.95209544830910797" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="36" id="C3p-LW-G0M"/>
                     </constraints>

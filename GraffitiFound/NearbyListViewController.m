@@ -110,19 +110,21 @@
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
     NSString *queryURL = @"http://www.graffpass.com/instagram_arts/";
 
-    NSString *queryParam = nearbyGraffiti[@"properties"][@"id"];
+    NSString *queryIDParam = nearbyGraffiti[@"properties"][@"id"];
+    NSString *queryDistanceParam = nearbyGraffiti[@"distance"];
     
-    NSString *query = [queryURL stringByAppendingString:queryParam];
+    NSString *queryWithID = [queryURL stringByAppendingString:queryIDParam];
+    NSString *queryWithIDWithLocation = [queryWithID stringByAppendingString:queryDistanceParam];
     
-    NSURL *URL = [NSURL URLWithString:query];
+    NSURL *URL = [NSURL URLWithString:queryWithIDWithLocation];
     
     [[Mixpanel sharedInstance] track:@"Request URL"
-                          properties:@{@"url": query}];
+                          properties:@{@"url": queryWithIDWithLocation}];
     
     self.webViewController.URL = URL;
     self.webViewController.hidesBottomBarWhenPushed = YES;
     
-    [[Mixpanel sharedInstance] track:@"Image clicked" properties:@{@"url": queryParam}];
+    [[Mixpanel sharedInstance] track:@"Image clicked" properties:@{@"url": queryIDParam}];
     
     if (!self.splitViewController) {
         [self.navigationController pushViewController:self.webViewController
