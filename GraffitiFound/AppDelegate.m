@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
+#import "LocationSettingsViewController.h"
 
 #define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
 
@@ -33,7 +34,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // 3. Set up the root view
+    
+    LocationSettingsViewController *lsvc = [[LocationSettingsViewController alloc] init];
     NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
+    
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
     
     NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
@@ -56,14 +60,13 @@
         self.window.rootViewController = svc;
     } else {
         // On non-ipad devices, just use the navigation controller
-        UITabBarController *tabBars = [[UITabBarController alloc] init];
-        NSMutableArray *localViewControllersArray = [[NSMutableArray alloc] initWithCapacity:1];
         
-        [localViewControllersArray addObject:masterNav];
-        tabBars.viewControllers = localViewControllersArray;
-        tabBars.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        tabBarController.viewControllers = @[masterNav, lsvc];
         
-        self.window.rootViewController = tabBars;
+        tabBarController.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
+        
+        self.window.rootViewController = tabBarController;
         
         // self.window.rootViewController = masterNav;
     }
