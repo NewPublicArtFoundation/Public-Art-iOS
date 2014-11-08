@@ -41,10 +41,19 @@
     }
 }
 
+-(void)setupCurrentLocation
+{
+    NSString *imageUrlString = @"http://maps.google.com/maps/api/staticmap?size=300x100&sensor=false&zoom=7&markers=40.7127%2C-74.0059";
+    NSURL *url = [NSURL URLWithString:imageUrlString];
+    
+    self.curLocationImage.contentMode = UIViewContentModeScaleAspectFill;
+    [self.curLocationImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self setupCurrentLocation];
     self.locationAccuControl.selectedSegmentIndex = 1;
     self.locationAccuracy = INTULocationAccuracyCity;
 }
