@@ -42,8 +42,12 @@
     }
 }
 
--(void)updateSettings
+-(IBAction)updateSettings
 {
+    NSString *location = self.curLocationTextInput.text;
+    NSString *email = self.userEmailTextInput.text;
+    NSLog(@"location: %@", location);
+    NSLog(@"email: %@", email);
     NSLog(@"Settings updated");
 }
 
