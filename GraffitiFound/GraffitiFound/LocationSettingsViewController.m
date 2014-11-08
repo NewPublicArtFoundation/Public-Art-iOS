@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *locationAccuControl;
 @property (weak, nonatomic) IBOutlet UIButton *curLocationImageButton;
 @property (weak, nonatomic) IBOutlet UILabel *userEmailLabel;
+@property (weak, nonatomic) IBOutlet UIButton *updateButton;
 @property (weak, nonatomic) IBOutlet UITextField *userEmailTextInput;
 
 @end
@@ -40,6 +41,12 @@
             break;
     }
 }
+
+-(void)updateSettings
+{
+    NSLog(@"Settings updated");
+}
+
 
 -(void)setupCurrentLocation
 {

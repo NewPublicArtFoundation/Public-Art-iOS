@@ -11,6 +11,7 @@
                 <outlet property="curLocationImageButton" destination="0NA-f8-XC9" id="YX6-M6-POp"/>
                 <outlet property="curLocationLabel" destination="2V5-fB-emW" id="ID3-Tm-axQ"/>
                 <outlet property="curLocationTextInput" destination="ck6-fB-nBu" id="WJg-OJ-jCr"/>
+                <outlet property="updateButton" destination="VCc-dX-Sms" id="hfY-ur-ELP"/>
                 <outlet property="userEmailLabel" destination="11p-6K-fxR" id="s6a-4c-qAi"/>
                 <outlet property="userEmailTextInput" destination="rge-16-ftD" id="awh-um-hFG"/>
                 <outlet property="view" destination="mSO-Hu-DSF" id="B3g-u9-WWx"/>
@@ -48,6 +49,18 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCc-dX-Sms">
+                    <rect key="frame" x="16" y="359" width="288" height="40"/>
+                    <color key="backgroundColor" red="0.69943104619999996" green="0.31105952269999998" blue="0.2889255033" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="OIv-Ow-mdU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
+                    <state key="normal" title="Update">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11p-6K-fxR">
                     <rect key="frame" x="16" y="248" width="288" height="31"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="27"/>
@@ -56,6 +69,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="VCc-dX-Sms" firstAttribute="top" secondItem="rge-16-ftD" secondAttribute="bottom" constant="30" id="0nl-58-QXr"/>
                 <constraint firstAttribute="trailing" secondItem="ck6-fB-nBu" secondAttribute="trailing" constant="16" id="4mV-r7-c58"/>
                 <constraint firstItem="2V5-fB-emW" firstAttribute="top" secondItem="mSO-Hu-DSF" secondAttribute="top" constant="28" id="5K8-Oj-iUi"/>
                 <constraint firstItem="djE-uu-SJj" firstAttribute="trailing" secondItem="0NA-f8-XC9" secondAttribute="trailing" id="6My-6E-r6q"/>
@@ -85,11 +99,13 @@
                 <constraint firstItem="djE-uu-SJj" firstAttribute="leading" secondItem="rge-16-ftD" secondAttribute="leading" id="cui-nq-dpg"/>
                 <constraint firstItem="2V5-fB-emW" firstAttribute="leading" secondItem="mSO-Hu-DSF" secondAttribute="leading" constant="16" id="dAv-OU-eRe"/>
                 <constraint firstItem="0NA-f8-XC9" firstAttribute="top" secondItem="2V5-fB-emW" secondAttribute="bottom" id="eCA-c1-UvZ"/>
+                <constraint firstItem="VCc-dX-Sms" firstAttribute="leading" secondItem="mSO-Hu-DSF" secondAttribute="leading" constant="16" id="eXn-WX-nmr"/>
                 <constraint firstAttribute="trailing" secondItem="11p-6K-fxR" secondAttribute="trailing" constant="16" id="edR-pM-KsW"/>
                 <constraint firstItem="djE-uu-SJj" firstAttribute="trailing" secondItem="2V5-fB-emW" secondAttribute="trailing" id="g6F-38-7S8"/>
                 <constraint firstItem="djE-uu-SJj" firstAttribute="trailing" secondItem="rge-16-ftD" secondAttribute="trailing" id="hJU-fv-rce"/>
                 <constraint firstItem="djE-uu-SJj" firstAttribute="leading" secondItem="mSO-Hu-DSF" secondAttribute="leading" constant="16" id="jVc-T5-ShA"/>
                 <constraint firstItem="rge-16-ftD" firstAttribute="leading" secondItem="mSO-Hu-DSF" secondAttribute="leading" constant="16" id="lMf-QX-Bi5"/>
+                <constraint firstAttribute="trailing" secondItem="VCc-dX-Sms" secondAttribute="trailing" constant="16" id="tYC-93-nvd"/>
             </constraints>
         </view>
     </objects>
