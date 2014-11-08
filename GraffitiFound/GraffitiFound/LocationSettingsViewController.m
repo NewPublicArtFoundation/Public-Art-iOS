@@ -10,7 +10,7 @@
 
 @interface LocationSettingsViewController ()
 
-@property (assign, nonatomic) INTULocationAccuracy desiredAccuracy;
+@property (assign, nonatomic) INTULocationAccuracy locationAccuracy;
 @property (weak, nonatomic) IBOutlet UILabel *curLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationAccuLabel;
 @property (weak, nonatomic) IBOutlet UITextField *curLocationTextInput;
@@ -24,17 +24,17 @@
 
 @implementation LocationSettingsViewController
 
-- (IBAction)desiredAccuracyControlChanged:(UISegmentedControl *)sender
+- (IBAction)locationAccuControlChanged:(UISegmentedControl *)sender
 {
     switch (sender.selectedSegmentIndex) {
         case 0:
-            self.locationAccuControl = INTULocationAccuracyBlock;
+            self.locationAccuracy = INTULocationAccuracyBlock;
             break;
         case 1:
-            self.locationAccuControl = INTULocationAccuracyNeighborhood;
+            self.locationAccuracy = INTULocationAccuracyNeighborhood;
             break;
         case 2:
-            self.locationAccuControl = INTULocationAccuracyCity;
+            self.locationAccuracy = INTULocationAccuracyCity;
             break;
         default:
             break;
@@ -45,8 +45,8 @@
 {
     [super viewDidLoad];
     
-    self.desiredAccuracyControl.selectedSegmentIndex = 0;
-    self.desiredAccuracy = INTULocationAccuracyCity;
+    self.locationAccuControl.selectedSegmentIndex = 2;
+    self.locationAccuracy = INTULocationAccuracyNeighborhood;
 }
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{

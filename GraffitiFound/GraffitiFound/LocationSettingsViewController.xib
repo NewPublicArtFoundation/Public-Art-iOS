@@ -48,9 +48,12 @@
                     <rect key="frame" x="16" y="259" width="288" height="29"/>
                     <segments>
                         <segment title="1 km"/>
-                        <segment title="10 km"/>
-                        <segment title="100 km"/>
+                        <segment title="5 km"/>
+                        <segment title="25 km"/>
                     </segments>
+                    <connections>
+                        <action selector="locationAccuControlChanged:" destination="-1" eventType="valueChanged" id="CTg-U1-qbW"/>
+                    </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11p-6K-fxR">
                     <rect key="frame" x="16" y="307" width="288" height="31"/>
