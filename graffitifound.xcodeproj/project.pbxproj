@@ -19,6 +19,8 @@
 		0378079F19FAE71B000C681F /* NearbyListWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378079E19FAE71B000C681F /* NearbyListWebViewController.m */; };
 		037807A219FAF10E000C681F /* NearbyGraffitiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 037807A119FAF10E000C681F /* NearbyGraffitiCell.m */; };
 		037807A419FAF13C000C681F /* NearbyGraffitiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */; };
+		03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */; };
+		03C4BA481A0E9CCC004A90CD /* LocationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */; };
 		2B2D7DDC19D745EF800AD661 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9051A087C75D4B52B7437278 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,9 @@
 		037807A019FAF10E000C681F /* NearbyGraffitiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyGraffitiCell.h; sourceTree = "<group>"; };
 		037807A119FAF10E000C681F /* NearbyGraffitiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyGraffitiCell.m; sourceTree = "<group>"; };
 		037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyGraffitiCell.xib; sourceTree = "<group>"; };
+		03C4BA441A0E9C58004A90CD /* LocationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationSettingsViewController.h; path = GraffitiFound/LocationSettingsViewController.h; sourceTree = "<group>"; };
+		03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationSettingsViewController.m; path = GraffitiFound/LocationSettingsViewController.m; sourceTree = "<group>"; };
+		03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationSettingsViewController.xib; path = GraffitiFound/LocationSettingsViewController.xib; sourceTree = "<group>"; };
 		145C04CE9C014F2485F6F1B7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		9051A087C75D4B52B7437278 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,6 +107,7 @@
 		031A34DE19FAD7E40034FE9F /* GraffitiFound */ = {
 			isa = PBXGroup;
 			children = (
+				03C4BA431A0E9C28004A90CD /* LocationSettings */,
 				0378079719FAD978000C681F /* NearbyListTableView */,
 				031A34E319FAD7E40034FE9F /* AppDelegate.h */,
 				031A34E419FAD7E40034FE9F /* AppDelegate.m */,
@@ -162,6 +168,16 @@
 				037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */,
 			);
 			name = NearbyListTableView;
+			sourceTree = "<group>";
+		};
+		03C4BA431A0E9C28004A90CD /* LocationSettings */ = {
+			isa = PBXGroup;
+			children = (
+				03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */,
+				03C4BA441A0E9C58004A90CD /* LocationSettingsViewController.h */,
+				03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */,
+			);
+			name = LocationSettings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03C4BA481A0E9CCC004A90CD /* LocationSettingsViewController.xib in Resources */,
 				031A34ED19FAD7E40034FE9F /* Images.xcassets in Resources */,
 				0373EAB71A05B2B000DC0858 /* InfoPlist.strings in Resources */,
 				037807A419FAF13C000C681F /* NearbyGraffitiCell.xib in Resources */,
@@ -304,6 +321,7 @@
 				031A34E219FAD7E40034FE9F /* main.m in Sources */,
 				0378079F19FAE71B000C681F /* NearbyListWebViewController.m in Sources */,
 				037807A219FAF10E000C681F /* NearbyGraffitiCell.m in Sources */,
+				03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */,
 				0378079A19FAD999000C681F /* NearbyListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
