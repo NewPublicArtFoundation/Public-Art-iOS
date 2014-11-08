@@ -45,8 +45,8 @@
 {
     [super viewDidLoad];
     
-    self.locationAccuControl.selectedSegmentIndex = 2;
-    self.locationAccuracy = INTULocationAccuracyNeighborhood;
+    self.locationAccuControl.selectedSegmentIndex = 1;
+    self.locationAccuracy = INTULocationAccuracyCity;
 }
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
