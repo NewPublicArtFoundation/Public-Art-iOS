@@ -8,7 +8,7 @@
 
 #import "LocationSettingsViewController.h"
 
-@interface LocationSettingsViewController ()
+@interface LocationSettingsViewController () <UITextFieldDelegate>
 
 @property (assign, nonatomic) INTULocationAccuracy locationAccuracy;
 @property (weak, nonatomic) IBOutlet UILabel *curLocationLabel;
@@ -24,6 +24,8 @@
 @end
 
 @implementation LocationSettingsViewController
+
+
 
 - (IBAction)locationAccuControlChanged:(UISegmentedControl *)sender
 {
