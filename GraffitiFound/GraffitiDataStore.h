@@ -21,6 +21,6 @@
 -(void)moveGraffitiAtIndex:(NSUInteger)fromIndex
                    toIndex:(NSUInteger)toIndex;
 
--(BOOL)saveChanges;
+//-(BOOL)saveChanges;
 
 @end
