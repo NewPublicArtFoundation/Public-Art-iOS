@@ -42,18 +42,19 @@
     }
 }
 
--(IBAction)tappedMapImage:(id)sender
+-(IBAction)tappedMapImage:(UIButton *)sender
 {
     NSLog(@"Map image tapped");
 }
 
--(IBAction)updateSettings:(id)sender
+-(IBAction)updateSettings:(UIButton *)sender
 {
     NSString *location = self.curLocationTextInput.text;
     NSString *email = self.userEmailTextInput.text;
     NSLog(@"location: %@", location);
     NSLog(@"email: %@", email);
     NSLog(@"Settings updated");
+
 }
 
 
