@@ -78,6 +78,37 @@
     self.curLocationTextInput.autocorrectionType = UITextAutocorrectionTypeNo;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSInteger nextTag = textField.tag + 1;
+    [self jumpToNextTextField:textField withTag:nextTag];
+    
+    return NO;
+}
+
+/*
+ Makes the cursor to jump to the next textfield if the "Next" button
+ is pressed from the keyboard.
+ */
+- (void)jumpToNextTextField:(UITextField *)textField withTag:(NSInteger)tag
+{
+    // Gets the next responder from the view. Here we use self.view because we are searching for controls with
+    // a specific tag, which are not subviews of a specific views, because each textfield belongs to the
+    // content view of a static table cell.
+    //
+    // In other cases may be more convenient to use textField.superView, if all textField belong to the same view.
+    UIResponder *nextResponder = [self.view viewWithTag:tag];
+    
+    if ([nextResponder isKindOfClass:[UITextField class]]) {
+        // If there is a next responder and it is a textfield, then it becomes first responder.
+        [nextResponder becomeFirstResponder];
+    }
+    else {
+        // If there is not then removes the keyboard.
+        [textField resignFirstResponder];
+    }
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
