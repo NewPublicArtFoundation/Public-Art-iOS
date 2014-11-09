@@ -19,6 +19,10 @@
 		0378079F19FAE71B000C681F /* NearbyListWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0378079E19FAE71B000C681F /* NearbyListWebViewController.m */; };
 		037807A219FAF10E000C681F /* NearbyGraffitiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 037807A119FAF10E000C681F /* NearbyGraffitiCell.m */; };
 		037807A419FAF13C000C681F /* NearbyGraffitiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */; };
+		03B8BE471A0FE95E006EACC9 /* UserDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B8BE461A0FE95E006EACC9 /* UserDataStore.m */; };
+		03B8BE4A1A0FE96E006EACC9 /* GraffitiDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B8BE491A0FE96E006EACC9 /* GraffitiDataStore.m */; };
+		03B8BE4D1A0FE979006EACC9 /* UserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B8BE4C1A0FE979006EACC9 /* UserData.m */; };
+		03B8BE501A0FE982006EACC9 /* GraffitiData.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B8BE4F1A0FE981006EACC9 /* GraffitiData.m */; };
 		03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */; };
 		03C4BA481A0E9CCC004A90CD /* LocationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */; };
 		2B2D7DDC19D745EF800AD661 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9051A087C75D4B52B7437278 /* libPods.a */; };
@@ -55,6 +59,14 @@
 		037807A019FAF10E000C681F /* NearbyGraffitiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyGraffitiCell.h; sourceTree = "<group>"; };
 		037807A119FAF10E000C681F /* NearbyGraffitiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyGraffitiCell.m; sourceTree = "<group>"; };
 		037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearbyGraffitiCell.xib; sourceTree = "<group>"; };
+		03B8BE451A0FE95E006EACC9 /* UserDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserDataStore.h; path = GraffitiFound/UserDataStore.h; sourceTree = "<group>"; };
+		03B8BE461A0FE95E006EACC9 /* UserDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserDataStore.m; path = GraffitiFound/UserDataStore.m; sourceTree = "<group>"; };
+		03B8BE481A0FE96E006EACC9 /* GraffitiDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraffitiDataStore.h; sourceTree = "<group>"; };
+		03B8BE491A0FE96E006EACC9 /* GraffitiDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraffitiDataStore.m; sourceTree = "<group>"; };
+		03B8BE4B1A0FE979006EACC9 /* UserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserData.h; sourceTree = "<group>"; };
+		03B8BE4C1A0FE979006EACC9 /* UserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserData.m; sourceTree = "<group>"; };
+		03B8BE4E1A0FE981006EACC9 /* GraffitiData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraffitiData.h; sourceTree = "<group>"; };
+		03B8BE4F1A0FE981006EACC9 /* GraffitiData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraffitiData.m; sourceTree = "<group>"; };
 		03C4BA441A0E9C58004A90CD /* LocationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationSettingsViewController.h; path = GraffitiFound/LocationSettingsViewController.h; sourceTree = "<group>"; };
 		03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationSettingsViewController.m; path = GraffitiFound/LocationSettingsViewController.m; sourceTree = "<group>"; };
 		03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationSettingsViewController.xib; path = GraffitiFound/LocationSettingsViewController.xib; sourceTree = "<group>"; };
@@ -107,6 +119,7 @@
 		031A34DE19FAD7E40034FE9F /* GraffitiFound */ = {
 			isa = PBXGroup;
 			children = (
+				03B8BE441A0FE939006EACC9 /* Model */,
 				03C4BA431A0E9C28004A90CD /* LocationSettings */,
 				0378079719FAD978000C681F /* NearbyListTableView */,
 				031A34E319FAD7E40034FE9F /* AppDelegate.h */,
@@ -168,6 +181,21 @@
 				037807A319FAF13C000C681F /* NearbyGraffitiCell.xib */,
 			);
 			name = NearbyListTableView;
+			sourceTree = "<group>";
+		};
+		03B8BE441A0FE939006EACC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				03B8BE451A0FE95E006EACC9 /* UserDataStore.h */,
+				03B8BE461A0FE95E006EACC9 /* UserDataStore.m */,
+				03B8BE481A0FE96E006EACC9 /* GraffitiDataStore.h */,
+				03B8BE491A0FE96E006EACC9 /* GraffitiDataStore.m */,
+				03B8BE4B1A0FE979006EACC9 /* UserData.h */,
+				03B8BE4C1A0FE979006EACC9 /* UserData.m */,
+				03B8BE4E1A0FE981006EACC9 /* GraffitiData.h */,
+				03B8BE4F1A0FE981006EACC9 /* GraffitiData.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		03C4BA431A0E9C28004A90CD /* LocationSettings */ = {
@@ -318,11 +346,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				031A34E519FAD7E40034FE9F /* AppDelegate.m in Sources */,
+				03B8BE4A1A0FE96E006EACC9 /* GraffitiDataStore.m in Sources */,
 				031A34E219FAD7E40034FE9F /* main.m in Sources */,
 				0378079F19FAE71B000C681F /* NearbyListWebViewController.m in Sources */,
+				03B8BE4D1A0FE979006EACC9 /* UserData.m in Sources */,
+				03B8BE501A0FE982006EACC9 /* GraffitiData.m in Sources */,
 				037807A219FAF10E000C681F /* NearbyGraffitiCell.m in Sources */,
 				03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */,
 				0378079A19FAD999000C681F /* NearbyListViewController.m in Sources */,
+				03B8BE471A0FE95E006EACC9 /* UserDataStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
