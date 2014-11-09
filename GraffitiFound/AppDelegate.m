@@ -6,11 +6,14 @@
 //  Copyright (c) 2014 New Public Art Foundation. All rights reserved.
 //
 
+
+#import <TSMessage.h>
 #import "Mixpanel.h"
 #import "AppDelegate.h"
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
 #import "LocationSettingsViewController.h"
+
 
 #define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
 
@@ -29,7 +32,13 @@
     [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     
     // Later, you can get your instance with
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+   
+    [[UIApplication sharedApplication]
+     registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge |
+      UIRemoteNotificationTypeSound |
+      UIRemoteNotificationTypeAlert)];
+
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -77,6 +86,14 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:
+(NSData *)deviceToken
+{
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel.people addPushDeviceToken:deviceToken];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

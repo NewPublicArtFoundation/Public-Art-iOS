@@ -1,5 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/INTULocationManager" "${PODS_ROOT}/Headers/Mixpanel" "${PODS_ROOT}/Headers/SDWebImage"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/INTULocationManager" -isystem "${PODS_ROOT}/Headers/Mixpanel" -isystem "${PODS_ROOT}/Headers/SDWebImage"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/HexColors" "${PODS_ROOT}/Headers/INTULocationManager" "${PODS_ROOT}/Headers/Mixpanel" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/TSMessages"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers" -isystem "${PODS_ROOT}/Headers/HexColors" -isystem "${PODS_ROOT}/Headers/INTULocationManager" -isystem "${PODS_ROOT}/Headers/Mixpanel" -isystem "${PODS_ROOT}/Headers/SDWebImage" -isystem "${PODS_ROOT}/Headers/TSMessages"
 OTHER_LDFLAGS = -ObjC -licucore -framework Accelerate -framework CoreGraphics -framework CoreTelephony -framework Foundation -framework ImageIO -framework QuartzCore -framework SystemConfiguration -framework UIKit
 PODS_ROOT = ${SRCROOT}/Pods
