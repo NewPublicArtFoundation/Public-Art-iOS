@@ -25,8 +25,6 @@
 
 @implementation LocationSettingsViewController
 
-
-
 - (IBAction)locationAccuControlChanged:(UISegmentedControl *)sender
 {
     switch (sender.selectedSegmentIndex) {
@@ -44,7 +42,12 @@
     }
 }
 
--(IBAction)updateSettings
+-(IBAction)tappedMapImage:(id)sender
+{
+    NSLog(@"Map image tapped");
+}
+
+-(IBAction)updateSettings:(id)
 {
     NSString *location = self.curLocationTextInput.text;
     NSString *email = self.userEmailTextInput.text;
