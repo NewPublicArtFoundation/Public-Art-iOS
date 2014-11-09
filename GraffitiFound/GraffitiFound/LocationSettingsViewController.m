@@ -63,13 +63,28 @@
     [self.curLocationImage sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
 }
 
+- (void)setupOutlets
+{
+    self.curLocationTextInput.delegate = self;
+    self.curLocationTextInput.tag = 1;
+    
+    self.userEmailTextInput.delegate = self;
+    self.userEmailTextInput.tag = 2;
+}
+
+-(void)disableQuickType
+{
+    self.userEmailTextInput.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.curLocationTextInput.autocorrectionType = UITextAutocorrectionTypeNo;
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     [self setupCurrentLocation];
+    [self setupOutlets];
+    [self disableQuickType];
     self.locationAccuControl.selectedSegmentIndex = 1;
-    self.userEmailTextInput.autocorrectionType = UITextAutocorrectionTypeNo;
-    self.curLocationTextInput.autocorrectionType = UITextAutocorrectionTypeNo;
     self.locationAccuracy = INTULocationAccuracyCity;
 }
 
