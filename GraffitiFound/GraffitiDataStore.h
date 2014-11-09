@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class GraffitiData;
+
 @interface GraffitiDataStore : NSObject
+
+@property (nonatomic, readonly, copy) NSArray *allGraffiti;
+
++ (instancetype)sharedStore;
+
+- (GraffitiData *)createGraffiti;
+-(void)removeGraffiti:(GraffitiData *)graffiti;
+-(void)moveGraffitiAtIndex:(NSUInteger)fromIndex
+                   toIndex:(NSUInteger)toIndex;
+
+-(BOOL)saveChanges;
 
 @end
