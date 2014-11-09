@@ -47,7 +47,7 @@
     NSLog(@"Map image tapped");
 }
 
--(IBAction)updateSettings:(id)
+-(IBAction)updateSettings:(id)sender
 {
     NSString *location = self.curLocationTextInput.text;
     NSString *email = self.userEmailTextInput.text;
