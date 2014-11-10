@@ -19,9 +19,7 @@
 @property (nonatomic) int valueInDollars;
 @property (nonatomic,readonly) NSDate *dateCreated;
 @property (nonatomic, copy) NSString *graffitiKey;
-@property (strong, nonatomic) UIImage *thumbnail;
 
-- (void)setThumbnailFromImage:(UIImage *)image;
 
 +(instancetype)randomgraffiti;
 

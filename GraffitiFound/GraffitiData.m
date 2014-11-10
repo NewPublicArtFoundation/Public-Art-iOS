@@ -16,7 +16,6 @@
     [aCoder encodeObject:self.serialNumber forKey:@"serialNumber"];
     [aCoder encodeObject:self.dateCreated forKey:@"dateCreated"];
     [aCoder encodeObject:self.graffitiKey forKey:@"graffitiKey"];
-    [aCoder encodeObject:self.thumbnail forKey:@"thumbnail"];
     
     [aCoder encodeInt:self.valueInDollars forKey:@"valueInDollars"];
 }
@@ -29,7 +28,6 @@
         _serialNumber = [aDecoder decodeObjectForKey:@"serialNumber"];
         _dateCreated = [aDecoder decodeObjectForKey:@"dateCreated"];
         _graffitiKey = [aDecoder decodeObjectForKey:@"graffitiKey"];
-        _thumbnail = [aDecoder decodeObjectForKey:@"thumbnail"];
         
         _valueInDollars = [aDecoder decodeIntForKey:@"valueInDollars"];
     }

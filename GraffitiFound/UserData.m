@@ -10,4 +10,10 @@
 
 @implementation UserData
 
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.userEmail forKey:@"userEmail"];
+    [aCoder encodeObject:self.defaultLocation forKey:@"defaultLocation"];
+}
+
 @end
