@@ -113,14 +113,19 @@
     NSString *graffitiId = nearbyGraffiti[@"properties"][@"id"];
     NSString *graffitiLocation = nearbyGraffiti[@"distance"];
     
-    NSString *queryIDParam = [NSString stringWithFormat:@"?search=%@", graffitiId];
-    NSString *queryDistanceParam = [NSString stringWithFormat:@"&d=%@", graffitiLocation];
+    NSString *queryIDParam = [NSString stringWithFormat:@"%@", graffitiId];
+    NSString *unescapedDistance = [NSString stringWithFormat:@"?d=%@", graffitiLocation];
+    NSString *queryDistanceParam = [unescapedDistance stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     
     NSString *queryWithID = [queryURL stringByAppendingString:queryIDParam];
     NSString *queryWithIDWithLocation = [queryWithID stringByAppendingString:queryDistanceParam];
     
     NSURL *URL = [NSURL URLWithString:queryWithIDWithLocation];
     
+    NSLog(@"queryIDParam: %@", queryIDParam);
+    NSLog(@"queryDistanceParam: %@", queryDistanceParam);
+    NSLog(@"queryWithID: %@", queryWithID);
+    NSLog(@"queryWithIDWithLocation: %@", queryWithIDWithLocation);
     NSLog(@"URL: %@", URL);
     
     [[Mixpanel sharedInstance] track:@"Request URL"
