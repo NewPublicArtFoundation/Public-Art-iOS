@@ -72,9 +72,9 @@
 {
 
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    NSString *queryURL = @"http://www.graffpass.com/find.json/?search=";
+    NSString *queryURL = @"http://www.graffpass.com/find.json/";
     NSString *queryParam = self.queryGraffiti;
-    NSString *query = [queryURL stringByAppendingString:queryParam];
+    NSString *query = [queryURL stringByAppendingString:[NSString stringWithFormat:@"?search=%@", queryParam]];
     
     NSURL *url = [NSURL URLWithString:query];
     
@@ -110,13 +110,18 @@
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
     NSString *queryURL = @"http://www.graffpass.com/instagram_arts/";
 
-    NSString *queryIDParam = nearbyGraffiti[@"properties"][@"id"];
-    NSString *queryDistanceParam = nearbyGraffiti[@"distance"];
+    NSString *graffitiId = nearbyGraffiti[@"properties"][@"id"];
+    NSString *graffitiLocation = nearbyGraffiti[@"distance"];
+    
+    NSString *queryIDParam = [NSString stringWithFormat:@"?search=%@", graffitiId];
+    NSString *queryDistanceParam = [NSString stringWithFormat:@"&d=%@", graffitiLocation];
     
     NSString *queryWithID = [queryURL stringByAppendingString:queryIDParam];
     NSString *queryWithIDWithLocation = [queryWithID stringByAppendingString:queryDistanceParam];
     
     NSURL *URL = [NSURL URLWithString:queryWithIDWithLocation];
+    
+    NSLog(@"URL: %@", URL);
     
     [[Mixpanel sharedInstance] track:@"Request URL"
                           properties:@{@"url": queryWithIDWithLocation}];

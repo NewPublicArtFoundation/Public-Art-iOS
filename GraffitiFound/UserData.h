@@ -14,6 +14,6 @@
 @property (nonatomic) NSString *defaultLocation;
 @property (nonatomic) NSString *userEmail;
 
--(instancetype)initWithUserName:(NSString *) email;
+-(instancetype)initWithDefaultLocation:(NSString *) location;
 
 @end
