@@ -28,6 +28,12 @@
     return self;
 }
 
+- (instancetype) initWithDefaultLocation:(NSString *) location
+{
+    
+    return self;
+}
+
 - (instancetype)init
 {
     return [self initWithDefaultLocation:@"defaultLocation"];
