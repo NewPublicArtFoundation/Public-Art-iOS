@@ -1,4 +1,5 @@
 PODS:
+  - AWPagedArray (0.2.0)
   - HexColors (2.2.1)
   - INTULocationManager (1.2.0)
   - Mixpanel (2.5.4)
@@ -9,12 +10,14 @@ PODS:
     - HexColors
 
 DEPENDENCIES:
+  - AWPagedArray
   - INTULocationManager
   - Mixpanel
   - SDWebImage
   - TSMessages
 
 SPEC CHECKSUMS:
+  AWPagedArray: 2c02ef1c4be38174c40b8160492e4283352dc5b0
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   INTULocationManager: 596c57e35a00ca1ee9d59bf4cc2b63dc299b580e
   Mixpanel: 87167a0b0a74f11f0ee3787f291357494730617c

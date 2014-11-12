@@ -114,8 +114,7 @@
     NSString *graffitiLocation = nearbyGraffiti[@"distance"];
     
     NSString *queryIDParam = [NSString stringWithFormat:@"%@", graffitiId];
-    NSString *unescapedDistance = [NSString stringWithFormat:@"?dist=%@", graffitiLocation];
-    NSString *queryDistanceParam = [unescapedDistance stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    NSString *queryDistanceParam = [NSString stringWithFormat:@"?dist=%@", graffitiLocation];
     
     NSString *queryWithID = [queryURL stringByAppendingString:queryIDParam];
     NSString *queryWithIDWithLocation = [queryWithID stringByAppendingString:queryDistanceParam];

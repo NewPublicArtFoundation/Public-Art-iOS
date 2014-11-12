@@ -6,6 +6,12 @@
 // project.
 
 
+// AWPagedArray
+#define COCOAPODS_POD_AVAILABLE_AWPagedArray
+#define COCOAPODS_VERSION_MAJOR_AWPagedArray 0
+#define COCOAPODS_VERSION_MINOR_AWPagedArray 2
+#define COCOAPODS_VERSION_PATCH_AWPagedArray 0
+
 // HexColors
 #define COCOAPODS_POD_AVAILABLE_HexColors
 #define COCOAPODS_VERSION_MAJOR_HexColors 2
