@@ -12,17 +12,13 @@
 	<dict>
 		<key>64186FCB38CE30C808E98C98D34953C37740E1BA</key>
 		<string>github.com:rememberlenny/GraffitiFound.git</string>
-		<key>9684E228A5133339D294D9BBEEFB9AB1FDF6E80E</key>
-		<string>https://github.com/intuit/LocationManager.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GraffitiFound.xcworkspace</string>
+	<string>GraffitiFound/GraffitiFound.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>64186FCB38CE30C808E98C98D34953C37740E1BA</key>
-		<string>..</string>
-		<key>9684E228A5133339D294D9BBEEFB9AB1FDF6E80E</key>
-		<string>../../LocationManager</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:rememberlenny/GraffitiFound.git</string>
@@ -39,14 +35,6 @@
 			<string>64186FCB38CE30C808E98C98D34953C37740E1BA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GraffitiFound</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>9684E228A5133339D294D9BBEEFB9AB1FDF6E80E</string>
-			<key>IDESourceControlWCCName</key>
-			<string>LocationManager</string>
 		</dict>
 	</array>
 </dict>

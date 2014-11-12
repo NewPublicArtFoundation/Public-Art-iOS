@@ -40,7 +40,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allow access to your current location to find graffiti near you.</string>
 	<key>UILaunchStoryboardName</key>
-	<string>LocationSettingsViewController</string>
+	<string>Launch Screen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

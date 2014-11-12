@@ -25,6 +25,7 @@
 		03B8BE501A0FE982006EACC9 /* GraffitiData.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B8BE4F1A0FE981006EACC9 /* GraffitiData.m */; };
 		03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */; };
 		03C4BA481A0E9CCC004A90CD /* LocationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */; };
+		03E061D01A13A64E008C256B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E061CF1A13A64E008C256B /* Launch Screen.xib */; };
 		2B2D7DDC19D745EF800AD661 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9051A087C75D4B52B7437278 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		03C4BA441A0E9C58004A90CD /* LocationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationSettingsViewController.h; path = GraffitiFound/LocationSettingsViewController.h; sourceTree = "<group>"; };
 		03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationSettingsViewController.m; path = GraffitiFound/LocationSettingsViewController.m; sourceTree = "<group>"; };
 		03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationSettingsViewController.xib; path = GraffitiFound/LocationSettingsViewController.xib; sourceTree = "<group>"; };
+		03E061CF1A13A64E008C256B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		145C04CE9C014F2485F6F1B7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		9051A087C75D4B52B7437278 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,6 +126,7 @@
 				0378079719FAD978000C681F /* NearbyListTableView */,
 				031A34E319FAD7E40034FE9F /* AppDelegate.h */,
 				031A34E419FAD7E40034FE9F /* AppDelegate.m */,
+				03E061CF1A13A64E008C256B /* Launch Screen.xib */,
 				031A34EC19FAD7E40034FE9F /* Images.xcassets */,
 				031A34DF19FAD7E40034FE9F /* Supporting Files */,
 			);
@@ -295,6 +298,7 @@
 				031A34ED19FAD7E40034FE9F /* Images.xcassets in Resources */,
 				0373EAB71A05B2B000DC0858 /* InfoPlist.strings in Resources */,
 				037807A419FAF13C000C681F /* NearbyGraffitiCell.xib in Resources */,
+				03E061D01A13A64E008C256B /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
