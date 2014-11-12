@@ -83,7 +83,7 @@
 
 - (void)removeGraffiti:(GraffitiData *)graffiti
 {
-    NSString *key = graffiti.graffitiKey;
+    // NSString *key = graffiti.graffitiKey;
     
     [self.privateGraffitis removeObjectIdenticalTo:graffiti];
 }

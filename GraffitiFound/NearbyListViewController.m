@@ -71,7 +71,7 @@
 - (void)fetchFeed
 {
 
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    // Mixpanel *mixpanel = [Mixpanel sharedInstance];
     NSString *queryURL = @"http://www.graffpass.com/find.json/";
     NSString *queryParam = self.queryGraffiti;
     NSString *query = [queryURL stringByAppendingString:[NSString stringWithFormat:@"?search=%@", queryParam]];
