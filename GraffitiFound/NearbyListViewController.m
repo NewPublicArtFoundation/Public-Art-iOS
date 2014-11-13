@@ -327,13 +327,7 @@
 
 - (IBAction)loadSettingsPage:(id)sender
 {
-    
-//    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-//    tabBarController.viewControllers = @[masterNav, lsvc];
-//    
-//    tabBarController.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
-//    
-//    self.window.rootViewController = tabBarController;
+    [((UITabBarController *)(self.tabBarController))setSelectedIndex:1];
 }
 
 /**
