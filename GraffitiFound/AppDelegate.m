@@ -71,8 +71,7 @@
         // On non-ipad devices, just use the navigation controller
         
         UITabBarController *tabBarController = [[UITabBarController alloc] init];
-        tabBarController.viewControllers = @[masterNav, lsvc];
-        
+        tabBarController.viewControllers = @[masterNav];
         tabBarController.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
         
         self.window.rootViewController = tabBarController;

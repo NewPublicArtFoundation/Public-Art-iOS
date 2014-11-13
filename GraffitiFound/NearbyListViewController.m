@@ -8,6 +8,7 @@
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
 #import "NearbyGraffitiCell.h"
+#import "LocationSettingsViewController.h"
 #import "INTULocationManager.h"
 #import "Mixpanel.h"
 #import "SVPullToRefresh.h"
@@ -327,7 +328,8 @@
 
 - (IBAction)loadSettingsPage:(id)sender
 {
-    [((UITabBarController *)(self.tabBarController))setSelectedIndex:1];
+    LocationSettingsViewController *settingsView = [[LocationSettingsViewController alloc] init];
+    [self.navigationController pushViewController:settingsView animated:YES];
 }
 
 /**
