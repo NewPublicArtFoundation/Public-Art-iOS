@@ -44,7 +44,6 @@
     
     // 3. Set up the root view
     
-    LocationSettingsViewController *lsvc = [[LocationSettingsViewController alloc] init];
     NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
     
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
