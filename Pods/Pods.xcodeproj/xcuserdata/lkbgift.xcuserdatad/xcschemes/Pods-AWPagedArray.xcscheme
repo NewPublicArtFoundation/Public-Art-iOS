@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CBFC9A506EB547B29B38178C"
+               BlueprintIdentifier = "573CD3FE2DBB48C0AE3C6A8B"
                BuildableName = "libPods-AWPagedArray.a"
                BlueprintName = "Pods-AWPagedArray"
                ReferencedContainer = "container:Pods.xcodeproj">

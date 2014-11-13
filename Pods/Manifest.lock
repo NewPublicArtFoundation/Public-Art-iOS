@@ -6,6 +6,7 @@ PODS:
   - SDWebImage (3.7.1):
     - SDWebImage/Core
   - SDWebImage/Core (3.7.1)
+  - SVPullToRefresh (0.4.1)
   - TSMessages (0.9.11):
     - HexColors
 
@@ -14,6 +15,7 @@ DEPENDENCIES:
   - INTULocationManager
   - Mixpanel
   - SDWebImage
+  - SVPullToRefresh
   - TSMessages
 
 SPEC CHECKSUMS:
@@ -22,6 +24,7 @@ SPEC CHECKSUMS:
   INTULocationManager: 596c57e35a00ca1ee9d59bf4cc2b63dc299b580e
   Mixpanel: 87167a0b0a74f11f0ee3787f291357494730617c
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  SVPullToRefresh: d5161ebc833a38b465364412e5e307ca80bbb190
   TSMessages: e21ef5b1c7518cc590a4826c8b05b16b79b10c2c
 
 COCOAPODS: 0.33.1
