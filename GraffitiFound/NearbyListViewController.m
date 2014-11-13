@@ -220,9 +220,12 @@
         [weakSelf insertRowAtTop];
     }];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                           target:self
-                                                                                           action:@selector(startLocationRequest:)];
+    UIBarButtonItem *_btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_settings_black"]
+                                                                landscapeImagePhone:[UIImage imageNamed:@"ic_settings_black"]
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:self
+                                                                             action:@selector(startLocationRequest)];
+    self.navigationItem.rightBarButtonItem = _btn;
     
     self.desiredAccuracyControl.selectedSegmentIndex = 0;
     self.desiredAccuracy = INTULocationAccuracyCity;
