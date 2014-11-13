@@ -58,7 +58,7 @@
 }
 
 - (void)closeView:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 
 -(void)setupCurrentLocation
