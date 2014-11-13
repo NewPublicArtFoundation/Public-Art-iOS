@@ -10,6 +10,7 @@
 #import "NearbyGraffitiCell.h"
 #import "INTULocationManager.h"
 #import "Mixpanel.h"
+#import "SVPullToRefresh.h"
 
 @interface NearbyListViewController ()
 
@@ -153,7 +154,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *MyIdentifier = @"NearbyGraffitiCell";
-    
+   
     // Get a new or recycled cell
     NearbyGraffitiCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     
@@ -188,9 +189,36 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void)insertRowAtTop {
+    
+    NSLog(@"Inset row at top");
+    __weak NearbyListViewController *weakSelf = self;
+    
+    int64_t delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [weakSelf.tableView beginUpdates];
+//        [weakSelf.dataSource insertObject:[NSDate date] atIndex:0];
+        NSLog(@"Loading");
+//        [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
+        [self startLocationRequest:nil];
+        
+        [weakSelf.tableView endUpdates];
+        
+        [weakSelf.tableView.pullToRefreshView stopAnimating];
+    });
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    __weak NearbyListViewController *weakSelf = self;
+    
+    // setup pull-to-refresh
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        [weakSelf insertRowAtTop];
+    }];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
                                                                                            target:self
