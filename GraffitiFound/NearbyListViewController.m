@@ -224,7 +224,7 @@
                                                                 landscapeImagePhone:[UIImage imageNamed:@"ic_settings_black"]
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:self
-                                                                             action:@selector(startLocationRequest)];
+                                                                             action:@selector(loadSettingsPage:)];
     self.navigationItem.rightBarButtonItem = _btn;
     
     self.desiredAccuracyControl.selectedSegmentIndex = 0;
@@ -325,6 +325,17 @@
     
 }
 
+- (IBAction)loadSettingsPage:(id)sender
+{
+    
+//    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+//    tabBarController.viewControllers = @[masterNav, lsvc];
+//    
+//    tabBarController.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
+//    
+//    self.window.rootViewController = tabBarController;
+}
+
 /**
  Callback when the "Force Complete Request" button is tapped.
  */
@@ -332,6 +343,7 @@
 {
     [[INTULocationManager sharedInstance] forceCompleteLocationRequest:self.locationRequestID];
 }
+
 
 /**
  Callback when the "Cancel Request" button is tapped.
