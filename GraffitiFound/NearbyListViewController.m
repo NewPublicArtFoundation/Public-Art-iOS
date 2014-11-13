@@ -191,7 +191,10 @@
 }
 
 - (void)insertRowAtTop {
-    
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"Pulling to refresh" properties:@{
+                                                             @"Request": @"Success"
+                                                             }];
     NSLog(@"Inset row at top");
     __weak NearbyListViewController *weakSelf = self;
     
