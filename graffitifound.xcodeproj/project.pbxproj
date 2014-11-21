@@ -11,6 +11,7 @@
 		031A34E519FAD7E40034FE9F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A34E419FAD7E40034FE9F /* AppDelegate.m */; };
 		031A34ED19FAD7E40034FE9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031A34EC19FAD7E40034FE9F /* Images.xcassets */; };
 		031A34FC19FAD7E50034FE9F /* GraffitiFoundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 031A34FB19FAD7E50034FE9F /* GraffitiFoundTests.m */; };
+		033B0D411A1EDE3000406794 /* OnboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 033B0D401A1EDE3000406794 /* OnboardViewController.m */; };
 		0373EAB31A058D7A00DC0858 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0373EAB21A058D7A00DC0858 /* CoreLocation.framework */; };
 		0373EAB71A05B2B000DC0858 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0373EAB51A05B2B000DC0858 /* InfoPlist.strings */; };
 		0378079419FAD957000C681F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0378079319FAD957000C681F /* UIKit.framework */; };
@@ -49,6 +50,8 @@
 		031A34F519FAD7E50034FE9F /* graffitifound.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = graffitifound.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		031A34FA19FAD7E50034FE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		031A34FB19FAD7E50034FE9F /* GraffitiFoundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraffitiFoundTests.m; sourceTree = "<group>"; };
+		033B0D3F1A1EDE3000406794 /* OnboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnboardViewController.h; sourceTree = "<group>"; };
+		033B0D401A1EDE3000406794 /* OnboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnboardViewController.m; sourceTree = "<group>"; };
 		0373EAB21A058D7A00DC0858 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0373EAB61A05B2B000DC0858 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../../LocationManager/LocationManagerExample/LocationManagerExample/en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0378079319FAD957000C681F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,7 @@
 		031A34DE19FAD7E40034FE9F /* GraffitiFound */ = {
 			isa = PBXGroup;
 			children = (
+				033B0D3E1A1EDDFB00406794 /* Onboarding */,
 				03B8BE441A0FE939006EACC9 /* Model */,
 				03C4BA431A0E9C28004A90CD /* LocationSettings */,
 				0378079719FAD978000C681F /* NearbyListTableView */,
@@ -159,6 +163,15 @@
 				031A34FA19FAD7E50034FE9F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		033B0D3E1A1EDDFB00406794 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				033B0D3F1A1EDE3000406794 /* OnboardViewController.h */,
+				033B0D401A1EDE3000406794 /* OnboardViewController.m */,
+			);
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 		0378079219FAD946000C681F /* Frameworks */ = {
@@ -365,6 +378,7 @@
 				0378079F19FAE71B000C681F /* NearbyListWebViewController.m in Sources */,
 				03B8BE4D1A0FE979006EACC9 /* UserData.m in Sources */,
 				03B8BE501A0FE982006EACC9 /* GraffitiData.m in Sources */,
+				033B0D411A1EDE3000406794 /* OnboardViewController.m in Sources */,
 				037807A219FAF10E000C681F /* NearbyGraffitiCell.m in Sources */,
 				03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */,
 				0378079A19FAD999000C681F /* NearbyListViewController.m in Sources */,
