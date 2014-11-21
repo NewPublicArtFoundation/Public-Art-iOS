@@ -231,9 +231,12 @@
 }
 
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBarResult
 {
+
+    NSLog(@"User searched for %@", searchBarResult.text);
     NSLog(@"Search button pressed");
+    
 }
 
 
