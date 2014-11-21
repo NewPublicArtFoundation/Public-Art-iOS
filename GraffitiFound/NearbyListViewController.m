@@ -240,8 +240,12 @@
                           properties:@{@"searchQuery": searchQuery}];
     
     self.queryGraffiti = searchQuery;
-    [searchBarResult resignFirstResponder];
+    [searchDisplayController setActive:NO];
+    [searchBar resignFirstResponder];
     [self fetchFeed];
+    [self.tableView reloadData];
+
+
     
 }
 
