@@ -46,13 +46,8 @@
     self = [super initWithStyle:style];
     if(self){
 
-        self.title = @"Find";
         self.navigationItem.title = @"Graffiti Found";
-        UIImage *image = [UIImage imageNamed:@"find.png"];
-        self.tabBarItem.image = image;
-        
         self.queryGraffiti = @"new+york+city";
-        
         // 5. Override initWithStyle to create the NSURLSession object
         // Want the defaults, so pass nil for second and third options
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -234,6 +229,7 @@
 {
 
     NSString *searchQuery = searchBarResult.text;
+    self.navigationItem.title = [NSString stringWithFormat:@"%@", searchQuery];
     NSLog(@"User searched for %@", searchQuery);
     NSLog(@"Search button pressed");
     
@@ -250,10 +246,14 @@
     
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     __weak NearbyListViewController *weakSelf = self;
     
     // setup pull-to-refresh

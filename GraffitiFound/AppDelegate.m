@@ -29,7 +29,7 @@
     // Initialize the library with your
     // Mixpanel project token, MIXPANEL_TOKEN
     [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     // Later, you can get your instance with
     
     [[UIApplication sharedApplication]
@@ -74,9 +74,9 @@
             tabBarController.viewControllers = @[masterNav];
             tabBarController.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
             
+//            self.window.rootViewController = tabBarController;
+
             self.window.rootViewController = tabBarController;
-            
-            // self.window.rootViewController = masterNav;
         }
 
         
