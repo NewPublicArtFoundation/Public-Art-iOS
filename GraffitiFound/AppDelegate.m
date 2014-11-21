@@ -26,24 +26,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
-    if(false){
-        
-        // Initialize the library with your
-        // Mixpanel project token, MIXPANEL_TOKEN
-        [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
-        
-        // Later, you can get your instance with
-       
-        [[UIApplication sharedApplication]
-         registerForRemoteNotificationTypes:
-         (UIRemoteNotificationTypeBadge |
-          UIRemoteNotificationTypeSound |
-          UIRemoteNotificationTypeAlert)];
-
-        
-        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        
-        // 3. Set up the root view
+    // Initialize the library with your
+    // Mixpanel project token, MIXPANEL_TOKEN
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    
+    // Later, you can get your instance with
+    
+    [[UIApplication sharedApplication]
+     registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge |
+      UIRemoteNotificationTypeSound |
+      UIRemoteNotificationTypeAlert)];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // 3. Set up the root view
+    
+    if(true){
         
         NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
         

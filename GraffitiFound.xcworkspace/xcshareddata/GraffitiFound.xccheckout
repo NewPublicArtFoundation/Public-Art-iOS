@@ -10,6 +10,8 @@
 	<string>GraffitiFound</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>31AEA62C9D141F639806512A23BF3A445C8BBF6A</key>
+		<string>github.com:rememberlenny/hypnomiser-iod.git</string>
 		<key>64186FCB38CE30C808E98C98D34953C37740E1BA</key>
 		<string>github.com:rememberlenny/GraffitiFound.git</string>
 		<key>9684E228A5133339D294D9BBEEFB9AB1FDF6E80E</key>
@@ -19,6 +21,8 @@
 	<string>GraffitiFound.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>31AEA62C9D141F639806512A23BF3A445C8BBF6A</key>
+		<string>../../Hypnomiser</string>
 		<key>64186FCB38CE30C808E98C98D34953C37740E1BA</key>
 		<string>..</string>
 		<key>9684E228A5133339D294D9BBEEFB9AB1FDF6E80E</key>
@@ -39,6 +43,14 @@
 			<string>64186FCB38CE30C808E98C98D34953C37740E1BA</string>
 			<key>IDESourceControlWCCName</key>
 			<string>GraffitiFound</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>31AEA62C9D141F639806512A23BF3A445C8BBF6A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Hypnomiser</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
