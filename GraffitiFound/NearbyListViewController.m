@@ -239,13 +239,13 @@
     [[Mixpanel sharedInstance] track:@"Search bar query term"
                           properties:@{@"searchQuery": searchQuery}];
     
-    self.queryGraffiti = searchQuery;
+    NSString *escapedSearchQuery =[searchQuery stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    self.queryGraffiti = escapedSearchQuery;
     [searchDisplayController setActive:NO];
     [searchBar resignFirstResponder];
     [self fetchFeed];
     [self.tableView reloadData];
-
-
     
 }
 
