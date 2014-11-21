@@ -191,6 +191,7 @@
     return UIStatusBarStyleLightContent;
 }
 
+
 - (void)insertRowAtTop {
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Pulling to refresh" properties:@{
