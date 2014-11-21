@@ -164,20 +164,20 @@
         cell = [[NearbyGraffitiCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:MyIdentifier];
  
-        
-        NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
-        // Configure the cell with the NearbyGraffitiCell
-        
-            cell.distanceLabel.text = [NSString stringWithFormat:@"%@",nearbyGraffiti[@"distance"]];
-            cell.backgroundColor = [UIColor clearColor];
-            
-            NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
-            NSURL *url = [NSURL URLWithString:imageUrlString];
-            
-            cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-            [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
-                
     }
+    NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
+    // Configure the cell with the NearbyGraffitiCell
+    
+    cell.distanceLabel.text = nearbyGraffiti[@"distance"];
+    cell.backgroundColor = [UIColor clearColor];
+    
+    NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
+    NSURL *url = [NSURL URLWithString:imageUrlString];
+    
+    cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
+                
+  
     return cell;
 }
 
@@ -240,7 +240,9 @@
                           properties:@{@"searchQuery": searchQuery}];
     
     self.queryGraffiti = searchQuery;
+    [searchBarResult resignFirstResponder];
     [self fetchFeed];
+    
 }
 
 - (void)viewDidLoad
