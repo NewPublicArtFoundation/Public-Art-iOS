@@ -163,19 +163,22 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:MyIdentifier];
-
+ 
+        
         NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
-        
         // Configure the cell with the NearbyGraffitiCell
-        cell.distanceLabel.text = nearbyGraffiti[@"distance"];
-        cell.backgroundColor = [UIColor clearColor];
-        
-        NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
-        NSURL *url = [NSURL URLWithString:imageUrlString];
-        
-        cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-        [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
-
+        if([cell class] == [NearbyGraffitiCell class]){
+            
+            cell.distanceLabel.text = [NSString stringWithFormat:@"%@",nearbyGraffiti[@"distance"]];
+            cell.backgroundColor = [UIColor clearColor];
+            
+            NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
+            NSURL *url = [NSURL URLWithString:imageUrlString];
+            
+            cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+            [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
+                
+        }
     }
     return cell;
 }
@@ -213,6 +216,31 @@
     });
 }
 
+- (void)setupSearchBar
+{
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    searchDisplayController.delegate = self;
+    searchDisplayController.searchResultsDataSource = self;
+    searchDisplayController.searchResultsDelegate = self;
+    searchDisplayController.searchResultsDataSource = self;
+    
+    self.tableView.tableHeaderView = searchBar;
+
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller
+shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    return true;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller
+shouldReloadTableForSearchString:(NSString *)searchString
+{
+   return true; 
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -224,13 +252,8 @@
         [weakSelf insertRowAtTop];
     }];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
-    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
-    searchDisplayController.delegate = self;
-    searchDisplayController.searchResultsDataSource = self;
-    
-    self.tableView.tableHeaderView = searchBar;
 
+    [self setupSearchBar];
     
     UIBarButtonItem *_btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_settings_black"]
                                                                 landscapeImagePhone:[UIImage imageNamed:@"ic_settings_black"]
