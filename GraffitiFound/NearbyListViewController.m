@@ -224,10 +224,18 @@
     searchDisplayController.searchResultsDataSource = self;
     searchDisplayController.searchResultsDelegate = self;
     searchDisplayController.searchResultsDataSource = self;
-    
-    self.tableView.tableHeaderView = searchBar;
+   
 
+    self.tableView.tableHeaderView = searchBar;
+    [searchBar setDelegate:self];
 }
+
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    NSLog(@"Search button pressed");
+}
+
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller
 shouldReloadTableForSearchScope:(NSInteger)searchOption
@@ -244,7 +252,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     __weak NearbyListViewController *weakSelf = self;
     
     // setup pull-to-refresh
@@ -254,6 +262,7 @@ shouldReloadTableForSearchString:(NSString *)searchString
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
     [self setupSearchBar];
+
     
     UIBarButtonItem *_btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_settings_black"]
                                                                 landscapeImagePhone:[UIImage imageNamed:@"ic_settings_black"]
