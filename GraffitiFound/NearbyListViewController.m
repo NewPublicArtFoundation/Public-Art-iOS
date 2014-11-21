@@ -46,7 +46,7 @@
     self = [super initWithStyle:style];
     if(self){
 
-        self.navigationItem.title = @"Graffiti Found";
+        self.navigationItem.title = @"Pull down or search";
         self.queryGraffiti = @"new+york+city";
         // 5. Override initWithStyle to create the NSURLSession object
         // Want the defaults, so pass nil for second and third options
