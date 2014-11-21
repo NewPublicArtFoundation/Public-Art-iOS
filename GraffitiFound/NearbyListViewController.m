@@ -234,9 +234,15 @@
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBarResult
 {
 
-    NSLog(@"User searched for %@", searchBarResult.text);
+    NSString *searchQuery = searchBarResult.text;
+    NSLog(@"User searched for %@", searchQuery);
     NSLog(@"Search button pressed");
     
+    [[Mixpanel sharedInstance] track:@"Search bar query term"
+                          properties:@{@"searchQuery": searchQuery}];
+    
+    self.queryGraffiti = searchQuery;
+    [self fetchFeed];
 }
 
 
