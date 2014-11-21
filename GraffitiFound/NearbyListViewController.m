@@ -163,20 +163,20 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:MyIdentifier];
-    }
-    
-    NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
-    
-    // Configure the cell with the NearbyGraffitiCell
-    cell.distanceLabel.text = nearbyGraffiti[@"distance"];
-    cell.backgroundColor = [UIColor clearColor];
-    
-    NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
-    NSURL *url = [NSURL URLWithString:imageUrlString];
-    
-    cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
 
+        NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
+        
+        // Configure the cell with the NearbyGraffitiCell
+        cell.distanceLabel.text = nearbyGraffiti[@"distance"];
+        cell.backgroundColor = [UIColor clearColor];
+        
+        NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
+        NSURL *url = [NSURL URLWithString:imageUrlString];
+        
+        cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+        [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
+
+    }
     return cell;
 }
 
@@ -223,6 +223,14 @@
     [self.tableView addPullToRefreshWithActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    searchDisplayController.delegate = self;
+    searchDisplayController.searchResultsDataSource = self;
+    
+    self.tableView.tableHeaderView = searchBar;
+
     
     UIBarButtonItem *_btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_settings_black"]
                                                                 landscapeImagePhone:[UIImage imageNamed:@"ic_settings_black"]

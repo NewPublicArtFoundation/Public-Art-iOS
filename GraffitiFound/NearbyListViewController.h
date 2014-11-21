@@ -12,7 +12,11 @@
 
 @class NearbyListWebViewController;
 
-@interface NearbyListViewController : UITableViewController
+@interface NearbyListViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>{
+    NSMutableArray *searchData;
+    UISearchBar *searchBar;
+    UISearchDisplayController *searchDisplayController;
+}
 
 @property (nonatomic) NearbyListWebViewController *webViewController;
 
