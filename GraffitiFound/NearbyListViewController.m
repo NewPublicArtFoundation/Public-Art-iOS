@@ -161,14 +161,13 @@
     
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[NearbyGraffitiCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:MyIdentifier];
  
         
         NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
         // Configure the cell with the NearbyGraffitiCell
-        if([cell class] == [NearbyGraffitiCell class]){
-            
+        
             cell.distanceLabel.text = [NSString stringWithFormat:@"%@",nearbyGraffiti[@"distance"]];
             cell.backgroundColor = [UIColor clearColor];
             
@@ -178,7 +177,6 @@
             cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
             [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
                 
-        }
     }
     return cell;
 }
@@ -243,19 +241,6 @@
     
     self.queryGraffiti = searchQuery;
     [self fetchFeed];
-}
-
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller
-shouldReloadTableForSearchScope:(NSInteger)searchOption
-{
-    return true;
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller
-shouldReloadTableForSearchString:(NSString *)searchString
-{
-   return true; 
 }
 
 - (void)viewDidLoad
