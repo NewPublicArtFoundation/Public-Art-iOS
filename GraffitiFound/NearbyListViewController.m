@@ -47,7 +47,7 @@
     if(self){
 
         self.title = @"Find";
-        self.navigationItem.title = @"Nearby Graffiti";
+        self.navigationItem.title = @"Graffiti Found";
         UIImage *image = [UIImage imageNamed:@"find.png"];
         self.tabBarItem.image = image;
         
