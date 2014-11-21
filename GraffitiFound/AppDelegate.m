@@ -25,64 +25,67 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   
-    
-    // Initialize the library with your
-    // Mixpanel project token, MIXPANEL_TOKEN
-    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
-    
-    // Later, you can get your instance with
-   
-    [[UIApplication sharedApplication]
-     registerForRemoteNotificationTypes:
-     (UIRemoteNotificationTypeBadge |
-      UIRemoteNotificationTypeSound |
-      UIRemoteNotificationTypeAlert)];
-
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    // 3. Set up the root view
-    
-    NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
-    
-    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
-    
-    NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
-    lvc.webViewController = wvc;
-    
-    // Check to make sure we are running on iPad
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        // webViewController must be in nvaigation controller; you will see why later
-        UINavigationController *detailNav = [[UINavigationController alloc] initWithRootViewController:wvc];
-        
-        UISplitViewController *svc = [[UISplitViewController alloc] init];
-        
-        // Set the delegate of the split view controller to the detail VC
-        // You will need this later - ignore the warning for now
-        // svc.delegate = wvc;
-        
-        svc.viewControllers = @[masterNav, detailNav];
-        
-        // Set the root view controller of the window to the split view controller
-        self.window.rootViewController = svc;
-    } else {
-        // On non-ipad devices, just use the navigation controller
-        
-        UITabBarController *tabBarController = [[UITabBarController alloc] init];
-        tabBarController.viewControllers = @[masterNav];
-        tabBarController.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
-        
-        self.window.rootViewController = tabBarController;
-        
-        // self.window.rootViewController = masterNav;
-    }
-
-    
   
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
+    if(false){
+        
+        // Initialize the library with your
+        // Mixpanel project token, MIXPANEL_TOKEN
+        [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+        
+        // Later, you can get your instance with
+       
+        [[UIApplication sharedApplication]
+         registerForRemoteNotificationTypes:
+         (UIRemoteNotificationTypeBadge |
+          UIRemoteNotificationTypeSound |
+          UIRemoteNotificationTypeAlert)];
+
+        
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        // 3. Set up the root view
+        
+        NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
+        
+        UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
+        
+        NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
+        lvc.webViewController = wvc;
+        
+        // Check to make sure we are running on iPad
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+            // webViewController must be in nvaigation controller; you will see why later
+            UINavigationController *detailNav = [[UINavigationController alloc] initWithRootViewController:wvc];
+            
+            UISplitViewController *svc = [[UISplitViewController alloc] init];
+            
+            // Set the delegate of the split view controller to the detail VC
+            // You will need this later - ignore the warning for now
+            // svc.delegate = wvc;
+            
+            svc.viewControllers = @[masterNav, detailNav];
+            
+            // Set the root view controller of the window to the split view controller
+            self.window.rootViewController = svc;
+        } else {
+            // On non-ipad devices, just use the navigation controller
+            
+            UITabBarController *tabBarController = [[UITabBarController alloc] init];
+            tabBarController.viewControllers = @[masterNav];
+            tabBarController.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
+            
+            self.window.rootViewController = tabBarController;
+            
+            // self.window.rootViewController = masterNav;
+        }
+
+        
+      
+        self.window.backgroundColor = [UIColor whiteColor];
+        [self.window makeKeyAndVisible];
+    } else {
+        
+    }
     return YES;
 }
 
