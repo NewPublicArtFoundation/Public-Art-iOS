@@ -36,6 +36,7 @@
 @property (assign, nonatomic) NSString *queryGraffiti;
 @property (assign, nonatomic) NSString *queryURL;
 @property (assign, nonatomic) NSInteger queryPage;
+@property (assign, nonatomic) BOOL ivarNoResults;
 @end
 
 @implementation NearbyListViewController
@@ -144,6 +145,15 @@
 // 1. write stubs for required data
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        if (self.nearbyGraffiti == 0) {
+            self.ivarNoResults = YES;
+            return 1;
+        } else {
+            self.ivarNoResults = NO;
+            
+        }
+    }
     return [self.nearbyGraffiti count];
 }
 
@@ -152,6 +162,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (self.tableView == self.searchDisplayController.searchResultsTableView && self.ivarNoResults) {
+        static NSString *cleanCellIdent = @"cleanCell";
+        UITableViewCell *ccell = [self.tableView dequeueReusableCellWithIdentifier:cleanCellIdent];
+        if (ccell == nil) {
+            ccell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cleanCellIdent];
+            ccell.userInteractionEnabled = NO;
+        }
+        return ccell;
+    }
+    
     static NSString *MyIdentifier = @"NearbyGraffitiCell";
    
     // Get a new or recycled cell
@@ -180,7 +200,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 85;
+    return 115;
 }
 
 #pragma mark General
@@ -243,13 +263,19 @@
     searchDisplayController.delegate = self;
     searchDisplayController.searchResultsDataSource = self;
     searchDisplayController.searchResultsDelegate = self;
-    searchDisplayController.searchResultsDataSource = self;
-   
+
 
     self.tableView.tableHeaderView = searchBar;
     [searchBar setDelegate:self];
 }
 
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    return NO;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+    return NO;
+}
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBarResult
 {

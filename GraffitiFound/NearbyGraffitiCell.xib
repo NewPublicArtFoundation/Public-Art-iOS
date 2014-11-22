@@ -16,7 +16,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="elq-Dx-YVa">
-                        <rect key="frame" x="0.0" y="-1" width="320" height="89"/>
+                        <rect key="frame" x="0.0" y="-1" width="320" height="90"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="4p3-1T-dGh"/>
                             <constraint firstAttribute="width" secondItem="elq-Dx-YVa" secondAttribute="height" multiplier="152:35" id="ejp-63-wTu"/>
@@ -42,7 +42,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Jr-d6-i23">
-                        <rect key="frame" x="167" y="53" width="112" height="27"/>
+                        <rect key="frame" x="170" y="54" width="109" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="Dwg-Z1-6o0"/>
                         </constraints>
@@ -57,7 +57,7 @@
                         </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="mi" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUr-P3-xCB">
-                        <rect key="frame" x="276" y="52" width="36" height="29"/>
+                        <rect key="frame" x="276" y="52" width="36" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="5E7-sh-QSz"/>
                         </constraints>
@@ -102,8 +102,8 @@
                     <constraint firstItem="elq-Dx-YVa" firstAttribute="trailing" secondItem="Y7P-A0-iHs" secondAttribute="trailingMargin" id="ZUJ-qp-XX4"/>
                     <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="Y7P-A0-iHs" secondAttribute="leadingMargin" constant="-8" id="a6T-nh-iUe"/>
                     <constraint firstAttribute="bottomMargin" secondItem="elq-Dx-YVa" secondAttribute="bottom" constant="-1" id="b6m-Gg-DHm"/>
-                    <constraint firstItem="9Jr-d6-i23" firstAttribute="leading" secondItem="elq-Dx-YVa" secondAttribute="leading" constant="167" id="c2O-jE-6ia"/>
-                    <constraint firstItem="9Jr-d6-i23" firstAttribute="top" secondItem="elq-Dx-YVa" secondAttribute="top" constant="54" id="cr7-xr-hvh"/>
+                    <constraint firstItem="9Jr-d6-i23" firstAttribute="leading" secondItem="elq-Dx-YVa" secondAttribute="leading" constant="170" id="c2O-jE-6ia"/>
+                    <constraint firstItem="9Jr-d6-i23" firstAttribute="top" secondItem="elq-Dx-YVa" secondAttribute="top" constant="55" id="cr7-xr-hvh"/>
                     <constraint firstItem="elq-Dx-YVa" firstAttribute="top" secondItem="Y7P-A0-iHs" secondAttribute="topMargin" id="dVM-Ra-Vt5"/>
                     <constraint firstItem="elq-Dx-YVa" firstAttribute="leading" secondItem="9Jr-d6-i23" secondAttribute="leading" id="ew1-eO-g6W"/>
                     <constraint firstAttribute="trailingMargin" secondItem="elq-Dx-YVa" secondAttribute="trailing" id="gBX-2W-gIe"/>
@@ -173,7 +173,7 @@
                 <outlet property="backgroundImageView" destination="elq-Dx-YVa" id="Fbe-Ng-Qap"/>
                 <outlet property="distanceLabel" destination="9Jr-d6-i23" id="s7p-6M-OVf"/>
             </connections>
-            <point key="canvasLocation" x="279" y="261"/>
+            <point key="canvasLocation" x="279" y="260"/>
         </tableViewCell>
     </objects>
 </document>
