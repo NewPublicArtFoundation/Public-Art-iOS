@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GraffitiFound/NearbyListViewController.m"
-            timestampString = "438326788.699741"
+            timestampString = "438328605.385875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "386"
-            endingLineNumber = "386"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "@implementation NearbyListViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GraffitiFound/NearbyListViewController.m"
-            timestampString = "438326788.699741"
+            timestampString = "438328605.385875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "411"
+            endingLineNumber = "411"
             landmarkName = "-loadSettingsPage:"
             landmarkType = "5">
          </BreakpointContent>

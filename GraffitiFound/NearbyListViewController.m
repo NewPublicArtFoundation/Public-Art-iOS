@@ -34,7 +34,7 @@
 @property (assign, nonatomic) NSTimeInterval timeout;
 @property (assign, nonatomic) NSInteger locationRequestID;
 @property (assign, nonatomic) NSString *queryGraffiti;
-
+@property (assign, nonatomic) NSInteger queryPage;
 @end
 
 @implementation NearbyListViewController
@@ -67,11 +67,13 @@
 
 - (void)fetchFeed
 {
-
+    NSString* queryPage = [NSString stringWithFormat:@"%li", (long)self.queryPage];
+    [[Mixpanel sharedInstance] track:@"Query page" properties:@{@"Value": queryPage}];
     // Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    NSLog(@"Querying page %@", queryPage);
     NSString *queryURL = @"http://www.graffpass.com/find.json/";
     NSString *queryParam = self.queryGraffiti;
-    NSString *query = [queryURL stringByAppendingString:[NSString stringWithFormat:@"?search=%@", queryParam]];
+    NSString *query = [queryURL stringByAppendingString:[NSString stringWithFormat:@"?search=%@&page=%@", queryParam, queryPage]];
     
     NSURL *url = [NSURL URLWithString:query];
     
@@ -194,22 +196,42 @@
                                                              @"Request": @"Success"
                                                              }];
     NSLog(@"Inset row at top");
+    [self startLocationRequest:nil];
+    
     __weak NearbyListViewController *weakSelf = self;
     
-    int64_t delayInSeconds = 2.0;
+    int64_t delayInSeconds = 1.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+    [weakSelf.tableView beginUpdates];
+        
+    NSLog(@"Loading");
+    [weakSelf.tableView endUpdates];
+    [weakSelf.tableView.pullToRefreshView stopAnimating];
+    });
+}
+
+- (void)insertRowAtBottom {
+    __weak NearbyListViewController *weakSelf = self;
+    
+    int64_t delayInSeconds = 0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [weakSelf.tableView beginUpdates];
-//        [weakSelf.dataSource insertObject:[NSDate date] atIndex:0];
-        NSLog(@"Loading");
-//        [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
-        [self startLocationRequest:nil];
+      NSLog(@"Infinite Scroll");
         
         [weakSelf.tableView endUpdates];
+//        self.queryGraffiti = escapedSearchQuery;
+        self.queryPage = self.queryPage + 1;
         
-        [weakSelf.tableView.pullToRefreshView stopAnimating];
+        [self fetchFeed];
+        [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
+        
+        NSLog(@"Looking at: %@", self.queryGraffiti);
+        [weakSelf.tableView.infiniteScrollingView stopAnimating];
     });
 }
+
 
 - (void)setupSearchBar
 {
@@ -257,6 +279,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupSearchBar];
+    self.queryPage = 1;
     self.navigationItem.title = @"Start searching";
     __weak NearbyListViewController *weakSelf = self;
     self.tableView.backgroundView = nil;
@@ -266,9 +290,14 @@
     [self.tableView addPullToRefreshWithActionHandler:^{
         [weakSelf insertRowAtTop];
     }];
+    
+    // setup infinite scrolling
+    [self.tableView addInfiniteScrollingWithActionHandler:^{
+        [weakSelf insertRowAtBottom];
+    }];
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    [self setupSearchBar];
+
 
     
     UIBarButtonItem *_btn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"ic_settings_black"]
@@ -324,7 +353,7 @@
                                                                           self.queryGraffiti = queryGraffiti;
                                                                           NSLog(@"%@", queryGraffiti);
                                                                           
-
+                                                                          self.queryPage = 1;
                                                                           
                                                                           [mixpanel track:@"Request current location" properties:@{
                                                                                                                                    @"Request": @"Success"
