@@ -41,13 +41,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		031A34DC19FAD7E40034FE9F /* graffitifound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = graffitifound.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		031A34DC19FAD7E40034FE9F /* Public Art.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Public Art.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		031A34E019FAD7E40034FE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		031A34E119FAD7E40034FE9F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		031A34E319FAD7E40034FE9F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		031A34E419FAD7E40034FE9F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		031A34EC19FAD7E40034FE9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		031A34F519FAD7E50034FE9F /* graffitifound.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = graffitifound.temp_caseinsensitive_renameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		031A34F519FAD7E50034FE9F /* Public Art.temp_caseinsensitive_renameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Public Art.temp_caseinsensitive_renameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		031A34FA19FAD7E50034FE9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		031A34FB19FAD7E50034FE9F /* GraffitiFoundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraffitiFoundTests.m; sourceTree = "<group>"; };
 		0373EAB21A058D7A00DC0858 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -116,8 +116,8 @@
 		031A34DD19FAD7E40034FE9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				031A34DC19FAD7E40034FE9F /* graffitifound.app */,
-				031A34F519FAD7E50034FE9F /* graffitifound.temp_caseinsensitive_renameTests.xctest */,
+				031A34DC19FAD7E40034FE9F /* Public Art.app */,
+				031A34F519FAD7E50034FE9F /* Public Art.temp_caseinsensitive_renameTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,9 +237,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		031A34DB19FAD7E40034FE9F /* graffitifound */ = {
+		031A34DB19FAD7E40034FE9F /* Public Art */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 031A34FF19FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "graffitifound" */;
+			buildConfigurationList = 031A34FF19FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "Public Art" */;
 			buildPhases = (
 				20E46255DDE74D0680A57A7A /* Check Pods Manifest.lock */,
 				031A34D819FAD7E40034FE9F /* Sources */,
@@ -251,14 +251,14 @@
 			);
 			dependencies = (
 			);
-			name = graffitifound;
+			name = "Public Art";
 			productName = GraffitiFound;
-			productReference = 031A34DC19FAD7E40034FE9F /* graffitifound.app */;
+			productReference = 031A34DC19FAD7E40034FE9F /* Public Art.app */;
 			productType = "com.apple.product-type.application";
 		};
-		031A34F419FAD7E50034FE9F /* graffitifound.Tests */ = {
+		031A34F419FAD7E50034FE9F /* Public Art.Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 031A350219FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "graffitifound.Tests" */;
+			buildConfigurationList = 031A350219FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "Public Art.Tests" */;
 			buildPhases = (
 				031A34F119FAD7E50034FE9F /* Sources */,
 				031A34F219FAD7E50034FE9F /* Frameworks */,
@@ -269,9 +269,9 @@
 			dependencies = (
 				031A34F719FAD7E50034FE9F /* PBXTargetDependency */,
 			);
-			name = graffitifound.Tests;
+			name = "Public Art.Tests";
 			productName = GraffitiFoundTests;
-			productReference = 031A34F519FAD7E50034FE9F /* graffitifound.temp_caseinsensitive_renameTests.xctest */;
+			productReference = 031A34F519FAD7E50034FE9F /* Public Art.temp_caseinsensitive_renameTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -293,7 +293,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 031A34D719FAD7E40034FE9F /* Build configuration list for PBXProject "graffitifound" */;
+			buildConfigurationList = 031A34D719FAD7E40034FE9F /* Build configuration list for PBXProject "Public Art" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -306,8 +306,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				031A34DB19FAD7E40034FE9F /* graffitifound */,
-				031A34F419FAD7E50034FE9F /* graffitifound.Tests */,
+				031A34DB19FAD7E40034FE9F /* Public Art */,
+				031A34F419FAD7E50034FE9F /* Public Art.Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -399,7 +399,7 @@
 /* Begin PBXTargetDependency section */
 		031A34F719FAD7E50034FE9F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 031A34DB19FAD7E40034FE9F /* graffitifound */;
+			target = 031A34DB19FAD7E40034FE9F /* Public Art */;
 			targetProxy = 031A34F619FAD7E50034FE9F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -503,7 +503,7 @@
 				INFOPLIST_FILE = GraffitiFound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = graffitifound;
+				PRODUCT_NAME = "Public Art";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -520,7 +520,7 @@
 				INFOPLIST_FILE = GraffitiFound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = graffitifound;
+				PRODUCT_NAME = "Public Art";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -540,7 +540,7 @@
 				);
 				INFOPLIST_FILE = GraffitiFoundTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = graffitifound.temp_caseinsensitive_renameTests;
+				PRODUCT_NAME = "Public Art.temp_caseinsensitive_renameTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraffitiFound.app/GraffitiFound";
 			};
 			name = Debug;
@@ -555,7 +555,7 @@
 				);
 				INFOPLIST_FILE = GraffitiFoundTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = graffitifound.temp_caseinsensitive_renameTests;
+				PRODUCT_NAME = "Public Art.temp_caseinsensitive_renameTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraffitiFound.app/GraffitiFound";
 			};
 			name = Release;
@@ -563,7 +563,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		031A34D719FAD7E40034FE9F /* Build configuration list for PBXProject "graffitifound" */ = {
+		031A34D719FAD7E40034FE9F /* Build configuration list for PBXProject "Public Art" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				031A34FD19FAD7E50034FE9F /* Debug */,
@@ -572,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		031A34FF19FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "graffitifound" */ = {
+		031A34FF19FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "Public Art" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				031A350019FAD7E50034FE9F /* Debug */,
@@ -581,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		031A350219FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "graffitifound.Tests" */ = {
+		031A350219FAD7E50034FE9F /* Build configuration list for PBXNativeTarget "Public Art.Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				031A350319FAD7E50034FE9F /* Debug */,

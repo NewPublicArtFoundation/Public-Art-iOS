@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "031A34DB19FAD7E40034FE9F"
                BuildableName = "graffitifound.app"
-               BlueprintName = "graffitifound"
-               ReferencedContainer = "container:graffitifound.xcodeproj">
+               BlueprintName = "Public Art"
+               ReferencedContainer = "container:Public Art.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,8 +30,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "031A34F419FAD7E50034FE9F"
                BuildableName = "graffitifound.temp_caseinsensitive_renameTests.xctest"
-               BlueprintName = "graffitifound.Tests"
-               ReferencedContainer = "container:graffitifound.xcodeproj">
+               BlueprintName = "Public Art.Tests"
+               ReferencedContainer = "container:Public Art.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,8 +48,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "031A34F419FAD7E50034FE9F"
                BuildableName = "graffitifound.temp_caseinsensitive_renameTests.xctest"
-               BlueprintName = "graffitifound.Tests"
-               ReferencedContainer = "container:graffitifound.xcodeproj">
+               BlueprintName = "Public Art.Tests"
+               ReferencedContainer = "container:Public Art.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "031A34DB19FAD7E40034FE9F"
             BuildableName = "graffitifound.app"
-            BlueprintName = "graffitifound"
-            ReferencedContainer = "container:graffitifound.xcodeproj">
+            BlueprintName = "Public Art"
+            ReferencedContainer = "container:Public Art.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,8 +77,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "031A34DB19FAD7E40034FE9F"
             BuildableName = "graffitifound.app"
-            BlueprintName = "graffitifound"
-            ReferencedContainer = "container:graffitifound.xcodeproj">
+            BlueprintName = "Public Art"
+            ReferencedContainer = "container:Public Art.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,8 +95,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "031A34DB19FAD7E40034FE9F"
             BuildableName = "graffitifound.app"
-            BlueprintName = "graffitifound"
-            ReferencedContainer = "container:graffitifound.xcodeproj">
+            BlueprintName = "Public Art"
+            ReferencedContainer = "container:Public Art.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
