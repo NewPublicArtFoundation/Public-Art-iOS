@@ -25,6 +25,7 @@
 		03B8BE501A0FE982006EACC9 /* GraffitiData.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B8BE4F1A0FE981006EACC9 /* GraffitiData.m */; };
 		03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */; };
 		03C4BA481A0E9CCC004A90CD /* LocationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */; };
+		03D989B51A2049C200417637 /* RKSwipeBetweenViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D989B41A2049C200417637 /* RKSwipeBetweenViewControllers.m */; };
 		03E061D01A13A64E008C256B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E061CF1A13A64E008C256B /* Launch Screen.xib */; };
 		2B2D7DDC19D745EF800AD661 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9051A087C75D4B52B7437278 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,8 @@
 		03C4BA441A0E9C58004A90CD /* LocationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationSettingsViewController.h; path = GraffitiFound/LocationSettingsViewController.h; sourceTree = "<group>"; };
 		03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationSettingsViewController.m; path = GraffitiFound/LocationSettingsViewController.m; sourceTree = "<group>"; };
 		03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationSettingsViewController.xib; path = GraffitiFound/LocationSettingsViewController.xib; sourceTree = "<group>"; };
+		03D989B31A2049C200417637 /* RKSwipeBetweenViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSwipeBetweenViewControllers.h; sourceTree = "<group>"; };
+		03D989B41A2049C200417637 /* RKSwipeBetweenViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSwipeBetweenViewControllers.m; sourceTree = "<group>"; };
 		03E061CF1A13A64E008C256B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		336FF8C49620BCFF9CFA1541 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		82142C3DF7EA93002B4E1EE8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		031A34DE19FAD7E40034FE9F /* GraffitiFound */ = {
 			isa = PBXGroup;
 			children = (
+				03D989B21A2049A700417637 /* SwipableViews */,
 				03B8BE441A0FE939006EACC9 /* Model */,
 				03C4BA431A0E9C28004A90CD /* LocationSettings */,
 				0378079719FAD978000C681F /* NearbyListTableView */,
@@ -210,6 +214,15 @@
 				03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */,
 			);
 			name = LocationSettings;
+			sourceTree = "<group>";
+		};
+		03D989B21A2049A700417637 /* SwipableViews */ = {
+			isa = PBXGroup;
+			children = (
+				03D989B31A2049C200417637 /* RKSwipeBetweenViewControllers.h */,
+				03D989B41A2049C200417637 /* RKSwipeBetweenViewControllers.m */,
+			);
+			name = SwipableViews;
 			sourceTree = "<group>";
 		};
 		9CAB5608258B494DBFAEA545 /* Pods */ = {
@@ -365,6 +378,7 @@
 				0378079F19FAE71B000C681F /* NearbyListWebViewController.m in Sources */,
 				03B8BE4D1A0FE979006EACC9 /* UserData.m in Sources */,
 				03B8BE501A0FE982006EACC9 /* GraffitiData.m in Sources */,
+				03D989B51A2049C200417637 /* RKSwipeBetweenViewControllers.m in Sources */,
 				037807A219FAF10E000C681F /* NearbyGraffitiCell.m in Sources */,
 				03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */,
 				0378079A19FAD999000C681F /* NearbyListViewController.m in Sources */,

@@ -13,7 +13,7 @@
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
 #import "LocationSettingsViewController.h"
-
+#import "RKSwipeBetweenViewControllers.h"
 
 #define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
 
@@ -31,63 +31,49 @@
     [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     // Later, you can get your instance with
-    
+ 
     [[UIApplication sharedApplication]
      registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge |
       UIRemoteNotificationTypeSound |
       UIRemoteNotificationTypeAlert)];
     
+ 
+    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    
+    RKSwipeBetweenViewControllers *navigationController = [[RKSwipeBetweenViewControllers alloc]initWithRootViewController:pageController];
+   
     
     // 3. Set up the root view
+    NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
+    NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
+    lvc.webViewController = wvc;
     
-    if(true){
-        
-        NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
-        
-        UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
-        
-        NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
-        lvc.webViewController = wvc;
-        
-        // Check to make sure we are running on iPad
-        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-            // webViewController must be in nvaigation controller; you will see why later
-            UINavigationController *detailNav = [[UINavigationController alloc] initWithRootViewController:wvc];
-            
-            UISplitViewController *svc = [[UISplitViewController alloc] init];
-            
-            // Set the delegate of the split view controller to the detail VC
-            // You will need this later - ignore the warning for now
-            // svc.delegate = wvc;
-            
-            svc.viewControllers = @[masterNav, detailNav];
-            
-            // Set the root view controller of the window to the split view controller
-            self.window.rootViewController = svc;
-        } else {
-            // On non-ipad devices, just use the navigation controller
-            
-            UITabBarController *tabBarController = [[UITabBarController alloc] init];
-            tabBarController.viewControllers = @[masterNav];
-            tabBarController.view.autoresizingMask=(UIViewAutoresizingFlexibleHeight);
-            
-//            self.window.rootViewController = tabBarController;
-
-            self.window.rootViewController = tabBarController;
-        }
-
-        
-      
-        self.window.backgroundColor = [UIColor whiteColor];
-        [self.window makeKeyAndVisible];
-    } else {
-        
-    }
+    //%%% DEMO CONTROLLERS
+    UIViewController *demo = [[UIViewController alloc]init];
+    UIViewController *demo2 = [[UIViewController alloc]init];
+    UIViewController *demo3 = [[UIViewController alloc]init];
+    UIViewController *demo4 = [[UIViewController alloc]init];
+    demo.view.backgroundColor = [UIColor redColor];
+    demo2.view.backgroundColor = [UIColor whiteColor];
+    demo3.view.backgroundColor = [UIColor grayColor];
+    demo4.view.backgroundColor = [UIColor orangeColor];
+    [navigationController.viewControllerArray addObjectsFromArray:@[lvc,demo2,demo3/*,demo4*/]];
+   
+    
+    
+    
+  
+    
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
     return YES;
-}
+    }
 
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:
