@@ -1,12 +1,12 @@
 //
 // Copyright (c) 2014 Mixpanel. All rights reserved.
 
-#import "MPABTestDesignerConnection.h"
 #import "MPABTestDesignerSnapshotRequestMessage.h"
+#import "MPABTestDesignerConnection.h"
 #import "MPABTestDesignerSnapshotResponseMessage.h"
 #import "MPApplicationStateSerializer.h"
-#import "MPObjectIdentityProvider.h"
 #import "MPObjectSerializerConfig.h"
+#import "MPObjectIdentityProvider.h"
 
 NSString * const MPABTestDesignerSnapshotRequestMessageType = @"snapshot_request";
 

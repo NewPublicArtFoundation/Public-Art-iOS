@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface MPTypeDescription : NSObject
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;

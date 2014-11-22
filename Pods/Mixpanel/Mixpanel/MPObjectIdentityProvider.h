@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface MPObjectIdentityProvider : NSObject
 
 - (NSString *)identifierForObject:(id)object;

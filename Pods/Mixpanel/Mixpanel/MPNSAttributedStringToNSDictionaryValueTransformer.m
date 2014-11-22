@@ -1,7 +1,6 @@
 //
 // Copyright (c) 2014 Mixpanel. All rights reserved.
 
-#import "MPLogging.h"
 #import "MPValueTransformers.h"
 
 @implementation MPNSAttributedStringToNSDictionaryValueTransformer
@@ -37,7 +36,7 @@
                     @"data" : [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]
             };
         } else {
-            MixpanelError(@"Failed to convert NSAttributedString to HTML: %@", error);
+            NSLog(@"Failed to convert NSAttributedString to HTML: %@", error);
         }
     }
 
@@ -62,7 +61,7 @@
                                                                   error:&error];
 #endif
             if (attributedString == nil) {
-                MixpanelError(@"Failed to convert HTML to NSAttributed string: %@", error);
+                NSLog(@"Failed to convert HTML to NSAttributed string: %@", error);
             }
 
             return attributedString;

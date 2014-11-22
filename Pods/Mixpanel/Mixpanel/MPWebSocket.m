@@ -17,6 +17,7 @@
 //   limitations under the License.
 //
 
+
 #import "MPWebSocket.h"
 
 #if TARGET_OS_IPHONE
@@ -24,24 +25,18 @@
 #endif
 
 #ifdef HAS_ICU
-
 #import <unicode/utf8.h>
-
 #endif
 
 #if TARGET_OS_IPHONE
-
 #import <Endian.h>
-
 #else
-
 #import <CoreServices/CoreServices.h>
-
 #endif
 
 #import <CommonCrypto/CommonDigest.h>
 #import <Security/SecRandom.h>
-#import "MPLogging.h"
+
 #import "NSData+MPBase64.h"
 
 #if OS_OBJECT_USE_OBJC_RETAIN_RELEASE
@@ -579,7 +574,7 @@ static __strong NSData *CRLFCRLF;
 
 #if DEBUG
         [SSLOptions setValue:[NSNumber numberWithBool:NO] forKey:(__bridge id)kCFStreamSSLValidatesCertificateChain];
-        MixpanelDebug(@"SocketRocket: In debug mode.  Allowing connection to any root cert");
+        NSLog(@"SocketRocket: In debug mode.  Allowing connection to any root cert");
 #endif
 
         [_outputStream setProperty:SSLOptions
@@ -709,7 +704,6 @@ static __strong NSData *CRLFCRLF;
     [_outputBuffer appendData:data];
     [self _pumpWriting];
 }
-
 - (void)send:(id)data;
 {
     NSAssert(self.readyState != MPWebSocketStateConnecting, @"Invalid State: Cannot call send: until connection is open");
@@ -1402,7 +1396,7 @@ static const size_t MPFrameHeaderOverhead = 32;
     dispatch_async(_workQueue, ^{
         switch (eventCode) {
             case NSStreamEventOpenCompleted: {
-                MessagingDebug(@"NSStreamEventOpenCompleted %@", aStream);
+                MPLog(@"NSStreamEventOpenCompleted %@", aStream);
                 if (self.readyState >= MPWebSocketStateClosing) {
                     return;
                 }
@@ -1417,7 +1411,7 @@ static const size_t MPFrameHeaderOverhead = 32;
             }
 
             case NSStreamEventErrorOccurred: {
-                MessagingDebug(@"NSStreamEventErrorOccurred %@ %@", aStream, [[aStream streamError] copy]);
+                MPLog(@"NSStreamEventErrorOccurred %@ %@", aStream, [[aStream streamError] copy]);
                 /// TODO specify error better!
                 [self _failWithError:aStream.streamError];
                 self->_readBufferOffset = 0;
@@ -1599,6 +1593,22 @@ static const size_t MPFrameHeaderOverhead = 32;
 }
 
 @end
+
+//#define MP_ENABLE_LOG
+
+static inline void MPLog(NSString *format, ...) {
+#ifdef MP_ENABLE_LOG
+    __block va_list arg_list;
+    va_start (arg_list, format);
+
+    NSString *formattedString = [[NSString alloc] initWithFormat:format arguments:arg_list];
+
+    va_end(arg_list);
+
+    NSLog(@"[MP] %@", formattedString);
+#endif
+}
+
 
 #ifdef HAS_ICU
 

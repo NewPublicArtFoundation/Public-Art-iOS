@@ -2,7 +2,6 @@
 // Copyright (c) 2014 Mixpanel. All rights reserved.
 
 #import <objc/runtime.h>
-#import "MPLogging.h"
 #import "NSInvocation+MPHelpers.h"
 
 typedef union {
@@ -37,7 +36,7 @@ static void *MPAllocBufferForObjCType(const char *objCType)
 
     int result = posix_memalign(&buffer, MAX(sizeof(void *), alignment), size);
     if (result != 0) {
-        MixpanelError(@"Error allocating aligned memory: %s", strerror(result));
+        NSLog(@"Error allocating aligned memory: %s", strerror(result));
     }
 
     if (buffer) {

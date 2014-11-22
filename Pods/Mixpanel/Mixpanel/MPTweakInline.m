@@ -7,13 +7,14 @@
  of patent rights can be found in the PATENTS file in the same directory.
  */
 
-#import <dlfcn.h>
-#import <libkern/OSAtomic.h>
-#import <mach-o/dyld.h>
-#import <mach-o/getsect.h>
-#import "MPTweak.h"
 #import "MPTweakInline.h"
+#import "MPTweak.h"
 #import "MPTweakStore.h"
+
+#import <libkern/OSAtomic.h>
+#import <mach-o/getsect.h>
+#import <mach-o/dyld.h>
+#import <dlfcn.h>
 
 static MPTweak *_MPTweakCreateWithEntry(NSString *name, mp_tweak_entry *entry)
 {

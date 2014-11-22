@@ -61,16 +61,6 @@
     [self setPayloadObject:deviceName forKey:@"device_name"];
 }
 
-- (NSString *)libVersion
-{
-    return [self payloadObjectForKey:@"device_name"];
-}
-
-- (void)setLibVersion:(NSString *)libVersion
-{
-    [self setPayloadObject:libVersion forKey:@"lib_version"];
-}
-
 - (NSString *)deviceModel
 {
     return [self payloadObjectForKey:@"device_model"];

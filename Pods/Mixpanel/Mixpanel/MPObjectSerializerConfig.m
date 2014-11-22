@@ -1,10 +1,11 @@
 //
 // Copyright (c) 2014 Mixpanel. All rights reserved.
 
-#import "MPClassDescription.h"
-#import "MPEnumDescription.h"
 #import "MPObjectSerializerConfig.h"
+#import "MPEnumDescription.h"
+#import "MPClassDescription.h"
 #import "MPTypeDescription.h"
+
 
 @implementation MPObjectSerializerConfig
 

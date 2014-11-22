@@ -4,6 +4,7 @@
 #import <Foundation/Foundation.h>
 #import "MPAbstractABTestDesignerMessage.h"
 
+
 @interface MPABTestDesignerChangeResponseMessage : MPAbstractABTestDesignerMessage
 
 + (instancetype)message;

@@ -2,14 +2,13 @@
 // Copyright (c) 2014 Mixpanel. All rights reserved.
 
 #import <objc/runtime.h>
-#import "MPCategoryHelpers.h"
+#import "MPObjectSerializer.h"
 #import "MPClassDescription.h"
+#import "MPPropertyDescription.h"
+#import "MPObjectSerializerContext.h"
+#import "MPObjectSerializerConfig.h"
 #import "MPEnumDescription.h"
 #import "MPObjectIdentityProvider.h"
-#import "MPObjectSerializer.h"
-#import "MPObjectSerializerConfig.h"
-#import "MPObjectSerializerContext.h"
-#import "MPPropertyDescription.h"
 #import "NSInvocation+MPHelpers.h"
 
 @interface MPObjectSerializer ()
@@ -70,27 +69,10 @@
         }
     }
 
-    NSMutableArray *delegateMethods = [NSMutableArray array];
-    id delegate;
-    SEL delegateSelector = NSSelectorFromString(@"delegate");
-
-    if (classDescription && [[classDescription delegateInfos] count] > 0 && [object respondsToSelector:delegateSelector]) {
-        delegate = ((id (*)(id, SEL))[object methodForSelector:delegateSelector])(object, delegateSelector);
-        for (MPDelegateInfo *delegateInfo in [classDescription delegateInfos]) {
-            if ([delegate respondsToSelector:NSSelectorFromString(delegateInfo.selectorName)]) {
-                [delegateMethods addObject:delegateInfo.selectorName];
-            }
-        }
-    }
-
     NSDictionary *serializedObject = @{
         @"id": [_objectIdentityProvider identifierForObject:object],
         @"class": [self classHierarchyArrayForObject:object],
-        @"properties": propertyValues,
-        @"delegate": @{
-                @"class": delegate ? NSStringFromClass([delegate class]) : @"",
-                @"selectors": delegateMethods
-            }
+        @"properties": propertyValues
     };
 
     [context addSerializedObject:serializedObject];
@@ -190,14 +172,11 @@
     NSAssert(aSelector != nil, @"Expected non-nil selector!");
 
     NSMethodSignature *methodSignature = [object methodSignatureForSelector:aSelector];
-    NSInvocation *invocation = nil;
+    NSAssert([methodSignature numberOfArguments] == (parameterCount + 2), @"Unexpected number of arguments!");
 
-    if (methodSignature) {
-        NSAssert([methodSignature numberOfArguments] == (parameterCount + 2), @"Unexpected number of arguments!");
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+    invocation.selector = aSelector;
 
-        invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
-        invocation.selector = aSelector;
-    }
     return invocation;
 }
 
@@ -232,7 +211,7 @@
 - (id)propertyValueForObject:(NSObject *)object withPropertyDescription:(MPPropertyDescription *)propertyDescription context:(MPObjectSerializerContext *)context
 {
     NSMutableArray *values = [[NSMutableArray alloc] init];
-
+    NSDictionary *propertyValue = @{@"values" : values};
 
     MPPropertySelectorDescription *selectorDescription = propertyDescription.getSelectorDescription;
 
@@ -259,37 +238,35 @@
                                context:context];
 
         NSDictionary *valueDictionary = @{
-            @"value" : (value ?: [NSNull null])
+                @"value" : (value ?: [NSNull null])
         };
 
         [values addObject:valueDictionary];
     } else {
         // the "slow" NSInvocation path. Required in order to invoke methods that take parameters.
         NSInvocation *invocation = [self invocationForObject:object withSelectorDescription:selectorDescription];
-        if (invocation) {
-            NSArray *parameterVariations = [self parameterVariationsForPropertySelector:selectorDescription];
+        NSArray *parameterVariations = [self parameterVariationsForPropertySelector:selectorDescription];
 
-            for (NSArray *parameters in parameterVariations) {
-                [invocation mp_setArgumentsFromArray:parameters];
-                [invocation invokeWithTarget:object];
+        for (NSArray *parameters in parameterVariations) {
+            [invocation mp_setArgumentsFromArray:parameters];
+            [invocation invokeWithTarget:object];
 
-                id returnValue = [invocation mp_returnValue];
+            id returnValue = [invocation mp_returnValue];
 
-                id value = [self propertyValue:returnValue
-                           propertyDescription:propertyDescription
-                                       context:context];
+            id value = [self propertyValue:returnValue
+                       propertyDescription:propertyDescription
+                                   context:context];
 
-                NSDictionary *valueDictionary = @{
-                    @"where": @{ @"parameters" : parameters },
-                    @"value": (value ?: [NSNull null])
-                };
+            NSDictionary *valueDictionary = @{
+                @"where" : @{ @"parameters" : parameters },
+                @"value" : (value ?: [NSNull null])
+            };
 
-                [values addObject:valueDictionary];
-            }
+            [values addObject:valueDictionary];
         }
     }
 
-    return @{@"values": values};
+    return propertyValue;
 }
 
 - (BOOL)isNestedObjectType:(NSString *)typeName
