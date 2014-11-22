@@ -60,6 +60,7 @@
    
     
     self.window.backgroundColor = [UIColor blackColor];
+    self.window.tintColor = [UIColor whiteColor];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
