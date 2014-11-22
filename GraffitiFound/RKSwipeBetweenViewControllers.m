@@ -129,9 +129,9 @@
 //%%% sets up the selection bar under the buttons on the navigation bar
 -(void)setupSelector
 {
-    selectionBar = [[UIView alloc]initWithFrame:CGRectMake(X_BUFFER-X_OFFSET, SELECTOR_Y_BUFFER,(self.view.frame.size.width-2*X_BUFFER)/[viewControllerArray count], SELECTOR_HEIGHT)];
+    selectionBar = [[UIView alloc]initWithFrame:CGRectMake(X_BUFFER-X_OFFSET, SELECTOR_Y_BUFFER,(self.view.frame.size.width-1*X_BUFFER)/[viewControllerArray count], SELECTOR_HEIGHT)];
     selectionBar.backgroundColor = [UIColor colorWithRed:204.0f/255.0f green:88.0f/255.0f blue:73.0f/255.0f alpha:1.0]; //%%% sbcolor
-    selectionBar.alpha = 0.8; //%%% sbalpha
+    selectionBar.alpha = 0.4; //%%% sbalpha
     [navigationView addSubview:selectionBar];
 }
 
