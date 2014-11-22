@@ -46,7 +46,7 @@
     self = [super initWithStyle:style];
     if(self){
 
-        self.navigationItem.title = @"Pull down or search";
+        self.navigationItem.title = @"Start searching";
         self.queryGraffiti = @"new+york+city";
         // 5. Override initWithStyle to create the NSURLSession object
         // Want the defaults, so pass nil for second and third options
@@ -188,7 +188,7 @@
 
 
 - (void)insertRowAtTop {
-    self.navigationItem.title = [NSString stringWithFormat:@"%@", @"Nearby"];
+    self.navigationItem.title = [NSString stringWithFormat:@"Searching %@", @"Nearby..."];
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Pulling to refresh" properties:@{
                                                              @"Request": @"Success"
@@ -214,6 +214,7 @@
 - (void)setupSearchBar
 {
     searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+    searchBar.placeholder = @"Search city name or address";
     searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
     searchDisplayController.delegate = self;
     searchDisplayController.searchResultsDataSource = self;
@@ -247,14 +248,15 @@
     
 }
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.title = @"Start searching";
     __weak NearbyListViewController *weakSelf = self;
     
     // setup pull-to-refresh
