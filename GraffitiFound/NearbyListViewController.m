@@ -281,7 +281,7 @@
 {
 
     NSString *searchQuery = searchBarResult.text;
-    self.navigationItem.title = [NSString stringWithFormat:@"%@", searchQuery];
+    self.navigationItem.title = [NSString stringWithFormat:@"Street Art %@", searchQuery];
     NSLog(@"User searched for %@", searchQuery);
     NSLog(@"Search button pressed");
     
