@@ -53,9 +53,10 @@
     lvc.webViewController = wvc;
     
     //%%% DEMO CONTROLLERS
+//    UIViewController *demo1 = [[UIViewController alloc]init];
     UIViewController *demo2 = [[UIViewController alloc]init];
     demo2.view.backgroundColor = [UIColor whiteColor];
-    [navigationController.viewControllerArray addObjectsFromArray:@[lvc,demo2/*,demo3,demo4*/]];
+    [navigationController.viewControllerArray addObjectsFromArray:@[lvc,demo2,/*demo1,demo4*/]];
    
     
     self.window.backgroundColor = [UIColor blackColor];

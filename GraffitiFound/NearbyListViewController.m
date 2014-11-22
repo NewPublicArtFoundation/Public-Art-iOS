@@ -214,7 +214,7 @@
 - (void)setupSearchBar
 {
     searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
-    searchBar.barTintColor = [UIColor colorWithRed:204.0f/255.0f green:88.0f/255.0f blue:73.0f/255.0f alpha:1.0];
+    searchBar.barStyle = UIBarStyleBlackOpaque;
     searchBar.placeholder = @"Search city name or address";
     searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
     searchDisplayController.delegate = self;
@@ -259,7 +259,9 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Start searching";
     __weak NearbyListViewController *weakSelf = self;
-    
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundView = [[UIView alloc] init];
+    self.tableView.backgroundView.backgroundColor = [UIColor blackColor];
     // setup pull-to-refresh
     [self.tableView addPullToRefreshWithActionHandler:^{
         [weakSelf insertRowAtTop];

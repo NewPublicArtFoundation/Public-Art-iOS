@@ -49,7 +49,7 @@
 {
     [super viewDidLoad];
 
-    self.navigationBar.barTintColor = [UIColor colorWithRed:40.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:0.5]; //%%% bartint
+    self.navigationBar.barTintColor = [UIColor colorWithRed:40.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:1.0]; //%%% bartint
     self.navigationBar.translucent = NO;
     viewControllerArray = [[NSMutableArray alloc]init];
     currentPageIndex = 0;
@@ -77,7 +77,7 @@
     NSInteger numControllers = [viewControllerArray count];
     
     if (!buttonText) {
-         buttonText = [[NSArray alloc]initWithObjects: @"Nearby",@"Map",@"third",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
+         buttonText = [[NSArray alloc]initWithObjects: @"Nearby",@"Map",@"Compass",@"fourth",@"etc",@"etc",@"etc",@"etc",nil]; //%%%buttontitle
     }
     
     for (int i = 0; i<numControllers; i++) {
@@ -85,7 +85,7 @@
         [navigationView addSubview:button];
         
         button.tag = i; //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
-        button.backgroundColor = [UIColor colorWithRed:40.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:0.5];//%%% buttoncolors
+        button.backgroundColor = [UIColor colorWithRed:40.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:1.0];//%%% buttoncolors
         
         [button addTarget:self action:@selector(tapSegmentButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         
