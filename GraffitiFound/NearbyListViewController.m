@@ -34,6 +34,7 @@
 @property (assign, nonatomic) NSTimeInterval timeout;
 @property (assign, nonatomic) NSInteger locationRequestID;
 @property (assign, nonatomic) NSString *queryGraffiti;
+@property (assign, nonatomic) NSString *queryURL;
 @property (assign, nonatomic) NSInteger queryPage;
 @end
 
@@ -74,7 +75,7 @@
     NSString *queryURL = @"http://www.graffpass.com/find.json/";
     NSString *queryParam = self.queryGraffiti;
     NSString *query = [queryURL stringByAppendingString:[NSString stringWithFormat:@"?search=%@&page=%@", queryParam, queryPage]];
-    
+    self.queryURL = query;
     NSURL *url = [NSURL URLWithString:query];
     
     NSLog(@"%@", url);
