@@ -25,6 +25,16 @@
 		03B8BE501A0FE982006EACC9 /* GraffitiData.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B8BE4F1A0FE981006EACC9 /* GraffitiData.m */; };
 		03C4BA461A0E9C58004A90CD /* LocationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */; };
 		03C4BA481A0E9CCC004A90CD /* LocationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */; };
+		03D243481A2244E200F88211 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D243461A2244E200F88211 /* Bolts.framework */; };
+		03D243491A2244E200F88211 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D243471A2244E200F88211 /* Parse.framework */; };
+		03D2434B1A22451F00F88211 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D2434A1A22451F00F88211 /* AudioToolbox.framework */; };
+		03D2434D1A22452600F88211 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D2434C1A22452600F88211 /* CFNetwork.framework */; };
+		03D2434F1A22452C00F88211 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D2434E1A22452C00F88211 /* CoreGraphics.framework */; };
+		03D243511A22453900F88211 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D243501A22453900F88211 /* libz.dylib */; };
+		03D243531A22453F00F88211 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D243521A22453F00F88211 /* MobileCoreServices.framework */; };
+		03D243551A22454300F88211 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D243541A22454300F88211 /* QuartzCore.framework */; };
+		03D243571A22454800F88211 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D243561A22454800F88211 /* Security.framework */; };
+		03D2435B1A22455400F88211 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D2435A1A22455400F88211 /* SystemConfiguration.framework */; };
 		03D989B51A2049C200417637 /* RKSwipeBetweenViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D989B41A2049C200417637 /* RKSwipeBetweenViewControllers.m */; };
 		03E061D01A13A64E008C256B /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E061CF1A13A64E008C256B /* Launch Screen.xib */; };
 		2B2D7DDC19D745EF800AD661 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9051A087C75D4B52B7437278 /* libPods.a */; };
@@ -72,6 +82,16 @@
 		03C4BA441A0E9C58004A90CD /* LocationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationSettingsViewController.h; path = GraffitiFound/LocationSettingsViewController.h; sourceTree = "<group>"; };
 		03C4BA451A0E9C58004A90CD /* LocationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationSettingsViewController.m; path = GraffitiFound/LocationSettingsViewController.m; sourceTree = "<group>"; };
 		03C4BA471A0E9CCC004A90CD /* LocationSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationSettingsViewController.xib; path = GraffitiFound/LocationSettingsViewController.xib; sourceTree = "<group>"; };
+		03D243461A2244E200F88211 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
+		03D243471A2244E200F88211 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
+		03D2434A1A22451F00F88211 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		03D2434C1A22452600F88211 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		03D2434E1A22452C00F88211 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		03D243501A22453900F88211 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		03D243521A22453F00F88211 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		03D243541A22454300F88211 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		03D243561A22454800F88211 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		03D2435A1A22455400F88211 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		03D989B31A2049C200417637 /* RKSwipeBetweenViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSwipeBetweenViewControllers.h; sourceTree = "<group>"; };
 		03D989B41A2049C200417637 /* RKSwipeBetweenViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSwipeBetweenViewControllers.m; sourceTree = "<group>"; };
 		03E061CF1A13A64E008C256B /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
@@ -85,9 +105,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D2435B1A22455400F88211 /* SystemConfiguration.framework in Frameworks */,
+				03D243571A22454800F88211 /* Security.framework in Frameworks */,
+				03D243551A22454300F88211 /* QuartzCore.framework in Frameworks */,
+				03D243531A22453F00F88211 /* MobileCoreServices.framework in Frameworks */,
+				03D243511A22453900F88211 /* libz.dylib in Frameworks */,
 				0373EAB31A058D7A00DC0858 /* CoreLocation.framework in Frameworks */,
+				03D2434F1A22452C00F88211 /* CoreGraphics.framework in Frameworks */,
+				03D2434D1A22452600F88211 /* CFNetwork.framework in Frameworks */,
+				03D2434B1A22451F00F88211 /* AudioToolbox.framework in Frameworks */,
+				03D243481A2244E200F88211 /* Bolts.framework in Frameworks */,
 				0378079619FAD95C000C681F /* Foundation.framework in Frameworks */,
 				0378079419FAD957000C681F /* UIKit.framework in Frameworks */,
+				03D243491A2244E200F88211 /* Parse.framework in Frameworks */,
 				2B2D7DDC19D745EF800AD661 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +198,16 @@
 		0378079219FAD946000C681F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03D243461A2244E200F88211 /* Bolts.framework */,
+				03D243471A2244E200F88211 /* Parse.framework */,
+				03D2435A1A22455400F88211 /* SystemConfiguration.framework */,
+				03D243561A22454800F88211 /* Security.framework */,
+				03D243541A22454300F88211 /* QuartzCore.framework */,
+				03D243521A22453F00F88211 /* MobileCoreServices.framework */,
+				03D243501A22453900F88211 /* libz.dylib */,
+				03D2434E1A22452C00F88211 /* CoreGraphics.framework */,
+				03D2434C1A22452600F88211 /* CFNetwork.framework */,
+				03D2434A1A22451F00F88211 /* AudioToolbox.framework */,
 				0373EAB21A058D7A00DC0858 /* CoreLocation.framework */,
 				0378079519FAD95C000C681F /* Foundation.framework */,
 				0378079319FAD957000C681F /* UIKit.framework */,
@@ -286,9 +326,15 @@
 					031A34DB19FAD7E40034FE9F = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 2AASLD8255;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					031A34F419FAD7E50034FE9F = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 2AASLD8255;
 						TestTargetID = 031A34DB19FAD7E40034FE9F;
 					};
 				};
@@ -502,6 +548,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GraffitiFound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -519,6 +569,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = GraffitiFound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -532,6 +586,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -543,6 +599,7 @@
 				INFOPLIST_FILE = GraffitiFoundTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Public Art.temp_caseinsensitive_renameTests";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraffitiFound.app/GraffitiFound";
 			};
 			name = Debug;
@@ -551,6 +608,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -558,6 +617,7 @@
 				INFOPLIST_FILE = GraffitiFoundTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "Public Art.temp_caseinsensitive_renameTests";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraffitiFound.app/GraffitiFound";
 			};
 			name = Release;

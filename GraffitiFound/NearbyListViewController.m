@@ -92,7 +92,7 @@
                                                          
                                                          // {name of local data store} = {json accessor and content reference}
                                                          self.nearbyGraffiti = jsonObject[@"data"];
-                                                         NSLog(@"%@", self.nearbyGraffiti);
+//                                                         NSLog(@"%@", self.nearbyGraffiti);
                                                          
                                                          // Force NSURLSessionDataTask response to run on the main thread to allow reload the table view
                                                          dispatch_async(dispatch_get_main_queue(), ^{
@@ -217,6 +217,7 @@
                                                              @"Request": @"Success"
                                                              }];
     NSLog(@"Inset row at top");
+    self.queryPage = 1;
     [self startLocationRequest:nil];
     
     __weak NearbyListViewController *weakSelf = self;

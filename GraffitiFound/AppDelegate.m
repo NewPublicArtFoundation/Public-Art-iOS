@@ -14,6 +14,7 @@
 #import "NearbyListWebViewController.h"
 #import "LocationSettingsViewController.h"
 #import "RKSwipeBetweenViewControllers.h"
+#import <Parse/Parse.h>
 
 #define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
 
@@ -25,22 +26,28 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  
+    [Parse setApplicationId:@"w7cmSk6gNvSreZAEMVLdI1moBHDxumKJtyHkx1Iz"
+                  clientKey:@"kxUUwGsz7UIE0PLQV1jYbmfqzf6klPSa64WSlaGs"];
     // Initialize the library with your
     // Mixpanel project token, MIXPANEL_TOKEN
-    Mixpanel *mixpanel = [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     // Later, you can get your instance with
     
-    [mixpanel identify:mixpanel.distinctId];
-    NSLog(@"%@", mixpanel.distinctId);
-    
-    [[UIApplication sharedApplication]
-     registerForRemoteNotificationTypes:
-     (UIRemoteNotificationTypeBadge |
-      UIRemoteNotificationTypeSound |
-      UIRemoteNotificationTypeAlert)];
-    
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    } else {
+        // Register for Push Notifications before iOS 8
+        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                         UIRemoteNotificationTypeAlert |
+                                                         UIRemoteNotificationTypeSound)];
+    }
  
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
@@ -55,8 +62,6 @@
     NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
     lvc.webViewController = wvc;
     
-    //%%% DEMO CONTROLLERS
-//    UIViewController *demo1 = [[UIViewController alloc]init];
     UIViewController *demo2 = [[UIViewController alloc]init];
     demo2.view.backgroundColor = [UIColor whiteColor];
     [navigationController.viewControllerArray addObjectsFromArray:@[lvc/*,demo2,demo1,demo4*/]];
@@ -67,7 +72,18 @@
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
-    }
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
