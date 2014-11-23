@@ -28,10 +28,13 @@
   
     // Initialize the library with your
     // Mixpanel project token, MIXPANEL_TOKEN
-    [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
+    Mixpanel *mixpanel = [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     // Later, you can get your instance with
- 
+    
+    [mixpanel identify:mixpanel.distinctId];
+    NSLog(@"%@", mixpanel.distinctId);
+    
     [[UIApplication sharedApplication]
      registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge |
@@ -66,13 +69,6 @@
     return YES;
     }
 
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:
-(NSData *)deviceToken
-{
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel.people addPushDeviceToken:deviceToken];
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
