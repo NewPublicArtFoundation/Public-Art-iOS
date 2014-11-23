@@ -12,6 +12,7 @@
 #import "INTULocationManager.h"
 #import "Mixpanel.h"
 #import "SVPullToRefresh.h"
+#import <Parse/Parse.h>
 
 @interface NearbyListViewController ()
 
@@ -56,6 +57,7 @@
         _session = [NSURLSession sessionWithConfiguration:config
                                                  delegate:nil
                                             delegateQueue:nil];
+        self.queryPage = 1;
         [self fetchFeed];
     }
     return self;
@@ -216,6 +218,8 @@
     [mixpanel track:@"Pulling to refresh" properties:@{
                                                              @"Request": @"Success"
                                                              }];
+
+    
     NSLog(@"Inset row at top");
     self.queryPage = 1;
     [self startLocationRequest:nil];
@@ -231,6 +235,7 @@
     [weakSelf.tableView endUpdates];
     [weakSelf.tableView.pullToRefreshView stopAnimating];
     });
+    
 }
 
 - (void)insertRowAtBottom {
