@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>GraffitiFound.xcscheme</key>
+		<key>Public Art.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>031A34DB19FAD7E40034FE9F</key>
+		<key>032EAFFA1A23BF5A007774EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>031A34F419FAD7E50034FE9F</key>
+		<key>032EB0131A23BF5A007774EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
