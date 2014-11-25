@@ -95,6 +95,7 @@
                                                          
                                                          // {name of local data store} = {json accessor and content reference}
                                                          self.nearbyGraffiti = jsonObject[@"data"];
+                                                         [self.tableView setSeparatorColor:[UIColor colorWithRed:1.00 green:0.58 blue:0.48 alpha:1.0]];
 //                                                         NSLog(@"%@", self.nearbyGraffiti);
                                                          
                                                          // Force NSURLSessionDataTask response to run on the main thread to allow reload the table view
@@ -104,6 +105,7 @@
                                                      }
                                       ];
     [dataTask resume];
+    
 }
 
 
@@ -337,7 +339,8 @@
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     }
     
-    [self.tableView setSeparatorColor:[UIColor colorWithRed:1.00 green:0.58 blue:0.48 alpha:1.0]];
+    self.tableView.separatorColor = [UIColor clearColor];
+    
     self.queryPage = 1;
     self.navigationItem.title = @"Start searching";
     __weak NearbyListViewController *weakSelf = self;
