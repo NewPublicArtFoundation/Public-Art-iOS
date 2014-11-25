@@ -60,6 +60,7 @@
         self.queryPage = 1;
         [self fetchFeed];
     }
+    
     return self;
 }
 
@@ -174,6 +175,7 @@
         return ccell;
     }
     
+    
     static NSString *MyIdentifier = @"NearbyGraffitiCell";
    
     // Get a new or recycled cell
@@ -185,6 +187,7 @@
                                       reuseIdentifier:MyIdentifier];
  
     }
+    
     NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
     // Configure the cell with the NearbyGraffitiCell
     
@@ -199,6 +202,19 @@
                 
   
     return cell;
+}
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -309,10 +325,19 @@
 //    return YES;
 //}
 
+
+
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     [self setupSearchBar];
+    
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    [self.tableView setSeparatorColor:[UIColor colorWithRed:1.00 green:0.58 blue:0.48 alpha:1.0]];
     self.queryPage = 1;
     self.navigationItem.title = @"Start searching";
     __weak NearbyListViewController *weakSelf = self;
