@@ -21,6 +21,18 @@
 		032EB03B1A23C1C0007774EF /* LocationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032EB0391A23C1C0007774EF /* LocationSettingsViewController.m */; };
 		032EB03C1A23C1C0007774EF /* LocationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032EB03A1A23C1C0007774EF /* LocationSettingsViewController.xib */; };
 		032EB0401A23C554007774EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032EB03F1A23C554007774EF /* Images.xcassets */; };
+		03ADCC961A241FA8002C3ABC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCC941A241FA8002C3ABC /* Bolts.framework */; };
+		03ADCC971A241FA8002C3ABC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCC951A241FA8002C3ABC /* Parse.framework */; };
+		03ADCC991A24225D002C3ABC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCC981A24225D002C3ABC /* AudioToolbox.framework */; };
+		03ADCC9B1A242266002C3ABC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCC9A1A242266002C3ABC /* CFNetwork.framework */; };
+		03ADCC9D1A24226C002C3ABC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCC9C1A24226C002C3ABC /* CoreGraphics.framework */; };
+		03ADCC9F1A242272002C3ABC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCC9E1A242272002C3ABC /* CoreLocation.framework */; };
+		03ADCCA11A24227A002C3ABC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCA01A24227A002C3ABC /* libz.dylib */; };
+		03ADCCA31A242280002C3ABC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCA21A242280002C3ABC /* MobileCoreServices.framework */; };
+		03ADCCA51A242286002C3ABC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCA41A242286002C3ABC /* QuartzCore.framework */; };
+		03ADCCA71A24228D002C3ABC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCA61A24228D002C3ABC /* Security.framework */; };
+		03ADCCA91A242292002C3ABC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCA81A242292002C3ABC /* StoreKit.framework */; };
+		03ADCCAB1A24229A002C3ABC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCAA1A24229A002C3ABC /* SystemConfiguration.framework */; };
 		09E794B1741126CA0F64AEB0 /* libPods-Public Art.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3ABA01845CFF2E645A5A972 /* libPods-Public Art.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +72,18 @@
 		032EB0391A23C1C0007774EF /* LocationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSettingsViewController.m; sourceTree = "<group>"; };
 		032EB03A1A23C1C0007774EF /* LocationSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationSettingsViewController.xib; sourceTree = "<group>"; };
 		032EB03F1A23C554007774EF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		03ADCC941A241FA8002C3ABC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Frameworks/Bolts.framework; sourceTree = "<group>"; };
+		03ADCC951A241FA8002C3ABC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Frameworks/Parse.framework; sourceTree = "<group>"; };
+		03ADCC981A24225D002C3ABC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		03ADCC9A1A242266002C3ABC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		03ADCC9C1A24226C002C3ABC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		03ADCC9E1A242272002C3ABC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		03ADCCA01A24227A002C3ABC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		03ADCCA21A242280002C3ABC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		03ADCCA41A242286002C3ABC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		03ADCCA61A24228D002C3ABC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		03ADCCA81A242292002C3ABC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		03ADCCAA1A24229A002C3ABC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		09A0DD42C65CAFA59517B495 /* Pods-Public Art.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Public Art.release.xcconfig"; path = "Pods/Target Support Files/Pods-Public Art/Pods-Public Art.release.xcconfig"; sourceTree = "<group>"; };
 		30B9E65CF14D0CE1F0039627 /* Pods-Public Art.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Public Art.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Public Art/Pods-Public Art.debug.xcconfig"; sourceTree = "<group>"; };
 		B3ABA01845CFF2E645A5A972 /* libPods-Public Art.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Public Art.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +94,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03ADCCAB1A24229A002C3ABC /* SystemConfiguration.framework in Frameworks */,
+				03ADCCA91A242292002C3ABC /* StoreKit.framework in Frameworks */,
+				03ADCCA71A24228D002C3ABC /* Security.framework in Frameworks */,
+				03ADCCA51A242286002C3ABC /* QuartzCore.framework in Frameworks */,
+				03ADCCA31A242280002C3ABC /* MobileCoreServices.framework in Frameworks */,
+				03ADCCA11A24227A002C3ABC /* libz.dylib in Frameworks */,
+				03ADCC9F1A242272002C3ABC /* CoreLocation.framework in Frameworks */,
+				03ADCC9D1A24226C002C3ABC /* CoreGraphics.framework in Frameworks */,
+				03ADCC9B1A242266002C3ABC /* CFNetwork.framework in Frameworks */,
+				03ADCC991A24225D002C3ABC /* AudioToolbox.framework in Frameworks */,
 				09E794B1741126CA0F64AEB0 /* libPods-Public Art.a in Frameworks */,
+				03ADCC971A241FA8002C3ABC /* Parse.framework in Frameworks */,
+				03ADCC961A241FA8002C3ABC /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +237,18 @@
 		FA0707432D7AC24C524B30AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03ADCCAA1A24229A002C3ABC /* SystemConfiguration.framework */,
+				03ADCCA81A242292002C3ABC /* StoreKit.framework */,
+				03ADCCA61A24228D002C3ABC /* Security.framework */,
+				03ADCCA41A242286002C3ABC /* QuartzCore.framework */,
+				03ADCCA21A242280002C3ABC /* MobileCoreServices.framework */,
+				03ADCCA01A24227A002C3ABC /* libz.dylib */,
+				03ADCC9E1A242272002C3ABC /* CoreLocation.framework */,
+				03ADCC9C1A24226C002C3ABC /* CoreGraphics.framework */,
+				03ADCC9A1A242266002C3ABC /* CFNetwork.framework */,
+				03ADCC981A24225D002C3ABC /* AudioToolbox.framework */,
+				03ADCC941A241FA8002C3ABC /* Bolts.framework */,
+				03ADCC951A241FA8002C3ABC /* Parse.framework */,
 				B3ABA01845CFF2E645A5A972 /* libPods-Public Art.a */,
 			);
 			name = Frameworks;
@@ -465,7 +513,12 @@
 			baseConfigurationReference = 30B9E65CF14D0CE1F0039627 /* Pods-Public Art.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "Public Art/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -476,7 +529,12 @@
 			baseConfigurationReference = 09A0DD42C65CAFA59517B495 /* Pods-Public Art.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = "Public Art/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
