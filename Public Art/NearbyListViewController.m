@@ -339,6 +339,8 @@
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     }
     
+    self.view.backgroundColor = [UIColor colorWithRed:0.12 green:0.12 blue:0.12 alpha:1.0];
+    
     self.tableView.separatorColor = [UIColor clearColor];
     
     self.queryPage = 1;
@@ -346,7 +348,7 @@
     __weak NearbyListViewController *weakSelf = self;
     self.tableView.backgroundView = nil;
     self.tableView.backgroundView = [[UIView alloc] init];
-    self.tableView.backgroundView.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundView.backgroundColor = [UIColor colorWithRed:0.12 green:0.12 blue:0.12 alpha:1.0];
     // setup pull-to-refresh
     [self.tableView addPullToRefreshWithActionHandler:^{
         [weakSelf insertRowAtTop];
