@@ -94,13 +94,13 @@
     [currentInstallation saveInBackground];
 }
 
-- (void)application:(UIApplication *)application
-    didReceiveRemoteNotification:(NSDictionary *)userInfo
-    fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    if (application.applicationState == UIApplicationStateInactive) {
-        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
-    }
-}
+//- (void)application:(UIApplication *)application
+//    didReceiveRemoteNotification:(NSDictionary *)userInfo
+//    fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+//    if (application.applicationState == UIApplicationStateInactive) {
+//        [PFAnalytics trackAppOpenedWithRemoteNotificationPayload:userInfo];
+//    }
+//}
 
 - (void)application:(UIApplication *)application
     didReceiveRemoteNotification:(NSDictionary *)userInfo {

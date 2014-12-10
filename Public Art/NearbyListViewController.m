@@ -253,7 +253,7 @@
     [weakSelf.tableView endUpdates];
     [weakSelf.tableView.pullToRefreshView stopAnimating];
     });
-    
+
 }
 
 - (void)insertRowAtBottom {
@@ -333,7 +333,6 @@
     [self presentViewController:activityViewController
                                        animated:YES
                                      completion:^{
-                                         // ...
                                      }];
 }
 
