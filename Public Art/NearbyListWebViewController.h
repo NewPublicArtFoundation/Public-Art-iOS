@@ -11,7 +11,7 @@
 
 @interface NearbyListWebViewController : UIViewController<UIWebViewDelegate>
 {
-    IBOutlet UIWebView *webView;
+//    IBOutlet UIWebView *webView;
 }
 
 @property (nonatomic) NSURL *URL;
