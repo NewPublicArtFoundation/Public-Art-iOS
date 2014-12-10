@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Public Art/NearbyListViewController.m"
-            timestampString = "439939188.076852"
+            timestampString = "439939887.761147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "341"
-            endingLineNumber = "341"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "-UIActivityButtonAction"
             landmarkType = "5">
          </BreakpointContent>
