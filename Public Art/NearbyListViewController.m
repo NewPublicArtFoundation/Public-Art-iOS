@@ -322,6 +322,21 @@
     
 }
 
+- (void)UIActivityButtonAction
+{
+    NSString *string = @"string";
+    NSURL *URL = [NSURL URLWithString:@"http://publicart.io"];
+    
+    UIActivityViewController *activityViewController =
+    [[UIActivityViewController alloc] initWithActivityItems:@[string, URL]
+                                      applicationActivities:nil];
+    [self presentViewController:activityViewController
+                                       animated:YES
+                                     completion:^{
+                                         // ...
+                                     }];
+}
+
 //- (BOOL)prefersStatusBarHidden
 //{
 //    return YES;
