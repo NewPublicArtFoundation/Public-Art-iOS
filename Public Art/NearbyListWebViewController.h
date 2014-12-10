@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-@interface NearbyListWebViewController : UIViewController
+@interface NearbyListWebViewController : UIViewController<UIWebViewDelegate>
+{
+    IBOutlet UIWebView *webView;
+}
 
 @property (nonatomic) NSURL *URL;
 

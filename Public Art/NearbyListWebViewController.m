@@ -12,15 +12,15 @@
 
 - (void)loadView
 {
-    UIWebView *webView = [[UIWebView alloc] init];
+    UIWebView *webViewReal = [[UIWebView alloc] init];
     
-    webView.opaque = NO;
-    webView.backgroundColor = [UIColor clearColor];
+    webViewReal.opaque = NO;
+    webViewReal.backgroundColor = [UIColor clearColor];
     
-    webView.scalesPageToFit = YES;
-    self.view = webView;
+    webViewReal.scalesPageToFit = YES;
+    self.view = webViewReal;
 }
-
+    
 - (void)setURL:(NSURL *)URL
 {
     _URL = URL;
