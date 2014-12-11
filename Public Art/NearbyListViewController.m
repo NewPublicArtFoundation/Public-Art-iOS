@@ -147,6 +147,7 @@
     }
 }
 
+
 // 1. write stubs for required data
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -322,10 +323,25 @@
     
 }
 
-- (void)UIActivityButtonAction
+- (void)didWriteToSavedPhotosAlbum
 {
-    NSString *string = @"string";
-    NSURL *URL = [NSURL URLWithString:@"http://publicart.io"];
+    
+}
+
+- (void)savePhoto:(UIImage *)imageToSave
+{
+    UIImage *image = imageToSave;
+    id completionTarget = self;
+    SEL completionSelector = @selector(didWriteToSavedPhotosAlbum);
+    void *contextInfo = NULL;
+    UIImageWriteToSavedPhotosAlbum(image, completionTarget, completionSelector, contextInfo);
+}
+
+- (void)UIActivityButtonAction:(NSString *)shareString
+               imageForSharing:(NSString *)clickedImageURL
+{
+    NSString *string = shareString;
+    NSURL *URL = [NSURL URLWithString: clickedImageURL];
     
     UIActivityViewController *activityViewController =
     [[UIActivityViewController alloc] initWithActivityItems:@[string, URL]
@@ -334,6 +350,19 @@
                                        animated:YES
                                      completion:^{
                                      }];
+}
+
+- (id)activityViewController:(UIActivityViewController *)activityViewController
+         itemForActivityType:(NSString *)activityType
+{
+    if ([activityType isEqualToString:UIActivityTypePostToFacebook]) {
+        return [NSString stringWithFormat: @"Like this!"];
+    } else if ([activityType isEqualToString:UIActivityTypePostToTwitter]) {
+        return [NSString stringWithFormat: @"Retweet this!"];
+    } else {
+        return nil;
+    }
+    
 }
 
 //- (BOOL)prefersStatusBarHidden
