@@ -13,7 +13,29 @@
 @property WebViewJavascriptBridge* bridge;
 @end
 
+@protocol NearbyListWebViewController<NSObject>
+
+@end
+
 @implementation NearbyListWebViewController
+
+- (void)UIActivityButtonAction:(NSString *)shareString
+               imageForSharing:(NSURL *)clickedImageURL
+{
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL: clickedImageURL];
+    UIImage *image = [UIImage imageWithData: imageData];
+    NSArray *activityItems = [NSArray arrayWithObjects:shareString, image, nil];
+
+    
+    UIActivityViewController *activityViewController =
+    [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                      applicationActivities:nil];
+    [self presentViewController:activityViewController
+                       animated:YES
+                     completion:^{
+                         NSLog(@"Test");
+                     }];
+}
 
 - (void)loadView
 {
@@ -27,22 +49,12 @@
         NSLog(@"ObjC received message from JS: %@", data);
         responseCallback(@"Response for message from ObjC");
     }];
-    
-    [_bridge registerHandler:@"testObjcCallback" handler:^(id data, WVJBResponseCallback responseCallback) {
-        NSLog(@"testObjcCallback called: %@", data);
-        responseCallback(@"Response from testObjcCallback");
+   
+    [_bridge registerHandler:@"shareButtonPressed" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"Share button was pressed");
+        [self UIActivityButtonAction:@"test" imageForSharing:self.URL];
     }];
-    
-    [_bridge send:@"A string sent from ObjC before Webview has loaded." responseCallback:^(id responseData) {
-        NSLog(@"objc got response! %@", responseData);
-    }];
-    
-    [_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];
-    
-    
-    [_bridge send:@"A string sent from ObjC after Webview has loaded."];
-    
-    
+   
     webView.opaque = NO;
     webView.backgroundColor = [UIColor clearColor];
     
