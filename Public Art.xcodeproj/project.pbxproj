@@ -302,6 +302,7 @@
 				032EAFF81A23BF5A007774EF /* Frameworks */,
 				032EAFF91A23BF5A007774EF /* Resources */,
 				3E58AF89C79738DE268A06DD /* Copy Pods Resources */,
+				0378B35F1A3BA9D80014E85F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -396,6 +397,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0378B35F1A3BA9D80014E85F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=/usr/local/bin:$PATH\ncd /Users/lkbgift/Spaceship/ios/parse\n\nparse symbols \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"";
+		};
 		3E58AF89C79738DE268A06DD /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
