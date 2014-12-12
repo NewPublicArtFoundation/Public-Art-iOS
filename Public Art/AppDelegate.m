@@ -26,16 +26,15 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ParseCrashReporting enable];
+    
     [Parse setApplicationId:@"w7cmSk6gNvSreZAEMVLdI1moBHDxumKJtyHkx1Iz"
                   clientKey:@"kxUUwGsz7UIE0PLQV1jYbmfqzf6klPSa64WSlaGs"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-//     Initialize the library with your
-//     Mixpanel project token, MIXPANEL_TOKEN
     [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    // Later, you can get your instance with
     
     if (application.applicationState != UIApplicationStateBackground) {
         // Track an app open here if we launch with a push, unless
@@ -50,7 +49,6 @@
         }
     }
    
-    
     
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |

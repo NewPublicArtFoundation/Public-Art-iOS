@@ -12,7 +12,6 @@
 #import "INTULocationManager.h"
 #import "Mixpanel.h"
 #import "SVPullToRefresh.h"
-//#import <Parse/Parse.h>
 
 @interface NearbyListViewController ()
 
@@ -108,6 +107,10 @@
     
 }
 
+
+- (void)crash {
+    [NSException raise:NSGenericException format:@"Everything is ok. This is just a test crash."];
+}
 
 #pragma mark Table Related
 
