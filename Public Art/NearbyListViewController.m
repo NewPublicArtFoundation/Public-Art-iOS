@@ -136,8 +136,11 @@
     [[Mixpanel sharedInstance] track:@"Request URL"
                           properties:@{@"url": queryWithIDWithLocation}];
     
+    NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
+    
     self.webViewController.URL = URL;
     self.webViewController.hidesBottomBarWhenPushed = YES;
+    self.webViewController.imageContent = imageUrlString;
     
     [[Mixpanel sharedInstance] track:@"Image clicked" properties:@{@"url": queryIDParam}];
     

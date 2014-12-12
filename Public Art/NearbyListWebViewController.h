@@ -15,5 +15,6 @@
 }
 
 @property (nonatomic) NSURL *URL;
+@property (nonatomic) NSString *imageContent;
 
 @end

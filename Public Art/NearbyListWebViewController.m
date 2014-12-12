@@ -20,15 +20,14 @@
 @implementation NearbyListWebViewController
 
 - (void)UIActivityButtonAction:(NSString *)shareString
-               imageForSharing:(NSURL *)clickedImageURL
+               imageForSharing:(NSString *)clickedImageURL
 {
-    NSData *imageData = [[NSData alloc] initWithContentsOfURL: clickedImageURL];
-    UIImage *image = [UIImage imageWithData: imageData];
-    NSArray *activityItems = [NSArray arrayWithObjects:shareString, image, nil];
-
-    
+    NSURL *URL = [NSURL URLWithString:clickedImageURL];
+    NSLog(@"%@", shareString);
+    NSLog(@"%@", clickedImageURL);
     UIActivityViewController *activityViewController =
-    [[UIActivityViewController alloc] initWithActivityItems:activityItems
+    [[UIActivityViewController alloc] initWithActivityItems: @[shareString, URL]
+
                                       applicationActivities:nil];
     [self presentViewController:activityViewController
                        animated:YES
@@ -40,7 +39,7 @@
 - (void)loadView
 {
     UIWebView *webView = [[UIWebView alloc] init];
-   
+
     if (_bridge) { return; }
     
     [WebViewJavascriptBridge enableLogging];
@@ -52,7 +51,10 @@
    
     [_bridge registerHandler:@"shareButtonPressed" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSLog(@"Share button was pressed");
-        [self UIActivityButtonAction:@"test" imageForSharing:self.URL];
+        NSString *actualImage = self.imageContent;
+        NSString *stringShared = [NSString stringWithFormat:@"%@ Street art from publicart.io", actualImage];
+        
+        [self UIActivityButtonAction:stringShared imageForSharing:actualImage];
     }];
    
     webView.opaque = NO;
