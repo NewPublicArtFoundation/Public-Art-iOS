@@ -54,7 +54,7 @@
         // THIS NEEDS AN EVENT
         NSLog(@"Share button was pressed");
         NSString *actualImage = self.imageContent;
-        NSString *stringShared = @"Street art from publicart.io";
+        NSString *stringShared = @"Street art found from publicart.io ";
         
         [self UIActivityButtonAction:stringShared imageForSharing:actualImage];
     }];
