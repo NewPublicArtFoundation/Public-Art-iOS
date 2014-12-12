@@ -22,6 +22,7 @@
 - (void)UIActivityButtonAction:(NSString *)shareString
                imageForSharing:(NSString *)clickedImageURL
 {
+    // THIS NEEDS AN EVENT
     NSURL *URL = [NSURL URLWithString:clickedImageURL];
     NSLog(@"%@", shareString);
     NSLog(@"%@", clickedImageURL);
@@ -50,9 +51,10 @@
     }];
    
     [_bridge registerHandler:@"shareButtonPressed" handler:^(id data, WVJBResponseCallback responseCallback) {
+        // THIS NEEDS AN EVENT
         NSLog(@"Share button was pressed");
         NSString *actualImage = self.imageContent;
-        NSString *stringShared = [NSString stringWithFormat:@"%@ Street art from publicart.io", actualImage];
+        NSString *stringShared = @"Street art from publicart.io";
         
         [self UIActivityButtonAction:stringShared imageForSharing:actualImage];
     }];
