@@ -7,12 +7,41 @@
 //
 
 #import "NearbyListWebViewController.h"
+#import "WebViewJavascriptBridge.h"
+
+@interface NearbyListWebViewController ()
+@property WebViewJavascriptBridge* bridge;
+@end
 
 @implementation NearbyListWebViewController
 
 - (void)loadView
 {
     UIWebView *webView = [[UIWebView alloc] init];
+   
+    if (_bridge) { return; }
+    
+    [WebViewJavascriptBridge enableLogging];
+    
+    _bridge = [WebViewJavascriptBridge bridgeForWebView:webView webViewDelegate:self handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"ObjC received message from JS: %@", data);
+        responseCallback(@"Response for message from ObjC");
+    }];
+    
+    [_bridge registerHandler:@"testObjcCallback" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"testObjcCallback called: %@", data);
+        responseCallback(@"Response from testObjcCallback");
+    }];
+    
+    [_bridge send:@"A string sent from ObjC before Webview has loaded." responseCallback:^(id responseData) {
+        NSLog(@"objc got response! %@", responseData);
+    }];
+    
+    [_bridge callHandler:@"testJavascriptHandler" data:@{ @"foo":@"before ready" }];
+    
+    
+    [_bridge send:@"A string sent from ObjC after Webview has loaded."];
+    
     
     webView.opaque = NO;
     webView.backgroundColor = [UIColor clearColor];

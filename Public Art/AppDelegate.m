@@ -73,6 +73,7 @@
     // 3. Set up the root view
     NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
     NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
+    
     lvc.webViewController = wvc;
     
     UIViewController *demo2 = [[UIViewController alloc]init];

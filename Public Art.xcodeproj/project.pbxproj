@@ -33,6 +33,8 @@
 		03ADCCA71A24228D002C3ABC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCA61A24228D002C3ABC /* Security.framework */; };
 		03ADCCA91A242292002C3ABC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCA81A242292002C3ABC /* StoreKit.framework */; };
 		03ADCCAB1A24229A002C3ABC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03ADCCAA1A24229A002C3ABC /* SystemConfiguration.framework */; };
+		03FCAC141A3A9D62006B344C /* WebViewJavascriptBridge.js.txt in Resources */ = {isa = PBXBuildFile; fileRef = 03FCAC121A3A9D62006B344C /* WebViewJavascriptBridge.js.txt */; };
+		03FCAC151A3A9D62006B344C /* WebViewJavascriptBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FCAC131A3A9D62006B344C /* WebViewJavascriptBridge.m */; };
 		09E794B1741126CA0F64AEB0 /* libPods-Public Art.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3ABA01845CFF2E645A5A972 /* libPods-Public Art.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,9 @@
 		03ADCCA61A24228D002C3ABC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		03ADCCA81A242292002C3ABC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		03ADCCAA1A24229A002C3ABC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		03FCAC111A3A9D62006B344C /* WebViewJavascriptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewJavascriptBridge.h; sourceTree = "<group>"; };
+		03FCAC121A3A9D62006B344C /* WebViewJavascriptBridge.js.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WebViewJavascriptBridge.js.txt; sourceTree = "<group>"; };
+		03FCAC131A3A9D62006B344C /* WebViewJavascriptBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewJavascriptBridge.m; sourceTree = "<group>"; };
 		09A0DD42C65CAFA59517B495 /* Pods-Public Art.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Public Art.release.xcconfig"; path = "Pods/Target Support Files/Pods-Public Art/Pods-Public Art.release.xcconfig"; sourceTree = "<group>"; };
 		30B9E65CF14D0CE1F0039627 /* Pods-Public Art.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Public Art.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Public Art/Pods-Public Art.debug.xcconfig"; sourceTree = "<group>"; };
 		B3ABA01845CFF2E645A5A972 /* libPods-Public Art.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Public Art.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +148,7 @@
 		032EAFFD1A23BF5A007774EF /* Public Art */ = {
 			isa = PBXGroup;
 			children = (
+				03FCAC101A3A9D62006B344C /* WebViewJavascriptBridge */,
 				032EB0371A23C1B2007774EF /* LocationSetting */,
 				032EB0331A23C108007774EF /* RKSwipe */,
 				032EB02C1A23C0E5007774EF /* NearbyListView */,
@@ -223,6 +229,16 @@
 				032EB03A1A23C1C0007774EF /* LocationSettingsViewController.xib */,
 			);
 			name = LocationSetting;
+			sourceTree = "<group>";
+		};
+		03FCAC101A3A9D62006B344C /* WebViewJavascriptBridge */ = {
+			isa = PBXGroup;
+			children = (
+				03FCAC111A3A9D62006B344C /* WebViewJavascriptBridge.h */,
+				03FCAC121A3A9D62006B344C /* WebViewJavascriptBridge.js.txt */,
+				03FCAC131A3A9D62006B344C /* WebViewJavascriptBridge.m */,
+			);
+			path = WebViewJavascriptBridge;
 			sourceTree = "<group>";
 		};
 		6D16FDE17754B3A5B7CA4B6F /* Pods */ = {
@@ -343,6 +359,7 @@
 			files = (
 				032EB02B1A23C0D6007774EF /* NearbyGraffitiCell.xib in Resources */,
 				032EB0401A23C554007774EF /* Images.xcassets in Resources */,
+				03FCAC141A3A9D62006B344C /* WebViewJavascriptBridge.js.txt in Resources */,
 				032EB03C1A23C1C0007774EF /* LocationSettingsViewController.xib in Resources */,
 				032EB00A1A23BF5A007774EF /* Main.storyboard in Resources */,
 				032EB0251A23C0B5007774EF /* Launch Screen.xib in Resources */,
@@ -397,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				032EB03B1A23C1C0007774EF /* LocationSettingsViewController.m in Sources */,
+				03FCAC151A3A9D62006B344C /* WebViewJavascriptBridge.m in Sources */,
 				032EB02A1A23C0D6007774EF /* NearbyGraffitiCell.m in Sources */,
 				032EB0071A23BF5A007774EF /* ViewController.m in Sources */,
 				032EB0041A23BF5A007774EF /* AppDelegate.m in Sources */,

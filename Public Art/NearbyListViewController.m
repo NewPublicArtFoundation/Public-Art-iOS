@@ -377,7 +377,7 @@
     
     [super viewDidLoad];
     [self setupSearchBar];
-    
+
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     }
