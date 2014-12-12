@@ -15,6 +15,7 @@
 #import "LocationSettingsViewController.h"
 #import "RKSwipeBetweenViewControllers.h"
 #import <Parse/Parse.h>
+#import <ParseCrashReporting/ParseCrashReporting.h>
 
 #define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
 
@@ -47,7 +48,7 @@
             [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
         }
     }
-    
+   
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
                                                         UIUserNotificationTypeBadge |

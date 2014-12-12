@@ -711,6 +711,12 @@
 
 /*!
  @abstract The cache policy to use for requests.
+
+ Not allowed when Pinning is enabled.
+
+ @see fromLocalDatastore:
+ @see fromPin:
+ @see fromPinWithName:
  */
 @property (assign, readwrite) PFCachePolicy cachePolicy;
 
@@ -735,6 +741,41 @@
  @abstract Clears the cached results for all queries.
  */
 + (void)clearAllCachedResults;
+
+///--------------------------------------
+/// @name Query Source
+///--------------------------------------
+
+/*!
+ @abstract Change the source of this query to all pinned objects.
+
+ Requires Pinning to be enabled.
+
+ @see cachePolicy
+ */
+- (PFQuery *)fromLocalDatastore;
+
+/*!
+ @abstract Change the source of this query to the default group of pinned objects.
+
+ Requires Pinning to be enabled.
+
+ @see PFObjectDefaultPin
+ @see cachePolicy
+ */
+- (PFQuery *)fromPin;
+
+/*!
+ @abstract Change the source of this query to a specific group of pinned objects.
+
+ Requires Pinning to be enabled.
+
+ @param name The pinned group.
+
+ @see PFObjectDefaultPin
+ @see cachePolicy
+ */
+- (PFQuery *)fromPinWithName:(NSString *)name;
 
 ///--------------------------------------
 /// @name Advanced Settings

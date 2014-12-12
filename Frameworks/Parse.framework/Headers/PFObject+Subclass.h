@@ -111,4 +111,18 @@
  */
 + (PFQuery *)query;
 
+/*!
+ @abstract Returns a query for objects of type <parseClassName> with a given predicate.
+
+ @discussion A default implementation is provided by <PFObject> which should always be sufficient.
+ @warning This method can only be called on subclasses which conform to <PFSubclassing>.
+
+ @param predicate The predicate to create conditions from.
+
+ @return An instance of <PFQuery>.
+
+ @see [PFQuery queryWithClassName:predicate:]
+ */
++ (PFQuery *)queryWithPredicate:(NSPredicate *)predicate;
+
 @end

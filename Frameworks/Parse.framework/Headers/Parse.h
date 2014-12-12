@@ -77,6 +77,16 @@
  */
 + (NSString *)getClientKey;
 
+///--------------------------------------
+/// @name Enabling Local Datastore
+///--------------------------------------
+
+/*!
+ @abstract Enable pinning in your application. This must be called before your application can use
+ pinning. The recommended way is to call this method before `setApplicationId:clientKey:`.
+ */
++ (void)enableLocalDatastore;
+
 #if PARSE_IOS_ONLY
 
 ///--------------------------------------

@@ -22,11 +22,34 @@
     NSString *screenName;
 }
 
+/*!
+ @abstract Consumer key of the application that is used to authorize with Twitter.
+ */
 @property (nonatomic, copy) NSString *consumerKey;
+
+/*!
+ @abstract Consumer secret of the application that is used to authorize with Twitter.
+ */
 @property (nonatomic, copy) NSString *consumerSecret;
+
+/*!
+ @abstract Auth token for the current user.
+ */
 @property (nonatomic, copy) NSString *authToken;
+
+/*!
+ @abstract Auth token secret for the current user.
+ */
 @property (nonatomic, copy) NSString *authTokenSecret;
+
+/*!
+ @abstract Twitter user id of the currently signed in user.
+ */
 @property (nonatomic, copy) NSString *userId;
+
+/*!
+ @abstract Twitter screen name of the currently signed in user.
+ */
 @property (nonatomic, copy) NSString *screenName;
 
 /*!

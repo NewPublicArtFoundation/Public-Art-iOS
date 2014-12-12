@@ -56,6 +56,19 @@
 + (PFQuery *)query;
 
 /*!
+ @abstract Returns a query for objects of this type with a given predicate.
+
+ @discussion A default implementation is provided by <PFObject> which should always be sufficient.
+
+ @param predicate The predicate to create conditions from.
+
+ @return An instance of <PFQuery>.
+
+ @see [PFQuery queryWithClassName:predicate:]
+ */
++ (PFQuery *)queryWithPredicate:(NSPredicate *)predicate;
+
+/*!
  @abstract Lets Parse know this class should be used to instantiate all objects with class type <parseClassName>.
 
  @warning This method must be called before <[Parse setApplicationId:clientKey:]>
