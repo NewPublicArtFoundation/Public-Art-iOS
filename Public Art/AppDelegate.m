@@ -27,6 +27,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [ParseCrashReporting enable];
     [Parse setApplicationId:@"w7cmSk6gNvSreZAEMVLdI1moBHDxumKJtyHkx1Iz"
                   clientKey:@"kxUUwGsz7UIE0PLQV1jYbmfqzf6klPSa64WSlaGs"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
