@@ -34,6 +34,31 @@
                      completion:^{
                          NSLog(@"Test");
                      }];
+
+    [activityViewController setCompletionHandler:^(NSString *act, BOOL done)
+    {
+        
+        NSLog(@"act type %@",act);
+        NSString *ServiceMsg = nil;
+        if ( [act isEqualToString:UIActivityTypeMail] )
+            ServiceMsg = @"Mail sent";
+        
+        if ( [act isEqualToString:UIActivityTypePostToTwitter] )
+            ServiceMsg = @"Post on twitter, ok!";
+        
+        if ( [act isEqualToString:UIActivityTypePostToFacebook] )
+            ServiceMsg = @"Post on facebook, ok!";
+        
+        if ( done )
+        {
+            UIAlertView *Alert = [[UIAlertView alloc] initWithTitle:ServiceMsg message:@"" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+            [Alert show];
+        }
+        else
+        {
+            // didn't succeed. 
+        }
+    }];
 }
 
 - (void)loadView

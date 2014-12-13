@@ -12,7 +12,6 @@
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
 #import "LocationSettingsViewController.h"
-#import "RKSwipeBetweenViewControllers.h"
 #import <Parse/Parse.h>
 
 #define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"

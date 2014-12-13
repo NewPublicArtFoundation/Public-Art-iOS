@@ -17,7 +17,6 @@
 		032EB02B1A23C0D6007774EF /* NearbyGraffitiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032EB0291A23C0D6007774EF /* NearbyGraffitiCell.xib */; };
 		032EB0311A23C0FC007774EF /* NearbyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032EB02E1A23C0FC007774EF /* NearbyListViewController.m */; };
 		032EB0321A23C0FC007774EF /* NearbyListWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032EB0301A23C0FC007774EF /* NearbyListWebViewController.m */; };
-		032EB0361A23C114007774EF /* RKSwipeBetweenViewControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 032EB0351A23C114007774EF /* RKSwipeBetweenViewControllers.m */; };
 		032EB03B1A23C1C0007774EF /* LocationSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032EB0391A23C1C0007774EF /* LocationSettingsViewController.m */; };
 		032EB03C1A23C1C0007774EF /* LocationSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032EB03A1A23C1C0007774EF /* LocationSettingsViewController.xib */; };
 		032EB0401A23C554007774EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032EB03F1A23C554007774EF /* Images.xcassets */; };
@@ -68,8 +67,6 @@
 		032EB02E1A23C0FC007774EF /* NearbyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyListViewController.m; sourceTree = "<group>"; };
 		032EB02F1A23C0FC007774EF /* NearbyListWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearbyListWebViewController.h; sourceTree = "<group>"; };
 		032EB0301A23C0FC007774EF /* NearbyListWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyListWebViewController.m; sourceTree = "<group>"; };
-		032EB0341A23C114007774EF /* RKSwipeBetweenViewControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSwipeBetweenViewControllers.h; sourceTree = "<group>"; };
-		032EB0351A23C114007774EF /* RKSwipeBetweenViewControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSwipeBetweenViewControllers.m; sourceTree = "<group>"; };
 		032EB0381A23C1C0007774EF /* LocationSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSettingsViewController.h; sourceTree = "<group>"; };
 		032EB0391A23C1C0007774EF /* LocationSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSettingsViewController.m; sourceTree = "<group>"; };
 		032EB03A1A23C1C0007774EF /* LocationSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationSettingsViewController.xib; sourceTree = "<group>"; };
@@ -150,7 +147,6 @@
 			children = (
 				03FCAC101A3A9D62006B344C /* WebViewJavascriptBridge */,
 				032EB0371A23C1B2007774EF /* LocationSetting */,
-				032EB0331A23C108007774EF /* RKSwipe */,
 				032EB02C1A23C0E5007774EF /* NearbyListView */,
 				032EB0261A23C0BC007774EF /* NearbyListCell */,
 				032EB0021A23BF5A007774EF /* AppDelegate.h */,
@@ -210,15 +206,6 @@
 				032EB0301A23C0FC007774EF /* NearbyListWebViewController.m */,
 			);
 			name = NearbyListView;
-			sourceTree = "<group>";
-		};
-		032EB0331A23C108007774EF /* RKSwipe */ = {
-			isa = PBXGroup;
-			children = (
-				032EB0341A23C114007774EF /* RKSwipeBetweenViewControllers.h */,
-				032EB0351A23C114007774EF /* RKSwipeBetweenViewControllers.m */,
-			);
-			name = RKSwipe;
 			sourceTree = "<group>";
 		};
 		032EB0371A23C1B2007774EF /* LocationSetting */ = {
@@ -421,7 +408,6 @@
 				032EB0011A23BF5A007774EF /* main.m in Sources */,
 				032EB0321A23C0FC007774EF /* NearbyListWebViewController.m in Sources */,
 				032EB0311A23C0FC007774EF /* NearbyListViewController.m in Sources */,
-				032EB0361A23C114007774EF /* RKSwipeBetweenViewControllers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
