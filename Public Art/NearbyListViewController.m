@@ -221,8 +221,8 @@
         
         _cellToDelete = cell;
         
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Delete?"
-                                                            message:@"Are you sure your want to delete the cell?"
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Not Street Art?"
+                                                            message:@"Are you sure your want to flag this image?"
                                                            delegate:self
                                                   cancelButtonTitle:@"No"
                                                   otherButtonTitles:@"Yes", nil];
