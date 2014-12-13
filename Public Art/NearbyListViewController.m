@@ -206,9 +206,6 @@
     UIView *shareView = [self viewWithImageName:@"share"];
     UIColor *yellowColor = [UIColor colorWithRed:254.0 / 255.0 green:217.0 / 255.0 blue:56.0 / 255.0 alpha:1.0];
     
-    UIView *listView = [self viewWithImageName:@"list"];
-    UIColor *brownColor = [UIColor colorWithRed:206.0 / 255.0 green:149.0 / 255.0 blue:98.0 / 255.0 alpha:1.0];
-    
     // Setting the default inactive state color to the tableView background color.
     [cell setDefaultColor:self.tableView.backgroundView.backgroundColor];
     
@@ -232,6 +229,8 @@
     [cell.textLabel setText:@"Right swipe only"];
     [cell.detailTextLabel setText:@"Swipe"];
     
+    cell.firstTrigger = 0.5;
+    
     [cell setSwipeGestureWithView:shareView color:yellowColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
         
         NSLog(@"Did swipe \"share\" cell");
@@ -240,9 +239,6 @@
         [self UIActivityButtonAction:stringShared imageForSharing:actualImage];
     }];
     
-    [cell setSwipeGestureWithView:listView color:brownColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState4 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-        NSLog(@"Did swipe \"List\" cell");
-    }];
     return cell;
 }
 
