@@ -7,7 +7,6 @@
 //
 
 
-#import <TSMessage.h>
 #import "Mixpanel.h"
 #import "AppDelegate.h"
 #import "NearbyListViewController.h"

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C27DEC620F3308910C2F7A78"
+               BlueprintIdentifier = "2C19EE7F533E1FC53881CC6E"
                BuildableName = "libPods-Public Art-INTULocationManager.a"
                BlueprintName = "Pods-Public Art-INTULocationManager"
                ReferencedContainer = "container:Pods.xcodeproj">
