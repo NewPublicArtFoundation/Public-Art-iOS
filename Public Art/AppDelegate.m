@@ -24,14 +24,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [Parse setApplicationId:@"w7cmSk6gNvSreZAEMVLdI1moBHDxumKJtyHkx1Iz"
-                  clientKey:@"kxUUwGsz7UIE0PLQV1jYbmfqzf6klPSa64WSlaGs"];
+    
+    [Parse setApplicationId:PARSE_APPID
+                  clientKey:PARSE_CLIENTKEY];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-//     Initialize the library with your
-//     Mixpanel project token, MIXPANEL_TOKEN
     [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    // Later, you can get your instance with
     
     if (application.applicationState != UIApplicationStateBackground) {
         // Track an app open here if we launch with a push, unless
@@ -45,6 +43,7 @@
             [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
         }
     }
+    
     
     if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
         UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
@@ -62,29 +61,25 @@
     }
     
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    RKSwipeBetweenViewControllers *navigationController = [[RKSwipeBetweenViewControllers alloc]initWithRootViewController:pageController];
     
     // 3. Set up the root view
     NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
     NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
-    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:lvc];
     lvc.webViewController = wvc;
     
-    UIViewController *demo2 = [[UIViewController alloc]init];
-    demo2.view.backgroundColor = [UIColor whiteColor];
-    [navigationController.viewControllerArray addObjectsFromArray:@[lvc/*,demo2,demo1,demo4*/]];
+    [self.window setRootViewController:navigationController];
     
     self.window.backgroundColor = [UIColor blackColor];
     self.window.tintColor = [UIColor whiteColor];
-    self.window.rootViewController = navigationController;
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
-//
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Store the deviceToken in the current installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
