@@ -12,6 +12,7 @@
 #import "INTULocationManager.h"
 #import "Mixpanel.h"
 #import "SVPullToRefresh.h"
+#import "MCSwipeTableViewCell.h"
 
 @interface NearbyListViewController ()
 
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancelRequestButton;
 @property (weak, nonatomic) IBOutlet UIButton *forceCompleteRequestButton;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) MCSwipeTableViewCell *cellToDelete;
 
 // 4. Create property to hold NSURLSession
 @property (nonatomic, strong) NSURLSession *session;
@@ -37,6 +39,7 @@
 @property (assign, nonatomic) NSString *queryURL;
 @property (assign, nonatomic) NSInteger queryPage;
 @property (assign, nonatomic) BOOL ivarNoResults;
+@property (nonatomic, assign) NSUInteger nbItems;
 @end
 
 @implementation NearbyListViewController
@@ -99,7 +102,9 @@
                                                          
                                                          // Force NSURLSessionDataTask response to run on the main thread to allow reload the table view
                                                          dispatch_async(dispatch_get_main_queue(), ^{
+                                                             _nbItems = [self.nearbyGraffiti count];
                                                              [self.tableView reloadData];
+                                                             
                                                          });
                                                      }
                                       ];
@@ -154,6 +159,10 @@
 }
 
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
 // 1. write stubs for required data
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -166,51 +175,103 @@
             
         }
     }
-    return [self.nearbyGraffiti count];
+    
+    return _nbItems;
 }
 
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (self.tableView == self.searchDisplayController.searchResultsTableView && self.ivarNoResults) {
-        static NSString *cleanCellIdent = @"cleanCell";
-        UITableViewCell *ccell = [self.tableView dequeueReusableCellWithIdentifier:cleanCellIdent];
-        if (ccell == nil) {
-            ccell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cleanCellIdent];
-            ccell.userInteractionEnabled = NO;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    
+    MCSwipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    if (!cell) {
+        cell = [[MCSwipeTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        
+        // Remove inset of iOS 7 separators.
+        if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+            cell.separatorInset = UIEdgeInsetsZero;
         }
-        return ccell;
+        
+        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+        
+        // Setting the background color of the cell.
+        cell.contentView.backgroundColor = [UIColor whiteColor];
     }
     
+    // Configuring the views and colors.
+//    UIView *checkView = [self viewWithImageName:@"check"];
+//    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
     
-    static NSString *MyIdentifier = @"NearbyGraffitiCell";
-   
-    // Get a new or recycled cell
-    NearbyGraffitiCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    UIView *crossView = [self viewWithImageName:@"cross"];
+    UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
     
-    if (cell == nil)
-    {
-        cell = [[NearbyGraffitiCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:MyIdentifier];
- 
-    }
+    UIView *clockView = [self viewWithImageName:@"clock"];
+    UIColor *yellowColor = [UIColor colorWithRed:254.0 / 255.0 green:217.0 / 255.0 blue:56.0 / 255.0 alpha:1.0];
     
-    NSDictionary *nearbyGraffiti = self.nearbyGraffiti[indexPath.row];
-    // Configure the cell with the NearbyGraffitiCell
+    UIView *listView = [self viewWithImageName:@"list"];
+    UIColor *brownColor = [UIColor colorWithRed:206.0 / 255.0 green:149.0 / 255.0 blue:98.0 / 255.0 alpha:1.0];
     
-    cell.distanceLabel.text = nearbyGraffiti[@"distance"];
-    cell.backgroundColor = [UIColor clearColor];
+    // Setting the default inactive state color to the tableView background color.
+    [cell setDefaultColor:self.tableView.backgroundView.backgroundColor];
     
-    NSString *imageUrlString = nearbyGraffiti[@"properties"][@"title"];
-    NSURL *url = [NSURL URLWithString:imageUrlString];
+    [cell.textLabel setText:@"Switch Mode Cell"];
+    [cell.detailTextLabel setText:@"Swipe to switch"];
     
-    cell.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-    [cell.backgroundImageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"placeholder"]];
-                
-  
+//    // Adding gestures per state basis.
+//    [cell setSwipeGestureWithView:checkView color:greenColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+//        NSLog(@"Did swipe \"Checkmark\" cell");
+//    }];
+    
+    [cell setSwipeGestureWithView:crossView color:redColor mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+        NSLog(@"Did swipe \"Cross\" cell");
+        
+        _cellToDelete = cell;
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Delete?"
+                                                            message:@"Are you sure your want to delete the cell?"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"No"
+                                                  otherButtonTitles:@"Yes", nil];
+        [alertView show];
+    }];
+    
+    [cell.textLabel setText:@"Right swipe only"];
+    [cell.detailTextLabel setText:@"Swipe"];
+    
+    [cell setSwipeGestureWithView:clockView color:yellowColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+        NSLog(@"Did swipe \"Clock\" cell");
+    }];
+    
+    [cell setSwipeGestureWithView:listView color:brownColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState4 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+        NSLog(@"Did swipe \"List\" cell");
+    }];
     return cell;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    // No
+    if (buttonIndex == 0) {
+        [_cellToDelete swipeToOriginWithCompletion:^{
+            NSLog(@"Swiped back");
+        }];
+        _cellToDelete = nil;
+    }
+    
+    // Yes
+    else {
+        _nbItems--;
+        [self.tableView deleteRowsAtIndexPaths:@[[self.tableView indexPathForCell:_cellToDelete]] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+- (UIView *)viewWithImageName:(NSString *)imageName {
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.contentMode = UIViewContentModeCenter;
+    return imageView;
 }
 
 -(void)viewDidLayoutSubviews
@@ -349,6 +410,11 @@
     [super viewDidLoad];
     [self setupSearchBar];
 
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+    [backgroundView setBackgroundColor:[UIColor colorWithRed:227.0 / 255.0 green:227.0 / 255.0 blue:227.0 / 255.0 alpha:1.0]];
+    [self.tableView setBackgroundView:backgroundView];
+    
+    
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     }

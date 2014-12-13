@@ -4,7 +4,7 @@
 target 'Public Art' do
 
 pod 'INTULocationManager'
-pod 'Mixpanel'
+pod 'Mixpanel', '~> 2.6'
 pod 'SDWebImage'
 pod 'TSMessages'
 pod 'SVPullToRefresh'

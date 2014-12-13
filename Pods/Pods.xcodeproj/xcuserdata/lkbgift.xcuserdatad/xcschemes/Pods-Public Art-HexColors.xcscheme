@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AFEDD73A4B66360FF21397F7"
+               BlueprintIdentifier = "4EEB84B39C6516408FFBCEE9"
                BuildableName = "libPods-Public Art-HexColors.a"
                BlueprintName = "Pods-Public Art-HexColors"
                ReferencedContainer = "container:Pods.xcodeproj">

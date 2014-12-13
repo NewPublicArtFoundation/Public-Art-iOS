@@ -7,17 +7,17 @@
 //
 
 
-#import <TSMessage.h>
 #import "Mixpanel.h"
 #import "AppDelegate.h"
 #import "NearbyListViewController.h"
 #import "NearbyListWebViewController.h"
 #import "LocationSettingsViewController.h"
-#import "RKSwipeBetweenViewControllers.h"
 #import <Parse/Parse.h>
 #import <ParseCrashReporting/ParseCrashReporting.h>
 
 #define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
+#define PARSE_APPID @"w7cmSk6gNvSreZAEMVLdI1moBHDxumKJtyHkx1Iz"
+#define PARSE_CLIENTKEY @"kxUUwGsz7UIE0PLQV1jYbmfqzf6klPSa64WSlaGs"
 
 @interface AppDelegate ()
 
@@ -30,8 +30,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ParseCrashReporting enable];
     
-    [Parse setApplicationId:@"w7cmSk6gNvSreZAEMVLdI1moBHDxumKJtyHkx1Iz"
-                  clientKey:@"kxUUwGsz7UIE0PLQV1jYbmfqzf6klPSa64WSlaGs"];
+    [Parse setApplicationId:PARSE_APPID
+                  clientKey:PARSE_CLIENTKEY];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
@@ -66,25 +66,21 @@
     }
     
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UIPageViewController *pageController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    
-    RKSwipeBetweenViewControllers *navigationController = [[RKSwipeBetweenViewControllers alloc]initWithRootViewController:pageController];
     
     // 3. Set up the root view
     NearbyListViewController *lvc = [[NearbyListViewController alloc] initWithStyle:UITableViewStylePlain];
     NearbyListWebViewController *wvc = [[NearbyListWebViewController alloc] init];
-    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:lvc];
     lvc.webViewController = wvc;
     
-    UIViewController *demo2 = [[UIViewController alloc]init];
-    demo2.view.backgroundColor = [UIColor whiteColor];
-    [navigationController.viewControllerArray addObjectsFromArray:@[lvc/*,demo2,demo1,demo4*/]];
+    [self.window setRootViewController:navigationController];
     
     self.window.backgroundColor = [UIColor blackColor];
     self.window.tintColor = [UIColor whiteColor];
-    self.window.rootViewController = navigationController;
+    
+
     [self.window makeKeyAndVisible];
     return YES;
 }

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2FEF3A41617EB6B62ED50E65"
+               BlueprintIdentifier = "6B5BE4B5F56367F54CD0156D"
                BuildableName = "libPods-Public Art-TSMessages.a"
                BlueprintName = "Pods-Public Art-TSMessages"
                ReferencedContainer = "container:Pods.xcodeproj">
