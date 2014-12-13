@@ -179,7 +179,6 @@
 		032EAFFD1A23BF5A007774EF /* Public Art */ = {
 			isa = PBXGroup;
 			children = (
-				0378B4551A3BCA2A0014E85F /* Helpers */,
 				0378B43D1A3BBEB00014E85F /* MCSwipeTableViewCell */,
 				03FCAC101A3A9D62006B344C /* WebViewJavascriptBridge */,
 				032EB0371A23C1B2007774EF /* LocationSetting */,
@@ -277,13 +276,6 @@
 				0378B44C1A3BC03F0014E85F /* list@2x.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		0378B4551A3BCA2A0014E85F /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 		03FCAC101A3A9D62006B344C /* WebViewJavascriptBridge */ = {

@@ -241,7 +241,11 @@
     [cell.detailTextLabel setText:@"Swipe"];
     
     [cell setSwipeGestureWithView:clockView color:yellowColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+        
         NSLog(@"Did swipe \"Clock\" cell");
+        NSString *stringShared = cell.textLabel.text;
+        NSString *actualImage = @"http://www.google.com";
+        [self UIActivityButtonAction:stringShared imageForSharing:actualImage];
     }];
     
     [cell setSwipeGestureWithView:listView color:brownColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState4 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
@@ -249,6 +253,26 @@
     }];
     return cell;
 }
+
+
+- (void)UIActivityButtonAction:(NSString *)shareString
+               imageForSharing:(NSString *)clickedImageURL
+{
+    // THIS NEEDS AN EVENT
+    NSURL *URL = [NSURL URLWithString:clickedImageURL];
+    NSLog(@"%@", shareString);
+    NSLog(@"%@", clickedImageURL);
+    UIActivityViewController *activityViewController =
+    [[UIActivityViewController alloc] initWithActivityItems: @[shareString, URL]
+     
+                                      applicationActivities:nil];
+    [self presentViewController:activityViewController
+                       animated:YES
+                     completion:^{
+                         NSLog(@"Test");
+                     }];
+}
+
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     
