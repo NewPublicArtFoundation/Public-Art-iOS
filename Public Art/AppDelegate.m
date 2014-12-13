@@ -15,6 +15,8 @@
 #import <Parse/Parse.h>
 
 #define MIXPANEL_TOKEN @"84d416fdfbfe20f78a60d04ab08cbc8c"
+#define PARSE_APPID @"w7cmSk6gNvSreZAEMVLdI1moBHDxumKJtyHkx1Iz"
+#define PARSE_CLIENTKEY @"kxUUwGsz7UIE0PLQV1jYbmfqzf6klPSa64WSlaGs"
 
 @interface AppDelegate ()
 
