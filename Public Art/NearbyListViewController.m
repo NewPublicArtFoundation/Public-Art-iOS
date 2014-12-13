@@ -200,14 +200,10 @@
         cell.contentView.backgroundColor = [UIColor whiteColor];
     }
     
-    // Configuring the views and colors.
-//    UIView *checkView = [self viewWithImageName:@"check"];
-//    UIColor *greenColor = [UIColor colorWithRed:85.0 / 255.0 green:213.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
-    
     UIView *crossView = [self viewWithImageName:@"cross"];
     UIColor *redColor = [UIColor colorWithRed:232.0 / 255.0 green:61.0 / 255.0 blue:14.0 / 255.0 alpha:1.0];
     
-    UIView *clockView = [self viewWithImageName:@"clock"];
+    UIView *shareView = [self viewWithImageName:@"share"];
     UIColor *yellowColor = [UIColor colorWithRed:254.0 / 255.0 green:217.0 / 255.0 blue:56.0 / 255.0 alpha:1.0];
     
     UIView *listView = [self viewWithImageName:@"list"];
@@ -219,11 +215,7 @@
     [cell.textLabel setText:@"Switch Mode Cell"];
     [cell.detailTextLabel setText:@"Swipe to switch"];
     
-//    // Adding gestures per state basis.
-//    [cell setSwipeGestureWithView:checkView color:greenColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
-//        NSLog(@"Did swipe \"Checkmark\" cell");
-//    }];
-    
+
     [cell setSwipeGestureWithView:crossView color:redColor mode:MCSwipeTableViewCellModeExit state:MCSwipeTableViewCellState1 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
         NSLog(@"Did swipe \"Cross\" cell");
         
@@ -240,9 +232,9 @@
     [cell.textLabel setText:@"Right swipe only"];
     [cell.detailTextLabel setText:@"Swipe"];
     
-    [cell setSwipeGestureWithView:clockView color:yellowColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
+    [cell setSwipeGestureWithView:shareView color:yellowColor mode:MCSwipeTableViewCellModeSwitch state:MCSwipeTableViewCellState3 completionBlock:^(MCSwipeTableViewCell *cell, MCSwipeTableViewCellState state, MCSwipeTableViewCellMode mode) {
         
-        NSLog(@"Did swipe \"Clock\" cell");
+        NSLog(@"Did swipe \"share\" cell");
         NSString *stringShared = cell.textLabel.text;
         NSString *actualImage = @"http://www.google.com";
         [self UIActivityButtonAction:stringShared imageForSharing:actualImage];
