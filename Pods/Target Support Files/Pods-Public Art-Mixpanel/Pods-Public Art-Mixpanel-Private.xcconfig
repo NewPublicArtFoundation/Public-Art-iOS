@@ -1,5 +1,6 @@
 #include "Pods-Public Art-Mixpanel.xcconfig"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/Mixpanel" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AWPagedArray" "${PODS_ROOT}/Headers/Public/INTULocationManager" "${PODS_ROOT}/Headers/Public/Mixpanel" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/SVPullToRefresh"
+LIBRARY_SEARCH_PATHS = ${PODS_PUBLIC_ART_MIXPANEL_LIBRARY_SEARCH_PATHS}
 OTHER_LDFLAGS = ${PODS_PUBLIC_ART_MIXPANEL_OTHER_LDFLAGS} -ObjC
 PODS_ROOT = ${SRCROOT}

@@ -1,7 +1,9 @@
 PODS:
   - AWPagedArray (0.2.0)
   - INTULocationManager (1.2.0)
-  - Mixpanel (2.5.4)
+  - Mixpanel (2.6.2):
+    - Mixpanel/MPCategoryHelpers (= 2.6.2)
+  - Mixpanel/MPCategoryHelpers (2.6.2)
   - SDWebImage (3.7.1):
     - SDWebImage/Core (= 3.7.1)
   - SDWebImage/Core (3.7.1)
@@ -17,7 +19,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AWPagedArray: 2c02ef1c4be38174c40b8160492e4283352dc5b0
   INTULocationManager: 596c57e35a00ca1ee9d59bf4cc2b63dc299b580e
-  Mixpanel: 87167a0b0a74f11f0ee3787f291357494730617c
+  Mixpanel: c075cedebda3328ce1ee29a18429e265ce967cd8
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
   SVPullToRefresh: d5161ebc833a38b465364412e5e307ca80bbb190
 
