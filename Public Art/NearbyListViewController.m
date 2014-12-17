@@ -36,6 +36,7 @@
 @property (assign, nonatomic) NSInteger locationRequestID;
 @property (assign, nonatomic) NSString *queryGraffiti;
 @property (assign, nonatomic) NSString *queryURL;
+@property (assign, nonatomic) NSString *currentTitle;
 @property (assign, nonatomic) NSInteger queryPage;
 @property (assign, nonatomic) BOOL ivarNoResults;
 @end
@@ -48,8 +49,8 @@
 {
     self = [super initWithStyle:style];
     if(self){
-        
-        self.navigationItem.title = @"Start searching";
+        self.currentTitle = @"Start searching";
+        self.navigationItem.title = self.currentTitle;
         self.queryGraffiti = @"new+york+city";
         [self startLocationRequest:nil];
         // 5. Override initWithStyle to create the NSURLSession object
@@ -236,7 +237,8 @@
 
 
 - (void)insertRowAtTop {
-    self.navigationItem.title = [NSString stringWithFormat:@"Searching %@", @"Nearby..."];
+    self.currentTitle = [NSString stringWithFormat:@"Searching %@", @"Nearby..."];
+    self.navigationItem.title = self.currentTitle;;
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"Pulling to refresh" properties:@{
                                                              @"Request": @"Success"
@@ -256,7 +258,8 @@
         
     NSLog(@"Loading");
     [weakSelf.tableView endUpdates];
-    self.navigationItem.title = [NSString stringWithFormat:@"Showing %@", @"Nearby Results"];
+    self.currentTitle = [NSString stringWithFormat:@"Showing %@", @"Nearby Results"]
+    self.navigationItem.title = self.currentTitle;
     [weakSelf.tableView.pullToRefreshView stopAnimating];
     });
 
@@ -312,7 +315,8 @@
 {
 
     NSString *searchQuery = searchBarResult.text;
-    self.navigationItem.title = [NSString stringWithFormat:@"Showing \"%@\"", searchQuery];
+    self.currentTitle = [NSString stringWithFormat:@"Showing \"%@\"", searchQuery];
+    self.navigationItem.title = self.currentTitle;
     NSLog(@"User searched for %@", searchQuery);
     NSLog(@"Search button pressed");
     
@@ -358,18 +362,23 @@
     self.tableView.separatorColor = [UIColor clearColor];
     
     self.queryPage = 1;
-    self.navigationItem.title = @"Start searching";
+    self.currentTitle =  @"Start searching";
+    self.navigationItem.title = self.currentTitle;
     __weak NearbyListViewController *weakSelf = self;
     self.tableView.backgroundView = nil;
     self.tableView.backgroundView = [[UIView alloc] init];
     self.tableView.backgroundView.backgroundColor = [UIColor colorWithRed:0.12 green:0.12 blue:0.12 alpha:1.0];
     // setup pull-to-refresh
     [self.tableView addPullToRefreshWithActionHandler:^{
+        weakSelf.currentTitle = @"Searching nearby...";
+        weakSelf.navigationItem.title = weakSelf.currentTitle;
         [weakSelf insertRowAtTop];
     }];
     
     // setup infinite scrolling
     [self.tableView addInfiniteScrollingWithActionHandler:^{
+        weakSelf.currentTitle = [NSString stringWithFormat:@"%@ (%ld)", weakSelf.currentTitle, (long)weakSelf.queryPage];
+        weakSelf.navigationItem.title = weakSelf.currentTitle;
         [weakSelf insertRowAtBottom];
     }];
     self.edgesForExtendedLayout = UIRectEdgeNone;
