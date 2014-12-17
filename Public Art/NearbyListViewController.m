@@ -48,9 +48,10 @@
 {
     self = [super initWithStyle:style];
     if(self){
-
+        
         self.navigationItem.title = @"Start searching";
         self.queryGraffiti = @"new+york+city";
+        [self startLocationRequest:nil];
         // 5. Override initWithStyle to create the NSURLSession object
         // Want the defaults, so pass nil for second and third options
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -409,7 +410,7 @@
 {
     __weak __typeof(self) weakSelf = self;
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    
+    self.queryPage = 1;
     INTULocationManager *locMgr = [INTULocationManager sharedInstance];
     self.locationRequestID = [locMgr requestLocationWithDesiredAccuracy:self.desiredAccuracy
                                                                 timeout:self.timeout
