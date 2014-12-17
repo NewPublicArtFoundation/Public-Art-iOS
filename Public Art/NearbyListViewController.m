@@ -255,6 +255,7 @@
         
     NSLog(@"Loading");
     [weakSelf.tableView endUpdates];
+    self.navigationItem.title = [NSString stringWithFormat:@"Showing %@", @"Nearby Results"];
     [weakSelf.tableView.pullToRefreshView stopAnimating];
     });
 
@@ -310,7 +311,7 @@
 {
 
     NSString *searchQuery = searchBarResult.text;
-    self.navigationItem.title = [NSString stringWithFormat:@"%@", searchQuery];
+    self.navigationItem.title = [NSString stringWithFormat:@"Showing \"%@\"", searchQuery];
     NSLog(@"User searched for %@", searchQuery);
     NSLog(@"Search button pressed");
     
@@ -334,10 +335,10 @@
 
 
 
-- (BOOL)prefersStatusBarHidden
-{
-    return YES;
-}
+//- (BOOL)prefersStatusBarHidden
+//{
+//    return YES;
+//}
 
 
 
@@ -346,7 +347,7 @@
     
     [super viewDidLoad];
     [self setupSearchBar];
-
+    [self setNeedsStatusBarAppearanceUpdate];
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
     }

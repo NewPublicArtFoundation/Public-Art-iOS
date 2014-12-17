@@ -78,8 +78,7 @@
     self.window.backgroundColor = [UIColor blackColor];
     self.window.tintColor = [UIColor colorWithRed:0.596 green:0.596 blue:0.596 alpha:1] /*#989898*/;
     navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.12 green:0.12 blue:0.12 alpha:1.0];
-    
-    
+
     [self.window makeKeyAndVisible];
     return YES;
 }
