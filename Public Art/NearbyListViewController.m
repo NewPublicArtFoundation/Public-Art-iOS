@@ -260,6 +260,7 @@
 
 }
 
+
 - (void)insertRowAtBottom {
     __weak NearbyListViewController *weakSelf = self;
     
@@ -333,10 +334,10 @@
 
 
 
-//- (BOOL)prefersStatusBarHidden
-//{
-//    return YES;
-//}
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 
 

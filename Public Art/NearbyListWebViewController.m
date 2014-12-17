@@ -88,7 +88,10 @@
     webView.scalesPageToFit = YES;
     self.view = webView;
 }
-
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 - (void)setURL:(NSURL *)URL
 {
     _URL = URL;
