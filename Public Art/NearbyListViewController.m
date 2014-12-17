@@ -51,15 +51,17 @@
     if(self){
         self.currentTitle = @"Start searching";
         self.navigationItem.title = self.currentTitle;
-        self.queryGraffiti = @"new+york+city";
-        [self startLocationRequest:nil];
+//        self.queryGraffiti = @"new+york+city";
+        
         // 5. Override initWithStyle to create the NSURLSession object
         // Want the defaults, so pass nil for second and third options
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+       
         _session = [NSURLSession sessionWithConfiguration:config
                                                  delegate:nil
                                             delegateQueue:nil];
         self.queryPage = 1;
+        
         [self fetchFeed];
     }
     
@@ -258,7 +260,7 @@
         
     NSLog(@"Loading");
     [weakSelf.tableView endUpdates];
-    self.currentTitle = [NSString stringWithFormat:@"Showing %@", @"Nearby Results"]
+        self.currentTitle = [NSString stringWithFormat:@"Showing %@", @"Nearby Results"];
     self.navigationItem.title = self.currentTitle;
     [weakSelf.tableView.pullToRefreshView stopAnimating];
     });
@@ -400,7 +402,7 @@
     self.locationRequestID = NSNotFound;
     self.statusLabel.text = @"Tap the button below to start a new location request.";
     
-    
+     [self startLocationRequest:nil];
     
     // Load the NIB file
     UINib *nib = [UINib nibWithNibName:@"NearbyGraffitiCell" bundle:nil];
